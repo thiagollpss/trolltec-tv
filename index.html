@@ -1,56 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TROLLTEC TV - IPTV Premium</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
       background-color: #0e0e0e;
       color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
       text-align: center;
     }
     header {
-      background-color: #111;
       padding: 30px 20px;
+      background-color: #111;
+      border-bottom: 3px solid #00ff88;
     }
     h1 {
+      margin: 0;
       color: #00ff88;
-      margin-bottom: 10px;
+      font-size: 2.8em;
     }
-    p {
+    p.subtitle {
+      margin: 5px 0 0 0;
       color: #ccc;
+      font-size: 1.1em;
     }
-    .section {
-      padding: 40px 20px;
+    section {
+      margin-top: 40px;
+    }
+    h2 {
+      color: #00ff88;
+      font-size: 2em;
+      margin-bottom: 20px;
     }
     .plan {
       background-color: #1a1a1a;
       margin: 15px auto;
       padding: 20px;
-      max-width: 300px;
-      border-radius: 10px;
-      border: 1px solid #00ff88;
+      max-width: 320px;
+      border-radius: 8px;
+      border: 2px solid #00ff88;
     }
     .plan h3 {
+      margin: 0 0 10px 0;
       color: #00ff88;
     }
-    .button {
-      display: inline-block;
-      background-color: #00ff88;
-      color: #000;
-      padding: 15px 25px;
-      margin-top: 30px;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      text-decoration: none;
-      transition: 0.3s;
+    .plan p {
+      font-size: 1.2em;
+      margin: 0;
     }
-    .button:hover {
-      background-color: #00cc6e;
+    .whatsapp-button {
+      display: inline-block;
+      margin-top: 35px;
+      background-color: #25d366;
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-size: 1.2em;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease;
+    }
+    .whatsapp-button:hover {
+      background-color: #1ebe57;
     }
   </style>
 </head>
@@ -58,10 +74,10 @@
 
 <header>
   <h1>TROLLTEC TV</h1>
-  <p>+10.000 Canais, Filmes e Séries | Qualidade HD | Suporte Imediato</p>
+  <p class="subtitle">+10.000 Canais, Filmes e Séries | Qualidade HD | Suporte Imediato</p>
 </header>
 
-<section class="section">
+<section>
   <h2>Planos de Assinatura</h2>
 
   <div class="plan">
@@ -79,9 +95,10 @@
     <p>R$ 180,00</p>
   </div>
 
-  <a class="button" href="https://wa.me/5584996126008" target="_blank">Fale com a TROLLTEC no WhatsApp</a>
+  <a class="whatsapp-button" href="https://wa.me/5584996126008" target="_blank" rel="noopener noreferrer">
+    Fale com a TROLLTEC no WhatsApp
+  </a>
 </section>
 
 </body>
 </html>
-
