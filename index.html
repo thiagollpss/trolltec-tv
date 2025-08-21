@@ -71,22 +71,21 @@
       margin-bottom: 40px;
       color: #ddd;
     }
-    .img-gallery {
+    .icon-tv {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 15px;
-      margin: 40px 0;
+      margin: 50px 0;
+      animation: pulse 2s infinite;
     }
-    .img-gallery img {
-      width: 240px;
+    .icon-tv img {
+      width: 100px;
       height: auto;
-      border-radius: 10px;
-      border: 2px solid #39ff14;
-      transition: transform 0.3s ease;
+      filter: drop-shadow(0 0 8px #39ff14);
     }
-    .img-gallery img:hover {
-      transform: scale(1.05);
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
     }
     .btn-whatsapp-white {
       display: inline-flex;
@@ -142,12 +141,12 @@
       <li>Plano mensal acessível por apenas R$ 25,00</li>
     </ul>
 
-    <div class="img-gallery">
-      <img src="https://i.imgur.com/8z7Zy5q.jpg" alt="IPTV Canal 1">
-      <img src="https://i.imgur.com/yOQF6tA.jpg" alt="IPTV Canal 2">
-      <img src="https://i.imgur.com/Lr1ZPf4.jpg" alt="IPTV Canal 3">
+    <!-- Ícone de TV animado -->
+    <div class="icon-tv">
+      <img src="https://cdn-icons-png.flaticon.com/512/3565/3565418.png" alt="Ícone de TV">
     </div>
 
+    <!-- Botão de WhatsApp -->
     <a href="https://wa.me/5584996126008?text=Oi%20Thiago%2C%20tenho%20interesse%20em%20fazer%20um%20teste%20do%20seu%20servi%C3%A7o%20de%20iptv!" 
        target="_blank" class="btn-whatsapp-white">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
