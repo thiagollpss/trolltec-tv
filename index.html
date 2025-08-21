@@ -27,7 +27,7 @@
       margin: 0;
     }
     main {
-      max-width: 600px;
+      max-width: 800px;
       margin: 40px auto;
       text-align: left;
       color: #ccc;
@@ -71,22 +71,46 @@
       margin-bottom: 40px;
       color: #ddd;
     }
-    .btn-whatsapp {
-      display: block;
-      width: fit-content;
-      margin: 0 auto 50px auto;
-      background-color: #39ff14;
-      color: #121212;
-      font-weight: bold;
-      padding: 15px 40px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 1.2rem;
-      transition: background-color 0.3s ease;
-      text-align: center;
+    .img-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 40px 0;
     }
-    .btn-whatsapp:hover {
-      background-color: #2edc11;
+    .img-gallery img {
+      width: 240px;
+      height: auto;
+      border-radius: 10px;
+      border: 2px solid #39ff14;
+      transition: transform 0.3s ease;
+    }
+    .img-gallery img:hover {
+      transform: scale(1.05);
+    }
+    .btn-whatsapp-white {
+      display: inline-flex;
+      align-items: center;
+      background-color: #ffffff;
+      color: #25D366;
+      border: 2px solid #25D366;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 1rem;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      margin: 50px auto 60px auto;
+    }
+    .btn-whatsapp-white img {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+    }
+    .btn-whatsapp-white:hover {
+      background-color: #25D366;
+      color: #ffffff;
     }
   </style>
 </head>
@@ -118,10 +142,18 @@
       <li>Plano mensal acessível por apenas R$ 25,00</li>
     </ul>
 
-<a href="https://wa.me/5584996126008?text=Oi%20Thiago%2C%20tenho%20interesse%20em%20fazer%20um%20teste%20do%20seu%20servi%C3%A7o%20de%20iptv!" target="_blank" class="btn-whatsapp-white">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-  Fale com Thiago no WhatsApp
-</a>
-    
+    <div class="img-gallery">
+      <img src="https://i.imgur.com/8z7Zy5q.jpg" alt="IPTV Canal 1">
+      <img src="https://i.imgur.com/yOQF6tA.jpg" alt="IPTV Canal 2">
+      <img src="https://i.imgur.com/Lr1ZPf4.jpg" alt="IPTV Canal 3">
+    </div>
+
+    <a href="https://wa.me/5584996126008?text=Oi%20Thiago%2C%20tenho%20interesse%20em%20fazer%20um%20teste%20do%20seu%20servi%C3%A7o%20de%20iptv!" 
+       target="_blank" class="btn-whatsapp-white">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+      Fale com Thiago no WhatsApp
+    </a>
+
+  </main>
 </body>
 </html>
