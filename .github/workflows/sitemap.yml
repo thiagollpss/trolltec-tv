@@ -10,14 +10,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      
       - name: Generate Sitemap
         uses: cicirello/generate-sitemap@v1
         with:
           base-url-path: "https://www.trolltectv.top"
+      
       - name: Commit Sitemap
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Explicita o token no ambiente
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
+          
           git add sitemap.xml
           git commit -m "update sitemap" || echo "No changes to commit"
-          git push
+          
+          # Ajusta a URL do remote para usar o token para autenticação
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/thiagollpss/trolltec-tv.git
+          
+          git push origin main
