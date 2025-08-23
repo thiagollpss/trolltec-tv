@@ -1,32 +1,26 @@
-name: Generate Sitemap
+name: Atualizar Sitemap
 
 on:
   push:
     branches:
-      - main
+      - principal  # só roda na branch principal
 
 jobs:
-  build:
+  update-sitemap:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      
-      - name: Generate Sitemap
-        uses: cicirello/generate-sitemap@v1
-        with:
-          base-url-path: "https://www.trolltectv.top"
-      
-      - name: Commit Sitemap
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Explicita o token no ambiente
+      - name: Checkout do repositório
+        uses: actions/checkout@v3
+
+      - name: Atualizar data no sitemap.xml
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
-          
+          DATA=$(date -u +"%Y-%m-%dT%H:%M:%S+00:00")
+          sed -i "s|<lastmod>.*</lastmod>|<lastmod>$DATA</lastmod>|" sitemap.xml
+
+      - name: Commit e push das mudanças
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           git add sitemap.xml
-          git commit -m "update sitemap" || echo "No changes to commit"
-          
-          # Ajusta a URL do remote para usar o token para autenticação
-          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/thiagollpss/trolltec-tv.git
-          
-          git push origin main
+          git commit -m "Atualizar sitemap automaticamente"
+          git push
