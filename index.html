@@ -4,21 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IPTV com +2000 Canais, Futebol Ao Vivo e Filmes em HD | TrollIPTV</title>
-
-    <!-- SEO PRINCIPAL -->
-    <meta name="description" content="Assista +2000 canais nacionais e internacionais, futebol ao vivo, filmes e séries em HD sem travamentos por apenas R$25,00/mês. Teste grátis disponível na TrollIPTV!">
-    <meta name="keywords" content="IPTV, IPTV Brasil, IPTV futebol, canais ao vivo, filmes HD, séries online, TrollIPTV, TV online, assistir TV, IPTV barato, teste grátis IPTV">
-    <meta name="author" content="TrollIPTV">
-    <link rel="canonical" href="https://trolliptv.com.br/">
-
-    <!-- OPEN GRAPH (Compartilhamento em redes sociais) -->
-    <meta property="og:title" content="TrollIPTV - +2000 Canais, Futebol ao Vivo e Filmes em HD">
-    <meta property="og:description" content="Assista futebol ao vivo, filmes e séries em HD sem travamentos. +2000 canais por apenas R$25/mês. Teste grátis disponível!">
-    <meta property="og:url" content="https://trolliptv.com.br/">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://trolliptv.com.br/logo.jpg"> <!-- coloque uma logo/imagem aqui -->
-
-    <!-- ESTILOS -->
+    <meta name="description" content="Assista +2000 canais nacionais e internacionais, futebol ao vivo, séries e filmes em HD sem travamentos por apenas R$ 25,00/mês. Teste grátis disponível na TrollIPTV!">
     <style>
         body {
             background-color: black;
@@ -34,42 +20,74 @@
         }
         h2 {
             color: white;
+            margin-top: 10px;
+            margin-bottom: 25px;
         }
+        /* QUADRO DO PLANO */
         .plano {
-            border: 3px solid white; /* borda branca */
+            border: 2px solid white;
             display: inline-block;
             padding: 25px 20px;
             margin: 20px auto;
             border-radius: 12px;
-            background-color: #111;
+            background-color: #fff;
             width: 320px;
-            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6); /* brilho suave */
+            box-shadow: 0px 0px 10px rgba(255,255,255,0.5);
         }
         .plano h3 {
-            color: red;
+            color: black;
             font-size: 28px;
             margin-bottom: 15px;
         }
         .plano p {
-            color: #ff4444;
+            color: red;
             font-size: 18px;
             font-weight: bold;
             margin-bottom: 0;
         }
-        .beneficio {
-            border: 2px solid limegreen;
-            border-radius: 10px;
-            padding: 12px;
-            margin: 12px auto;
-            width: 320px;
+        /* BENEFÍCIOS */
+        .beneficios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 15px;
+            max-width: 900px;
+            margin: 30px auto;
+        }
+        .beneficio-box {
             background-color: #111;
-            box-shadow: 0 0 8px rgba(0, 255, 0, 0.4);
+            border: 2px solid limegreen;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 8px rgba(0, 255, 0, 0.3);
             font-weight: bold;
             color: limegreen;
         }
+        /* BLOCO DE INFORMAÇÃO IPTV */
+        .info-iptv {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 25px;
+            background-color: #111;
+            border: 2px solid red;
+            border-radius: 12px;
+            box-shadow: 0px 0px 12px rgba(255,0,0,0.4);
+            text-align: left;
+        }
+        .info-iptv h3 {
+            color: orange;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        .info-iptv p {
+            color: #ddd;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        /* BOTÃO WHATSAPP */
         .whatsapp-button {
             position: fixed;
-            bottom: 40px;
+            bottom: 60px; /* um pouco mais pra cima */
             right: 20px;
             background-color: #25D366;
             color: white;
@@ -81,14 +99,20 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            box-shadow: 0px 4px 6px rgba(0,0,0,0.3);
+            box-shadow: 0 0 6px #25D366, 0 0 12px #25D366;
+            transition: 0.3s;
+        }
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+            box-shadow: 0 0 10px #25D366, 0 0 20px #25D366;
         }
         .whatsapp-button img {
             width: 22px;
             height: 22px;
         }
+        /* RODAPÉ */
         footer {
-            margin-top: 40px;
+            margin-top: 50px;
             padding: 20px;
             color: gray;
             font-size: 14px;
@@ -97,28 +121,41 @@
 </head>
 <body>
 
-    <h1>TROLLTEC TV</h1>
+    <h1>TrollIPTV</h1>
     <h2>+2.000 Canais | Futebol ao Vivo | Sem Travamentos | Qualidade HD</h2>
 
     <div class="plano">
         <h3>VALOR DO PLANO</h3>
-        <p>𝐑$𝟐𝟓,𝟎𝟎 𝐌𝐄𝐍𝐒𝐀𝐋</p>
+        <p>R$25/MÊS</p>
     </div>
 
-    <p>Bem-vindo à <b>TrollIPTV</b>, seu serviço de IPTV de alta qualidade que oferece mais de 2.000 canais nacionais e internacionais, 
-    com foco especial em futebol ao vivo dos principais campeonatos. Nosso streaming é garantido em alta definição (HD) para proporcionar 
-    uma experiência incrível, sem travamentos.</p>
+    <div class="beneficios">
+        <div class="beneficio-box">● Mais de 2.000 canais nacionais e internacionais</div>
+        <div class="beneficio-box">● Futebol ao vivo dos principais campeonatos</div>
+        <div class="beneficio-box">● Streaming em alta qualidade HD, sem travamentos</div>
+        <div class="beneficio-box">● Compatível com Smart TVs, celulares e computadores</div>
+        <div class="beneficio-box">● Suporte rápido e atendimento via WhatsApp</div>
+        <div class="beneficio-box">● Plano mensal acessível por apenas R$ 25,00</div>
+    </div>
 
-    <p>Compatível com smartphone, Smart TV e computador, garantindo praticidade e suporte rápido via WhatsApp.</p>
+    <!-- Grande bloco de informação -->
+    <div class="info-iptv">
+        <h3>Por que escolher a TrollIPTV?</h3>
+        <p>A <b>TrollIPTV</b> oferece o melhor em IPTV, garantindo estabilidade, qualidade e diversidade de conteúdo. Nosso serviço foi desenvolvido para quem busca praticidade e entretenimento ilimitado.</p>
 
-    <div class="beneficio">● Mais de 2.000 canais nacionais e internacionais</div>
-    <div class="beneficio">● Futebol ao vivo dos principais campeonatos</div>
-    <div class="beneficio">● Streaming em alta qualidade HD, sem travamentos</div>
-    <div class="beneficio">● Compatível com Smart TVs, celulares e computadores</div>
-    <div class="beneficio">● Suporte rápido e atendimento via WhatsApp</div>
-    <div class="beneficio">● Plano mensal acessível por apenas R$ 25,00</div>
+        <h3>O que você vai encontrar:</h3>
+        <p>✔ Mais de <b>2.000 canais</b> nacionais e internacionais, incluindo esportes, filmes, séries, documentários e muito mais.</p>
+        <p>✔ Futebol ao vivo dos principais campeonatos, para você não perder nenhum lance do seu time favorito.</p>
+        <p>✔ Filmes e séries em alta definição (HD), disponíveis a qualquer momento.</p>
 
-    <a class="whatsapp-button" href="https://wa.me/5584996126008?text=Ol%C3%A1%20Thiago%2C%20tenho%20interesse%20no%20IPTV%2C%20quero%20um%20teste%20gr%C3%A1tis" target="_blank">
+        <h3>Compatibilidade total</h3>
+        <p>Nosso sistema funciona em <b>Smart TVs, celulares, computadores e TV Box</b>, oferecendo flexibilidade para você assistir onde quiser.</p>
+
+        <h3>Suporte dedicado</h3>
+        <p>Nosso atendimento é feito diretamente pelo <b>WhatsApp</b>, garantindo resposta rápida e suporte eficiente sempre que você precisar.</p>
+    </div>
+
+    <a class="whatsapp-button" href="https://wa.me/5584996126008?text=Ol%C3%A1%20tenho%20interesse%20no%20IPTV" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
         Fale no WhatsApp
     </a>
