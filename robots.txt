@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.trolltectv.top/sitemap.xml
+Sitemap: https://trolliptv.com.br/sitemap.xml
