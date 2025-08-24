@@ -24,19 +24,38 @@
         .plano {
             border: 2px solid limegreen;
             display: inline-block;
-            padding: 30px;
+            padding: 25px 20px;
             margin: 20px auto;
-            border-radius: 10px;
+            border-radius: 12px;
             background-color: #111;
-            width: 60%;
+            width: 320px; /* menor e elegante */
+            box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.4);
         }
         .plano h3 {
             color: red;
-            margin-bottom: 10px;
+            font-size: 28px; /* maior e destacado */
+            margin-bottom: 15px;
         }
         .plano p {
             color: #ff4444;
+            font-size: 18px;
             font-weight: bold;
+            margin-bottom: 0;
+        }
+        .botao-teste {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 14px 24px;
+            background-color: red;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .botao-teste:hover {
+            background-color: darkred;
         }
         .beneficios {
             margin-top: 20px;
@@ -65,21 +84,6 @@
             width: 22px;
             height: 22px;
         }
-        .botao-teste {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 12px 20px;
-            background-color: red;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-        .botao-teste:hover {
-            background-color: darkred;
-        }
     </style>
 </head>
 <body>
@@ -90,7 +94,6 @@
     <div class="plano">
         <h3>Plano de Assinatura</h3>
         <p>Plano Mensal - R$ 25,00</p>
-        <a class="botao-teste" href="https://wa.me/5584996126008?text=Ol%C3%A1%20Thiago%2C%20tenho%20interesse%20no%20IPTV%2C%20quero%20um%20teste%20gr%C3%A1tis">Quero Testar Agora</a>
     </div>
 
     <p>Bem-vindo à <b>TROLLTEC TV</b>, seu serviço de IPTV de alta qualidade que oferece mais de 2.000 canais nacionais e internacionais, 
@@ -107,6 +110,9 @@
         <p>✔️ Suporte rápido e atendimento via WhatsApp</p>
         <p>✔️ Plano mensal acessível por apenas R$ 25,00</p>
     </div>
+
+    <!-- Botão embaixo de tudo -->
+    <a class="botao-teste" href="https://wa.me/5584996126008?text=Ol%C3%A1%20Thiago%2C%20tenho%20interesse%20no%20IPTV%2C%20quero%20um%20teste%20gr%C3%A1tis">Quero Testar Agora</a>
 
     <a class="whatsapp-button" href="https://wa.me/5584996126008?text=Ol%C3%A1%20Thiago%2C%20tenho%20interesse%20no%20IPTV%2C%20quero%20um%20teste%20gr%C3%A1tis" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
