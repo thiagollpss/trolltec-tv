@@ -1,283 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TROLLTEC TV - IPTV de Qualidade</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <!-- SEO -->
-  <meta name="description" content="TROLLTEC TV - IPTV de qualidade com +2.000 canais, futebol ao vivo, filmes e séries em HD. Assista em qualquer dispositivo com suporte rápido.">
-  <meta name="keywords" content="iptv, canais ao vivo, futebol, filmes, séries, tv online, hd, trolltec tv, lista iptv, streaming">
-  <meta name="author" content="TROLLTEC TV">
+  <title>TROLLTEC TV - IPTV com +2000 Canais em HD</title>
+  <meta name="description" content="Assine a TROLLTEC TV e tenha +2000 canais ao vivo em HD. Futebol, filmes e séries sem travamentos. Teste grátis disponível!">
+  <meta name="keywords" content="IPTV, canais ao vivo, futebol online, IPTV Brasil, filmes online, séries HD, TV sem travar, IPTV barato, IPTV 2025">
 
-  <!-- Redes sociais -->
-  <meta property="og:title" content="TROLLTEC TV - IPTV de Qualidade">
-  <meta property="og:description" content="Acesse +2.000 canais em HD, futebol ao vivo, filmes e séries sem travamentos. Compatível com Smart TV, celular e PC.">
-  <meta property="og:image" content="https://trolliptv.com.br/logo.png">
-  <meta property="og:url" content="https://trolliptv.com.br">
+  <!-- Open Graph -->
+  <meta property="og:title" content="TROLLTEC TV - IPTV com +2000 Canais em HD">
+  <meta property="og:description" content="Futebol ao vivo, filmes e séries em alta definição. Teste grátis disponível!">
+  <meta property="og:url" content="https://trolliptv.com.br/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://trolliptv.com.br/imagem-de-destaque.jpg">
+
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TROLLTEC TV - IPTV com +2000 Canais em HD">
+  <meta name="twitter:description" content="Mais de 2000 canais, filmes e futebol em HD. Teste grátis já disponível!">
+  <meta name="twitter:image" content="https://trolliptv.com.br/imagem-de-destaque.jpg">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="https://trolliptv.com.br/logo.png">
-
-  <!-- Redirecionar www para domínio principal -->
-  <script>
-    if (location.hostname === "www.trolliptv.com.br") {
-      location.replace("https://trolliptv.com.br" + location.pathname + location.search + location.hash);
-    }
-  </script>
-
-  <!-- Estilo -->
   <style>
     body {
-      background-color: #121212;
-      color: #39ff14;
-      font-family: 'Arial', sans-serif;
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
       text-align: center;
-      margin: 0;
-      padding: 0 20px;
     }
-    header {
-      padding: 40px 0 10px 0;
-      border-bottom: 2px solid #39ff14;
-    }
-    header h1 {
-      font-size: clamp(2rem, 5vw, 2.8rem);
-      margin-bottom: 5px;
+    h1 {
       color: red;
     }
-    header p {
-      font-size: 1rem;
-      color: #eee;
-      margin: 0;
+    h2 {
+      color: limegreen;
     }
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      text-align: left;
-      color: #ddd;
-      padding: 0 10px;
+    h3 {
+      color: red;
     }
-    main h2 {
-      color: red; /* todos os títulos agora vermelhos */
-      text-align: center;
-      margin-bottom: 25px;
-    }
-    .plan {
-      border: 2px solid #39ff14;
-      border-radius: 8px;
-      padding: 25px 20px;
-      margin-bottom: 30px;
-      font-size: 1.3rem;
-      text-align: center;
-      color: #39ff14;
-      font-weight: bold;
-    }
-    .info-list {
-      list-style: none;
-      padding-left: 0;
-      margin-bottom: 40px;
-    }
-    .info-list li {
-      margin-bottom: 15px;
-      font-size: 1.1rem;
-      position: relative;
-      padding-left: 25px;
-      color: #39ff14;
-    }
-    .info-list li::before {
-      content: "✔️";
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
-    .description {
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-bottom: 40px;
-      color: #ddd;
-    }
-    hr {
-      border: 1px solid #39ff14;
-      margin: 40px 0;
-    }
-    .cta-button {
-      display: inline-block;
+    .plano {
+      border: 2px solid limegreen;
+      padding: 10px;
       margin: 20px auto;
-      background: #000;
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      padding: 12px 24px;
+      width: 50%;
       border-radius: 8px;
-      transition: background 0.3s ease;
-      text-align: center;
     }
-    .cta-button:hover {
-      background: #1ebe5d;
+    ul {
+      text-align: left;
+      display: inline-block;
     }
-
-    /* Botão flutuante WhatsApp */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      border-radius: 50px;
+    li {
+      margin: 8px 0;
+      color: limegreen;
+    }
+    .btn {
+      display: inline-block;
+      background: limegreen;
+      color: black;
       padding: 12px 20px;
-      display: flex;
-      align-items: center;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 16px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      animation: float 2s ease-in-out infinite;
-      z-index: 999;
-      transition: background 0.3s ease;
     }
-    .whatsapp-float:hover {
-      background-color: #1ebe5d;
-    }
-    .whatsapp-float img {
-      width: 24px;
-      height: 24px;
-      margin-right: 10px;
-    }
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
-      100% { transform: translateY(0); }
-    }
-
-    body::after {
-      content: "";
-      display: block;
-      height: 80px;
+    .btn:hover {
+      background: green;
+      color: #fff;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>TROLLTEC TV</h1>
-    <p>+2.000 Canais | Futebol ao Vivo | Sem Travamentos | Qualidade HD</p>
-  </header>
-  <main>
-    <!-- Planos -->
-    <h2 id="planos">Plano de Assinatura</h2>
-    <div class="plan">
-      Plano Mensal - R$ 25,00
-    </div>
 
-    <div class="description">
-      Bem-vindo à <strong>TROLLTEC TV</strong>, seu serviço de IPTV de alta qualidade que oferece mais de 2.000 canais nacionais e internacionais, com foco especial em futebol ao vivo dos principais campeonatos. Nosso streaming é garantido em alta definição (HD) para proporcionar uma experiência incrível, sem travamentos.
-      <br><br>
-      Compatível com smartphone, Smart TV e computador, garantindo praticidade e suporte rápido via WhatsApp.
-    </div>
+  <h1>TROLLTEC TV</h1>
+  <h3>+2.000 Canais | Futebol ao Vivo | Sem Travamentos | Qualidade HD</h3>
+  
+  <div class="plano">
+    <h2>Plano de Assinatura</h2>
+    <p><strong>Plano Mensal - R$ 25,00</strong></p>
+  </div>
 
-    <ul class="info-list">
-      <li>Mais de 2.000 canais nacionais e internacionais</li>
-      <li>Futebol ao vivo dos principais campeonatos</li>
-      <li>Streaming em alta qualidade HD, sem travamentos</li>
-      <li>Compatível com Smart TVs, celulares e computadores</li>
-      <li>Suporte rápido e atendimento via WhatsApp</li>
-      <li>Plano mensal acessível por apenas R$ 25,00</li>
-    </ul>
+  <p>
+    Bem-vindo à <strong>TROLLTEC TV</strong>, seu serviço de IPTV de alta qualidade que oferece mais de 2.000 canais nacionais e internacionais, com foco especial em futebol ao vivo dos principais campeonatos. Nosso streaming é garantido em alta definição (HD) para proporcionar uma experiência incrível, sem travamentos.
+  </p>
+  
+  <p>
+    Compatível com smartphone, Smart TV e computador, garantindo praticidade e suporte rápido via WhatsApp.
+  </p>
 
-    <!-- Linha separadora -->
-    <hr>
+  <ul>
+    <li>✔️ Mais de 2.000 canais nacionais e internacionais</li>
+    <li>✔️ Futebol ao vivo dos principais campeonatos</li>
+    <li>✔️ Streaming em alta qualidade HD, sem travamentos</li>
+    <li>✔️ Compatível com Smart TVs, celulares e computadores</li>
+    <li>✔️ Suporte rápido e atendimento via WhatsApp</li>
+    <li>✔️ Plano mensal acessível por apenas R$ 25,00</li>
+  </ul>
 
-    <!-- Seções extras -->
-    <section id="vantagens">
-      <h2>🎯 Vantagens do TROLLTEC TV</h2>
-      <ul class="info-list">
-        <li>Servidores estáveis 24h, sem travamentos</li>
-        <li>Qualidade HD, Full HD e até 4K em alguns canais</li>
-        <li>Sem necessidade de antena, apenas internet</li>
-        <li>Lista sempre atualizada automaticamente</li>
-      </ul>
-    </section>
+  <br>
+  <a href="https://wa.me/seu-numero" class="btn">📲 PEDIR TESTE AGORA</a>
 
-    <section id="dispositivos">
-      <h2>📺 Dispositivos Compatíveis</h2>
-      <ul class="info-list">
-        <li>Smart TVs (Samsung, LG, Philco, etc.)</li>
-        <li>TV Box, Fire Stick e Chromecast</li>
-        <li>Celulares Android e iPhone (apps como IPTV Smarters, XCIPTV)</li>
-        <li>Computadores e notebooks (Windows/Mac)</li>
-      </ul>
-    </section>
-
-    <section id="suporte">
-      <h2>⚡ Suporte & Garantia</h2>
-      <ul class="info-list">
-        <li>Teste grátis para conhecer o serviço</li>
-        <li>Suporte via WhatsApp rápido e dedicado</li>
-        <li>Auxílio na instalação e configuração</li>
-      </ul>
-    </section>
-
-    <section id="faq">
-      <h2>❓ Perguntas Frequentes (FAQ)</h2>
-      <div class="description">
-        <p><strong>O que é IPTV?</strong> É a transmissão de canais de TV pela internet, sem necessidade de antena.</p>
-        <p><strong>Funciona em qualquer TV?</strong> Sim, basta ter internet e um aplicativo compatível.</p>
-        <p><strong>Preciso de internet rápida?</strong> Recomendamos no mínimo 10MB estáveis para HD e 20MB para Full HD/4K.</p>
-        <p><strong>Posso usar em mais de um dispositivo?</strong> Sim, consulte os planos multi-telas.</p>
-      </div>
-
-      <!-- CTA extra -->
-      <div style="text-align:center; margin-top:30px;" id="contato">
-        <a href="https://wa.me/5584996126008?text=Oi%20Thiago%2C%20quero%20meu%20teste%20do%20IPTV!" 
-           class="cta-button" target="_blank">
-          👉 QUERO TESTAR AGORA
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <!-- Botão flutuante WhatsApp -->
-  <a href="https://wa.me/5584996126008?text=Oi%20Thiago%2C%20quero%20meu%20teste%20do%20IPTV!" 
-     class="whatsapp-float" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Ícone do WhatsApp">
-    PEDIR TESTE AGORA 🚀
-  </a>
-
-  <!-- FAQ Schema (dados estruturados para SEO) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [{
-      "@type": "Question",
-      "name": "O que é IPTV?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "É a transmissão de canais de TV pela internet, sem antena, compatível com Smart TV, celular e PC."
-      }
-    },{
-      "@type": "Question",
-      "name": "Funciona em qualquer TV?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sim, basta ter internet e um aplicativo compatível."
-      }
-    },{
-      "@type": "Question",
-      "name": "Preciso de internet rápida?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Recomendamos no mínimo 10MB estáveis para HD e 20MB para Full HD/4K."
-      }
-    },{
-      "@type": "Question",
-      "name": "Posso usar em mais de um dispositivo?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sim, consulte os planos multi-telas para usar em mais de um dispositivo ao mesmo tempo."
-      }
-    }]
-  }
-  </script>
 </body>
 </html>
