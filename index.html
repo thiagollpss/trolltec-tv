@@ -13,12 +13,19 @@
   <!-- Redes sociais -->
   <meta property="og:title" content="TROLLTEC TV - IPTV de Qualidade">
   <meta property="og:description" content="Acesse +2.000 canais em HD, futebol ao vivo, filmes e séries sem travamentos. Compatível com Smart TV, celular e PC.">
-  <meta property="og:image" content="logo.png"> <!-- Substitua pelo link completo da imagem -->
-  <meta property="og:url" content="https://SEUUSUARIO.github.io/SEUREPOSITORIO">
+  <meta property="og:image" content="https://trolliptv.com.br/logo.png">
+  <meta property="og:url" content="https://trolliptv.com.br">
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="icon" type="image/png" href="https://trolliptv.com.br/logo.png">
+
+  <!-- Redirecionar www para domínio principal -->
+  <script>
+    if (location.hostname === "www.trolliptv.com.br") {
+      location.replace("https://trolliptv.com.br" + location.pathname + location.search + location.hash);
+    }
+  </script>
 
   <!-- Estilo -->
   <style>
