@@ -7,82 +7,75 @@
     <meta name="description" content="Assista +2000 canais nacionais e internacionais, futebol ao vivo, séries e filmes em HD sem travamentos por apenas R$ 25,00/mês. Teste grátis disponível!">
     <style>
         body {
-            background-color: #000;
-            color: #cce7ff;
+            background-color: black;
+            color: white;
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 0;
             padding: 0;
         }
         h1 {
-            color: #ff3333;
+            color: red;
             margin-top: 30px;
-            text-shadow: 0 0 6px #ff3333, 0 0 12px #ff3333;
         }
         h2 {
-            color: #ff9900; /* Laranja neon */
-            text-shadow: 0 0 6px #ff9900, 0 0 12px #ff6600, 0 0 20px #ff5500;
+            color: orange;
+            text-shadow: 0 0 8px orange, 0 0 16px orange;
         }
-        /* Quadro do valor */
         .plano {
-            border: 1px solid #39ff14;
+            border: 2px solid limegreen;
             display: inline-block;
-            padding: 20px 15px;
+            padding: 25px 20px;
             margin: 20px auto;
             border-radius: 12px;
             background-color: #111;
-            width: 280px;
-            box-shadow: none; /* sem neon */
+            width: 320px; 
         }
         .plano h3 {
-            color: #ff3333;
-            font-size: 26px;
+            color: red;
+            font-size: 28px;
             margin-bottom: 15px;
-            text-shadow: none;
         }
         .plano p {
-            color: #ff5555;
-            font-size: 20px;
+            color: #ff4444;
+            font-size: 18px;
             font-weight: bold;
             margin-bottom: 0;
-            text-shadow: none;
         }
-        /* Cada benefício em quadro */
-        .beneficio {
-            border: 1px solid #00ffff;
-            display: inline-block;
-            padding: 15px;
-            margin: 10px;
-            border-radius: 12px;
+        .beneficios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 15px;
+            max-width: 900px;
+            margin: 30px auto;
+        }
+        .beneficio-box {
             background-color: #111;
-            width: 280px;
-            box-shadow: none; /* sem neon */
-            text-align: center;
-            font-size: 16px;
-            color: #ffffff;
+            border: 2px solid limegreen;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 8px rgba(0, 255, 0, 0.3);
+            font-weight: bold;
+            color: limegreen;
         }
-        /* Botão de teste */
         .botao-teste {
             display: inline-block;
-            margin-top: 30px;
+            margin-top: 25px;
             padding: 14px 24px;
-            background-color: #ff3333;
+            background-color: red;
             color: white;
             font-size: 18px;
             font-weight: bold;
             border-radius: 8px;
             text-decoration: none;
             transition: 0.3s;
-            box-shadow: 0 0 6px #ff3333, 0 0 12px #ff3333;
         }
         .botao-teste:hover {
-            background-color: #cc0000;
-            box-shadow: 0 0 10px #ff3333, 0 0 20px #ff3333;
+            background-color: darkred;
         }
-        /* Botão WhatsApp fixo */
         .whatsapp-button {
             position: fixed;
-            bottom: 20px;
+            bottom: 60px; /* botão subiu mais */
             right: 20px;
             background-color: #25D366;
             color: white;
@@ -121,15 +114,18 @@
     com foco especial em futebol ao vivo dos principais campeonatos. Nosso streaming é garantido em alta definição (HD) para proporcionar 
     uma experiência incrível, sem travamentos.</p>
 
-    <!-- Cada benefício em um quadro -->
-    <div class="beneficio">● Mais de 2.000 canais nacionais e internacionais</div>
-    <div class="beneficio">● Futebol ao vivo dos principais campeonatos</div>
-    <div class="beneficio">● Streaming em alta qualidade HD, sem travamentos</div>
-    <div class="beneficio">● Compatível com Smart TVs, celulares e computadores</div>
-    <div class="beneficio">● Suporte rápido e atendimento via WhatsApp</div>
-    <div class="beneficio">● Plano mensal acessível por apenas R$ 25,00</div>
+    <p>Compatível com smartphone, Smart TV e computador, garantindo praticidade e suporte rápido via WhatsApp.</p>
 
-    <br>
+    <div class="beneficios">
+        <div class="beneficio-box">● Mais de 2.000 canais nacionais e internacionais</div>
+        <div class="beneficio-box">● Futebol ao vivo dos principais campeonatos</div>
+        <div class="beneficio-box">● Streaming em alta qualidade HD, sem travamentos</div>
+        <div class="beneficio-box">● Compatível com Smart TVs, celulares e computadores</div>
+        <div class="beneficio-box">● Suporte rápido e atendimento via WhatsApp</div>
+        <div class="beneficio-box">● Plano mensal acessível por apenas R$ 25,00</div>
+    </div>
+
+    <!-- Botão embaixo de tudo -->
     <a class="botao-teste" href="https://wa.me/5584996126008?text=Ol%C3%A1%20Thiago%2C%20tenho%20interesse%20no%20IPTV%2C%20quero%20um%20teste%20gr%C3%A1tis">Quero Testar Agora</a>
 
     <a class="whatsapp-button" href="https://wa.me/5584996126008?text=Ol%C3%A1%20Thiago%2C%20tenho%20interesse%20no%20IPTV%2C%20quero%20um%20teste%20gr%C3%A1tis" target="_blank">
