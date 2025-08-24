@@ -20,32 +20,48 @@
             text-shadow: 0 0 6px #ff3333, 0 0 12px #ff3333;
         }
         h2 {
-            color: #ff9900; /* Laranja */
+            color: #ff9900; /* Laranja neon */
             text-shadow: 0 0 6px #ff9900, 0 0 12px #ff6600, 0 0 20px #ff5500;
         }
+        /* Quadro do valor */
         .plano {
             border: 1px solid #39ff14;
             display: inline-block;
-            padding: 25px 20px;
+            padding: 20px 15px;
             margin: 20px auto;
             border-radius: 12px;
             background-color: #111;
             width: 280px;
-            box-shadow: 0 0 6px #39ff14, 0 0 12px #39ff14;
+            box-shadow: none; /* sem neon */
         }
         .plano h3 {
             color: #ff3333;
             font-size: 26px;
             margin-bottom: 15px;
-            text-shadow: 0 0 5px #ff3333, 0 0 10px #ff3333;
+            text-shadow: none;
         }
         .plano p {
             color: #ff5555;
             font-size: 20px;
             font-weight: bold;
             margin-bottom: 0;
-            text-shadow: 0 0 5px #ff5555;
+            text-shadow: none;
         }
+        /* Cada benefício em quadro */
+        .beneficio {
+            border: 1px solid #00ffff;
+            display: inline-block;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 12px;
+            background-color: #111;
+            width: 280px;
+            box-shadow: none; /* sem neon */
+            text-align: center;
+            font-size: 16px;
+            color: #ffffff;
+        }
+        /* Botão de teste */
         .botao-teste {
             display: inline-block;
             margin-top: 30px;
@@ -63,18 +79,7 @@
             background-color: #cc0000;
             box-shadow: 0 0 10px #ff3333, 0 0 20px #ff3333;
         }
-        .beneficios {
-            margin-top: 20px;
-            text-align: left;
-            display: inline-block;
-        }
-        .beneficios p {
-            color: #ffffff;
-            font-weight: normal;
-            text-shadow: none;
-            font-size: 16px;
-            margin: 6px 0;
-        }
+        /* Botão WhatsApp fixo */
         .whatsapp-button {
             position: fixed;
             bottom: 20px;
@@ -116,18 +121,15 @@
     com foco especial em futebol ao vivo dos principais campeonatos. Nosso streaming é garantido em alta definição (HD) para proporcionar 
     uma experiência incrível, sem travamentos.</p>
 
-    <p>Compatível com smartphone, Smart TV e computador, garantindo praticidade e suporte rápido via WhatsApp.</p>
+    <!-- Cada benefício em um quadro -->
+    <div class="beneficio">● Mais de 2.000 canais nacionais e internacionais</div>
+    <div class="beneficio">● Futebol ao vivo dos principais campeonatos</div>
+    <div class="beneficio">● Streaming em alta qualidade HD, sem travamentos</div>
+    <div class="beneficio">● Compatível com Smart TVs, celulares e computadores</div>
+    <div class="beneficio">● Suporte rápido e atendimento via WhatsApp</div>
+    <div class="beneficio">● Plano mensal acessível por apenas R$ 25,00</div>
 
-    <div class="beneficios">
-        <p>● Mais de 2.000 canais nacionais e internacionais</p>
-        <p>● Futebol ao vivo dos principais campeonatos</p>
-        <p>● Streaming em alta qualidade HD, sem travamentos</p>
-        <p>● Compatível com Smart TVs, celulares e computadores</p>
-        <p>● Suporte rápido e atendimento via WhatsApp</p>
-        <p>● Plano mensal acessível por apenas R$ 25,00</p>
-    </div>
-
-    <br><br>
+    <br>
     <a class="botao-teste" href="https://wa.me/5584996126008?text=Ol%C3%A1%20Thiago%2C%20tenho%20interesse%20no%20IPTV%2C%20quero%20um%20teste%20gr%C3%A1tis">Quero Testar Agora</a>
 
     <a class="whatsapp-button" href="https://wa.me/5584996126008?text=Ol%C3%A1%20Thiago%2C%20tenho%20interesse%20no%20IPTV%2C%20quero%20um%20teste%20gr%C3%A1tis" target="_blank">
