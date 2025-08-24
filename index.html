@@ -41,10 +41,15 @@
       padding: 40px 0 10px 0;
       border-bottom: 2px solid #39ff14;
     }
+
+    /* TODOS OS TÍTULOS EM VERMELHO */
+    h1, h2, h3, h4, h5, h6 {
+      color: red;
+    }
+
     header h1 {
       font-size: clamp(2rem, 5vw, 2.8rem);
       margin-bottom: 5px;
-      color: red;
     }
     header p {
       font-size: 1rem;
@@ -59,7 +64,6 @@
       padding: 0 10px;
     }
     main h2 {
-      color: #39ff14;
       text-align: center;
       margin-bottom: 25px;
     }
@@ -163,7 +167,8 @@
     <p>+2.000 Canais | Futebol ao Vivo | Sem Travamentos | Qualidade HD</p>
   </header>
   <main>
-    <h2>Plano de Assinatura</h2>
+    <!-- Planos -->
+    <h2 id="planos">Plano de Assinatura</h2>
     <div class="plan">
       Plano Mensal - R$ 25,00
     </div>
@@ -187,7 +192,7 @@
     <hr>
 
     <!-- Seções extras -->
-    <section>
+    <section id="vantagens">
       <h2>🎯 Vantagens do TROLLTEC TV</h2>
       <ul class="info-list">
         <li>Servidores estáveis 24h, sem travamentos</li>
@@ -195,7 +200,9 @@
         <li>Sem necessidade de antena, apenas internet</li>
         <li>Lista sempre atualizada automaticamente</li>
       </ul>
+    </section>
 
+    <section id="dispositivos">
       <h2>📺 Dispositivos Compatíveis</h2>
       <ul class="info-list">
         <li>Smart TVs (Samsung, LG, Philco, etc.)</li>
@@ -203,14 +210,18 @@
         <li>Celulares Android e iPhone (apps como IPTV Smarters, XCIPTV)</li>
         <li>Computadores e notebooks (Windows/Mac)</li>
       </ul>
+    </section>
 
+    <section id="suporte">
       <h2>⚡ Suporte & Garantia</h2>
       <ul class="info-list">
         <li>Teste grátis para conhecer o serviço</li>
         <li>Suporte via WhatsApp rápido e dedicado</li>
         <li>Auxílio na instalação e configuração</li>
       </ul>
+    </section>
 
+    <section id="faq">
       <h2>❓ Perguntas Frequentes (FAQ)</h2>
       <div class="description">
         <p><strong>O que é IPTV?</strong> É a transmissão de canais de TV pela internet, sem necessidade de antena.</p>
@@ -220,7 +231,7 @@
       </div>
 
       <!-- CTA extra -->
-      <div style="text-align:center; margin-top:30px;">
+      <div style="text-align:center; margin-top:30px;" id="contato">
         <a href="https://wa.me/5584996126008?text=Oi%20Thiago%2C%20quero%20meu%20teste%20do%20IPTV!" 
            class="cta-button" target="_blank">
           👉 QUERO TESTAR AGORA
