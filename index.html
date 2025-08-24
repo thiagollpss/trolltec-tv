@@ -30,7 +30,7 @@
       border-radius: 10px;
       padding: 20px;
       margin: 20px auto;
-      width: 70%; /* Mais largo */
+      width: 70%;
       background-color: #111;
     }
     .plano h2 {
@@ -46,6 +46,25 @@
       font-size: 18px;
       margin: 15px 0;
       line-height: 1.8;
+    }
+    /* Botão normal de WhatsApp */
+    .btn-whatsapp {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background-color: #25d366;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    .btn-whatsapp i {
+      margin-right: 8px;
+    }
+    .btn-whatsapp:hover {
+      background-color: #1ebe5b;
     }
     /* Botão flutuante WhatsApp */
     .whatsapp-float {
@@ -89,7 +108,13 @@
     Plano mensal acessível por apenas R$ 25,00
   </div>
 
-  <!-- Botão WhatsApp -->
+  <!-- Botão normal abaixo do texto -->
+  <a href="https://wa.me/5584996126008?text=Olá%20Thiago,%20tenho%20interesse%20no%20IPTV,%20quero%20um%20teste%20grátis" 
+     class="btn-whatsapp" target="_blank">
+    <i class="fab fa-whatsapp"></i> Quero testar agora
+  </a>
+
+  <!-- Botão flutuante -->
   <a href="https://wa.me/5584996126008?text=Olá%20Thiago,%20tenho%20interesse%20no%20IPTV,%20quero%20um%20teste%20grátis" 
      class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
