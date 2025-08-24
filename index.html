@@ -19,68 +19,44 @@
             margin-top: 30px;
         }
         h2 {
-            color: white; 
+            color: white;
+            text-shadow: 0 0 6px rgba(255, 0, 0, 0.6); /* neon vermelho suave */
         }
         .plano {
-            border: 2px solid red;
+            border: 3px solid white; /* borda branca */
             display: inline-block;
             padding: 25px 20px;
             margin: 20px auto;
             border-radius: 12px;
-            background-color: white; /* fundo branco */
+            background-color: #111;
             width: 320px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6); /* brilho neon branco suave */
         }
         .plano h3 {
-            color: black; /* texto preto */
+            color: red;
             font-size: 28px;
             margin-bottom: 15px;
         }
         .plano p {
-            color: red; /* valor destacado em vermelho */
-            font-size: 20px;
+            color: #ff4444;
+            font-size: 18px;
             font-weight: bold;
             margin-bottom: 0;
         }
-        .beneficios {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 15px;
-            max-width: 900px;
-            margin: 30px auto;
-        }
-        .beneficio-box {
-            background-color: #111;
+        .beneficio {
             border: 2px solid limegreen;
-            padding: 15px;
-            border-radius: 12px;
-            box-shadow: 0px 0px 8px rgba(0, 255, 0, 0.3);
+            border-radius: 10px;
+            padding: 12px;
+            margin: 12px auto;
+            width: 320px;
+            background-color: #111;
+            box-shadow: 0 0 8px rgba(0, 255, 0, 0.4);
             font-weight: bold;
             color: limegreen;
         }
-        .info-iptv {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 25px;
-            background-color: #111;
-            border: 2px solid red;
-            border-radius: 12px;
-            box-shadow: 0px 0px 12px rgba(255,0,0,0.4);
-            text-align: left;
-        }
-        .info-iptv h3 {
-            color: orange;
-            margin-bottom: 15px;
-            font-size: 22px;
-        }
-        .info-iptv p {
-            color: #ddd;
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
         .whatsapp-button {
             position: fixed;
-            bottom: 60px;
+            bottom: 40px; /* subiu um pouco */
             right: 20px;
             background-color: #25D366;
             color: white;
@@ -92,22 +68,16 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            box-shadow: 0 0 6px #25D366, 0 0 12px #25D366;
-            transition: 0.3s;
-        }
-        .whatsapp-button:hover {
-            background-color: #128C7E;
-            box-shadow: 0 0 10px #25D366, 0 0 20px #25D366;
+            box-shadow: 0px 4px 6px rgba(0,0,0,0.3);
         }
         .whatsapp-button img {
             width: 22px;
             height: 22px;
         }
         footer {
-            margin-top: 50px;
-            padding: 15px;
-            background-color: #111;
-            color: #aaa;
+            margin-top: 40px;
+            padding: 20px;
+            color: gray;
             font-size: 14px;
         }
     </style>
@@ -122,33 +92,20 @@
         <p>R$25/MÊS</p>
     </div>
 
-    <div class="beneficios">
-        <div class="beneficio-box">● Mais de 2.000 canais nacionais e internacionais</div>
-        <div class="beneficio-box">● Futebol ao vivo dos principais campeonatos</div>
-        <div class="beneficio-box">● Streaming em alta qualidade HD, sem travamentos</div>
-        <div class="beneficio-box">● Compatível com Smart TVs, celulares e computadores</div>
-        <div class="beneficio-box">● Suporte rápido e atendimento via WhatsApp</div>
-        <div class="beneficio-box">● Plano mensal acessível por apenas R$ 25,00</div>
-    </div>
+    <p>Bem-vindo à <b>TROLLTEC TV</b>, seu serviço de IPTV de alta qualidade que oferece mais de 2.000 canais nacionais e internacionais, 
+    com foco especial em futebol ao vivo dos principais campeonatos. Nosso streaming é garantido em alta definição (HD) para proporcionar 
+    uma experiência incrível, sem travamentos.</p>
 
-    <div class="info-iptv">
-        <h3>Por que escolher a TROLLTEC TV?</h3>
-        <p>A <b>TROLLTEC TV</b> oferece o melhor em IPTV, garantindo estabilidade, qualidade e diversidade de conteúdo. 
-        Nosso serviço foi desenvolvido para quem busca praticidade e entretenimento ilimitado.</p>
+    <p>Compatível com smartphone, Smart TV e computador, garantindo praticidade e suporte rápido via WhatsApp.</p>
 
-        <h3>O que você vai encontrar:</h3>
-        <p>✔ Mais de <b>2.000 canais</b> nacionais e internacionais, incluindo esportes, filmes, séries, documentários e muito mais.</p>
-        <p>✔ Futebol ao vivo dos principais campeonatos, para você não perder nenhum lance do seu time favorito.</p>
-        <p>✔ Filmes e séries em alta definição (HD), disponíveis a qualquer momento.</p>
+    <div class="beneficio">● Mais de 2.000 canais nacionais e internacionais</div>
+    <div class="beneficio">● Futebol ao vivo dos principais campeonatos</div>
+    <div class="beneficio">● Streaming em alta qualidade HD, sem travamentos</div>
+    <div class="beneficio">● Compatível com Smart TVs, celulares e computadores</div>
+    <div class="beneficio">● Suporte rápido e atendimento via WhatsApp</div>
+    <div class="beneficio">● Plano mensal acessível por apenas R$ 25,00</div>
 
-        <h3>Compatibilidade total</h3>
-        <p>Nosso sistema funciona em <b>Smart TVs, celulares, computadores e TV Box</b>, oferecendo flexibilidade para você assistir onde quiser.</p>
-
-        <h3>Suporte dedicado</h3>
-        <p>Nosso atendimento é feito diretamente pelo <b>WhatsApp</b>, garantindo resposta rápida e suporte eficiente sempre que você precisar.</p>
-    </div>
-
-    <a class="whatsapp-button" href="https://wa.me/5584996126008?text=Ol%C3%A1%20Thiago%2C%20tenho%20interesse%20no%20IPTV" target="_blank">
+    <a class="whatsapp-button" href="https://wa.me/5584996126008?text=Ol%C3%A1%20Thiago%2C%20tenho%20interesse%20no%20IPTV%2C%20quero%20um%20teste%20gr%C3%A1tis" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
         Fale no WhatsApp
     </a>
