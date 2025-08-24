@@ -41,15 +41,10 @@
       padding: 40px 0 10px 0;
       border-bottom: 2px solid #39ff14;
     }
-
-    /* TODOS OS TÍTULOS EM VERMELHO */
-    h1, h2, h3, h4, h5, h6 {
-      color: red;
-    }
-
     header h1 {
       font-size: clamp(2rem, 5vw, 2.8rem);
       margin-bottom: 5px;
+      color: red;
     }
     header p {
       font-size: 1rem;
@@ -64,6 +59,7 @@
       padding: 0 10px;
     }
     main h2 {
+      color: red; /* todos os títulos agora vermelhos */
       text-align: center;
       margin-bottom: 25px;
     }
@@ -246,5 +242,42 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Ícone do WhatsApp">
     PEDIR TESTE AGORA 🚀
   </a>
+
+  <!-- FAQ Schema (dados estruturados para SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "O que é IPTV?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "É a transmissão de canais de TV pela internet, sem antena, compatível com Smart TV, celular e PC."
+      }
+    },{
+      "@type": "Question",
+      "name": "Funciona em qualquer TV?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, basta ter internet e um aplicativo compatível."
+      }
+    },{
+      "@type": "Question",
+      "name": "Preciso de internet rápida?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Recomendamos no mínimo 10MB estáveis para HD e 20MB para Full HD/4K."
+      }
+    },{
+      "@type": "Question",
+      "name": "Posso usar em mais de um dispositivo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, consulte os planos multi-telas para usar em mais de um dispositivo ao mesmo tempo."
+      }
+    }]
+  }
+  </script>
 </body>
 </html>
