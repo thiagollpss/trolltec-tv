@@ -66,6 +66,28 @@
       background: green;
       color: #fff;
     }
+
+    /* Balão WhatsApp fixo */
+    .whatsapp-fixo {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      z-index: 1000;
+      transition: transform 0.3s ease;
+    }
+    .whatsapp-fixo:hover {
+      transform: scale(1.1);
+    }
   </style>
 </head>
 <body>
@@ -87,16 +109,19 @@
   </p>
 
   <ul>
-    <li>✔️ Mais de 2.000 canais nacionais e internacionais</li>
-    <li>✔️ Futebol ao vivo dos principais campeonatos</li>
-    <li>✔️ Streaming em alta qualidade HD, sem travamentos</li>
-    <li>✔️ Compatível com Smart TVs, celulares e computadores</li>
-    <li>✔️ Suporte rápido e atendimento via WhatsApp</li>
-    <li>✔️ Plano mensal acessível por apenas R$ 25,00</li>
+    <li>Mais de 2.000 canais nacionais e internacionais</li>
+    <li>Futebol ao vivo dos principais campeonatos</li>
+    <li>Streaming em alta qualidade HD, sem travamentos</li>
+    <li>Compatível com Smart TVs, celulares e computadores</li>
+    <li>Suporte rápido e atendimento via WhatsApp</li>
+    <li>Plano mensal acessível por apenas R$ 25,00</li>
   </ul>
 
   <br>
   <a href="https://wa.me/seu-numero" class="btn">📲 PEDIR TESTE AGORA</a>
+
+  <!-- Balão do WhatsApp -->
+  <a href="https://wa.me/seu-numero" class="whatsapp-fixo" target="_blank" aria-label="Chamar no WhatsApp">💬</a>
 
 </body>
 </html>
