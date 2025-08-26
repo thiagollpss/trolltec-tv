@@ -247,7 +247,7 @@
       inset: 0;
       background: rgba(0,0,0,0.8);
       z-index: 10000;
-      display: flex;
+      /* display: flex;  <-- esta linha fazia o modal aparecer imediatamente */
       align-items: center;
       justify-content: center;
     }
@@ -402,4 +402,35 @@
 
     (function(){
       var modal = document.getElementById('promoModal');
-      var closeBtn =
+      var closeBtn = document.getElementById('promoClose');
+
+      function openModal(){
+        if(modal) modal.style.display = 'flex';
+      }
+      function closeModal(){
+        if(modal) modal.style.display = 'none';
+      }
+
+      // abre após 2000ms (2 segundos)
+      window.addEventListener('load', function(){
+        setTimeout(openModal, 2000);
+      });
+
+      // fecha no X
+      if(closeBtn){
+        closeBtn.addEventListener('click', closeModal);
+      }
+
+      // fecha ao clicar fora da caixa
+      window.addEventListener('click', function(e){
+        if(e.target === modal){ closeModal(); }
+      });
+
+      // fecha com ESC
+      window.addEventListener('keydown', function(e){
+        if(e.key === 'Escape'){ closeModal(); }
+      });
+    })();
+  </script>
+</body>
+</html>
