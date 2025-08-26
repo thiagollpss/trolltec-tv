@@ -227,6 +227,49 @@
             color: gray;
             font-size: 14px;
         }
+
+        /* ====== (ADICIONADO) MODAL PROMOCIONAL ====== */
+        .promo-modal-overlay{
+            display:none;
+            position:fixed;
+            inset:0;
+            background:rgba(0,0,0,0.8);
+            z-index:9999; /* acima de tudo, inclusive botão WhatsApp */
+        }
+        .promo-modal-box{
+            background:#111;
+            width:90%;
+            max-width:420px;
+            margin:10% auto 0;
+            border:2px solid red;
+            border-radius:14px;
+            box-shadow:0 0 20px red;
+            color:#fff;
+            text-align:center;
+            padding:20px 18px 16px;
+            position:relative;
+        }
+        .promo-modal-close{
+            position:absolute;
+            top:8px;
+            right:12px;
+            font-size:28px;
+            color:#aaa;
+            cursor:pointer;
+            user-select:none;
+        }
+        .promo-modal-close:hover{ color:#fff; }
+        .promo-modal-box h2{
+            margin:6px 0 10px;
+            color:#fff; /* mantendo cores existentes; borda já é neon vermelho */
+        }
+        .promo-modal-box p{
+            margin:0;
+            color:#ddd;
+            line-height:1.5;
+            font-size:16px;
+        }
+        /* ====== /MODAL PROMOCIONAL ====== */
     </style>
 </head>
 <body>
@@ -321,9 +364,54 @@
         𝙏𝙀𝙎𝙏𝙀 𝙂𝙍𝘼́𝙏𝙄𝙎
     </a>
 
+    <!-- ====== (ADICIONADO) MODAL PROMOCIONAL ====== -->
+    <div class="promo-modal-overlay" id="promoModal" role="dialog" aria-modal="true" aria-labelledby="promoTitle">
+      <div class="promo-modal-box">
+        <span class="promo-modal-close" id="promoClose" aria-label="Fechar">&times;</span>
+        <h2 id="promoTitle">Parabens! Você acabou de ganhar um teste de 6 horas,clique no botão verde de whatsapp e pegue seu teste!</h2>
+        <p></p>
+      </div>
+    </div>
+    <!-- ====== /MODAL PROMOCIONAL ====== -->
+
     <footer>
         ©2025 TrollIPTV
     </footer>
 
 </body>
+
+<!-- ====== (ADICIONADO) SCRIPT DO MODAL ====== -->
+<script>
+  (function(){
+    var modal = document.getElementById('promoModal');
+    var closeBtn = document.getElementById('promoClose');
+
+    function openModal(){
+      if(modal) modal.style.display = 'block';
+    }
+    function closeModal(){
+      if(modal) modal.style.display = 'none';
+    }
+
+    // abre automaticamente ao carregar a página
+    window.addEventListener('load', function(){
+      // pequeno atraso para garantir renderização
+      setTimeout(openModal, 800);
+    });
+
+    // fecha ao clicar no X
+    if(closeBtn){
+      closeBtn.addEventListener('click', closeModal);
+    }
+    // fecha ao clicar fora da caixa
+    window.addEventListener('click', function(e){
+      if(e.target === modal){ closeModal(); }
+    });
+    // fecha com ESC
+    window.addEventListener('keydown', function(e){
+      if(e.key === 'Escape'){ closeModal(); }
+    });
+  })();
+</script>
+<!-- ====== /SCRIPT DO MODAL ====== -->
 </html>
