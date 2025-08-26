@@ -401,4 +401,36 @@
     document.getElementById("ano").textContent = new Date().getFullYear();
 
     (function(){
-     
+      var modal = document.getElementById('promoModal');
+      var closeBtn = document.getElementById('promoClose');
+
+      function openModal(){
+        if(modal) modal.style.display = 'flex';
+      }
+      function closeModal(){
+        if(modal) modal.style.display = 'none';
+      }
+
+      // abre após 800ms
+      window.addEventListener('load', function(){
+        setTimeout(openModal, 800);
+      });
+
+      // fecha no X
+      if(closeBtn){
+        closeBtn.addEventListener('click', closeModal);
+      }
+
+      // fecha ao clicar fora da caixa
+      window.addEventListener('click', function(e){
+        if(e.target === modal){ closeModal(); }
+      });
+
+      // fecha com ESC
+      window.addEventListener('keydown', function(e){
+        if(e.key === 'Escape'){ closeModal(); }
+      });
+    })();
+  </script>
+</body>
+</html>
