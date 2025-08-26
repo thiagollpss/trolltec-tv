@@ -27,6 +27,10 @@
       font-size: 1.5em;
       margin: 10px 0 20px;
     }
+    .beneficios-resumidos {
+      font-size: 1.1em;
+      margin-bottom: 30px;
+    }
     .btn-teste {
       background-color: red;
       color: #fff;
@@ -41,63 +45,43 @@
     .btn-teste:hover {
       transform: scale(1.05);
     }
-    h3 {
-      color: red;
-      margin-top: 40px;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-      text-align: left;
-      max-width: 600px;
-      margin: auto;
-    }
-    ul li {
-      margin: 10px 0;
-    }
-    .beneficios {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: 40px auto;
-    }
-    .beneficio {
-      background: #111;
-      border: 1px solid red;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 0 8px rgba(255,0,0,0.5);
-    }
-    .beneficio h4 {
-      color: red;
-      margin-bottom: 10px;
-    }
 
-    /* Tabela de planos */
-    .tabela-planos {
+    /* Quadros verdes de benefícios */
+    .beneficios {
       display: flex;
       justify-content: center;
       gap: 20px;
-      margin: 40px auto;
       flex-wrap: wrap;
+      margin: 30px auto;
       max-width: 1000px;
     }
-    .plano {
+    .beneficio {
+      background-color: #003300;
+      border: 2px solid #00ff00;
+      border-radius: 15px;
+      padding: 20px;
+      width: 280px;
+      color: #fff;
+      box-shadow: 0 0 15px #00ff00;
+    }
+    .beneficio h3 {
+      color: #00ff00;
+      margin-bottom: 10px;
+    }
+
+    /* Quadro neon vermelho */
+    .quadro-neon {
       background-color: #111;
       border: 2px solid red;
       border-radius: 15px;
       padding: 20px;
-      width: 280px;
-      box-shadow: 0 0 10px rgba(255,0,0,0.5);
+      max-width: 600px;
+      margin: 40px auto;
+      box-shadow: 0 0 20px red;
     }
-    .plano h4 {
+    .quadro-neon h3 {
       color: red;
-      margin-bottom: 15px;
-    }
-    .plano p {
-      font-size: 1.2em;
-      margin: 10px 0;
+      margin-bottom: 10px;
     }
 
     /* Botão WhatsApp flutuante */
@@ -169,48 +153,32 @@
   <h1>TrollIPTV</h1>
   <h2>O melhor do IPTV ao seu alcance</h2>
 
+  <div class="beneficios-resumidos">
+    +2000 canais • Futebol ao vivo • Filmes e séries em HD • Compatível com todos os dispositivos
+  </div>
+
   <button class="btn-teste">Quero Testar Agora</button>
 
-  <h3>Por que escolher a TrollIPTV?</h3>
-  <p>A TrollIPTV oferece o melhor em IPTV, garantindo estabilidade, qualidade e diversidade de conteúdo. Nosso serviço foi desenvolvido para quem busca praticidade e entretenimento ilimitado.</p>
-
+  <!-- Quadros verdes -->
   <div class="beneficios">
     <div class="beneficio">
-      <h4>+2000 Canais</h4>
-      <p>Esportes, filmes, séries, documentários e muito mais em qualidade HD.</p>
+      <h3>+2000 Canais</h3>
+      <p>Canais nacionais e internacionais, incluindo esportes, filmes, séries e muito mais.</p>
     </div>
     <div class="beneficio">
-      <h4>Futebol ao Vivo</h4>
-      <p>Acompanhe os principais campeonatos sem perder nenhum lance.</p>
+      <h3>Futebol ao Vivo</h3>
+      <p>Acompanhe os principais campeonatos do mundo em tempo real.</p>
     </div>
     <div class="beneficio">
-      <h4>Filmes e Séries</h4>
-      <p>Assista quando quiser, direto na sua TV, celular, computador ou TV Box.</p>
-    </div>
-    <div class="beneficio">
-      <h4>Compatibilidade Total</h4>
-      <p>Nosso sistema funciona em todos os dispositivos modernos.</p>
-    </div>
-    <div class="beneficio">
-      <h4>Suporte Rápido</h4>
-      <p>Atendimento direto pelo WhatsApp, rápido e eficiente.</p>
+      <h3>HD Sem Travamentos</h3>
+      <p>Filmes e séries em alta definição com estabilidade garantida.</p>
     </div>
   </div>
 
-  <h3>Nossos Planos</h3>
-  <div class="tabela-planos">
-    <div class="plano">
-      <h4>Mensal</h4>
-      <p>R$ 29,90</p>
-    </div>
-    <div class="plano">
-      <h4>Trimestral</h4>
-      <p>R$ 79,90</p>
-    </div>
-    <div class="plano">
-      <h4>Anual</h4>
-      <p>R$ 249,90</p>
-    </div>
+  <!-- Quadro neon vermelho -->
+  <div class="quadro-neon">
+    <h3>Compatibilidade Total</h3>
+    <p>Assista em Smart TVs, Celulares, Computadores e TV Box. Flexibilidade para ver onde quiser!</p>
   </div>
 
   <!-- Botão flutuante WhatsApp -->
@@ -239,15 +207,20 @@
     // Modal
     const modal = document.getElementById("popupModal");
     const span = document.getElementsByClassName("close")[0];
+    const STORAGE_KEY = "popup_shown";
+
+    function shouldShow() {
+      return !localStorage.getItem(STORAGE_KEY);
+    }
 
     function openModal() {
       modal.style.display = "block";
+      localStorage.setItem(STORAGE_KEY, "true");
     }
 
-    // Abre automaticamente ao carregar a página
-    window.onload = function() {
-      setTimeout(openModal, 1500); 
-    };
+    if (shouldShow()) {
+      setTimeout(openModal, 2000); // abre sozinho na 1ª visita
+    }
 
     span.onclick = function() {
       modal.style.display = "none";
