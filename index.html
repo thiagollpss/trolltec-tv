@@ -1,240 +1,329 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
-  <meta name="description" content="Assista +2000 canais ao vivo em HD com estabilidade: futebol, filmes, séries e muito mais. Teste IPTV grátis e aproveite a TrollIPTV no seu dispositivo favorito.">
-  <link rel="canonical" href="https://trolliptv.github.io/" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Online em HD: Futebol, Filmes e Séries | Teste IPTV Grátis</title>
+    <meta name="description" content="Assista IPTV grátis atualizado 2025 no TrollIPTV: +2.000 canais nacionais e internacionais, filmes, séries e futebol ao vivo em HD sem travamentos. Teste agora mesmo!">
+    <meta name="keywords" content="IPTV 2025, IPTV atualizado, lista IPTV grátis, canais ao vivo, futebol ao vivo 2025, filmes em HD, séries online, TrollIPTV, IPTV Brasil, IPTV barato">
+    <meta name="author" content="TrollIPTV">
+    <meta name="robots" content="index, follow">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #000;
-      color: #fff;
-      text-align: center;
-    }
+    <!-- CANONICAL -->
+    <link rel="canonical" href="https://trolliptv.com.br/" />
 
-    header {
-      padding: 20px;
-    }
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 
-    h1 {
-      font-size: 2.5rem;
-      font-style: italic;
-      color: #ff0000;
-      text-shadow: 0 0 10px #ff0000;
-    }
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1D9881ST18"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1D9881ST18');
+    </script>
 
-    .btn-teste {
-      display: inline-block;
-      background-color: #000;
-      color: #fff;
-      border: 2px solid red;
-      padding: 12px 20px;
-      margin-top: 15px;
-      border-radius: 10px;
-      font-weight: bold;
-      text-decoration: none;
-      box-shadow: 0 0 10px red;
-    }
+    <!-- Título com ano automático -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const ano = new Date().getFullYear();
+        document.title = "TV Online em HD " + ano + ": Futebol, Filmes e Séries | Teste IPTV Grátis";
+      });
+    </script>
 
-    .btn-teste:hover {
-      background-color: red;
-      color: #fff;
-    }
-
-    .info-iptv {
-      max-width: 800px;
-      margin: 30px auto;
-      padding: 20px;
-      border: 2px solid red;
-      border-radius: 10px;
-      box-shadow: 0 0 15px red;
-      text-align: left;
-    }
-
-    .info-iptv h2 {
-      text-align: center;
-      color: #ff0000;
-      text-shadow: 0 0 8px #ff0000;
-    }
-
-    .info-iptv ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .info-iptv ul li {
-      margin: 10px 0;
-    }
-
-    /* ====== TABELA DE PLANOS (VERMELHO NEON) ====== */
-    .tabela-planos {
-      max-width: 1000px;
-      margin: 20px auto 10px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-    }
-
-    .plano-card {
-      background-color: #111;
-      border: 2px solid red;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(255,0,0,0.45);
-      padding: 18px;
-      text-align: center;
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-
-    .plano-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 0 16px rgba(255,0,0,0.6), 0 0 28px rgba(255,0,0,0.25);
-    }
-
-    .plano-card .tag {
-      display: inline-block;
-      font-size: 12px;
-      color: #111;
-      background: #ff4d4d;
-      border-radius: 999px;
-      padding: 6px 10px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .plano-card h4 {
-      color: #fff;
-      font-size: 22px;
-      margin: 8px 0 6px;
-    }
-
-    .plano-card .preco {
-      font-size: 34px;
-      font-weight: 800;
-      color: #ff3b3b;
-      margin: 6px 0 4px;
-      text-shadow: 0 0 10px rgba(255,0,0,0.55);
-    }
-
-    .plano-card .detalhe {
-      color: #bbb;
-      font-size: 14px;
-      margin-bottom: 12px;
-    }
-
-    .plano-card ul {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0 16px;
-      text-align: left;
-      color: #ddd;
-      font-size: 15px;
-      line-height: 1.5;
-    }
-
-    .plano-card ul li {
-      margin: 6px 0;
-    }
-
-    .btn-assinar {
-      display: inline-block;
-      text-decoration: none;
-      color: #fff;
-      border: 2px solid red;
-      border-radius: 10px;
-      padding: 10px 14px;
-      font-weight: bold;
-      box-shadow: 0 0 10px rgba(255,0,0,0.45);
-      transition: background .2s ease, box-shadow .2s ease;
-    }
-
-    .btn-assinar:hover {
-      background: #d81111;
-      box-shadow: 0 0 16px rgba(255,0,0,0.7), 0 0 26px rgba(255,0,0,0.3);
-    }
-  </style>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const ano = new Date().getFullYear();
-      document.title = "TV Online em HD " + ano + ": Futebol, Filmes e Séries | Teste IPTV Grátis";
-    });
-  </script>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        /* Título principal */
+        h1 {
+            color: red;
+            margin-top: 30px;
+            font-size: 60px;        /* bem grande */
+            font-style: italic;     /* deixa meio deitado */
+            font-weight: bold;
+            text-shadow: 0px 0px 12px rgba(255,0,0,0.6); /* brilho vermelho */
+        }
+        h2 {
+            color: white;
+            margin-top: 10px;
+            margin-bottom: 25px;
+        }
+        /* QUADRO DO PLANO */
+        .plano {
+            border: 2px solid white;
+            display: inline-block;
+            padding: 25px 20px;
+            margin: 20px auto;
+            border-radius: 12px;
+            background-color: #111;
+            width: 320px;
+            box-shadow: 0px 0px 12px rgba(255,255,255,0.4);
+        }
+        .plano h3 {
+            color: white;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        .plano p {
+            color: red;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+        /* BENEFÍCIOS (AS CAIXAS VERDES) */
+        .beneficios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 15px;
+            max-width: 900px;
+            margin: 30px auto;
+        }
+        .beneficio-box {
+            background-color: #111;
+            border: 2px solid limegreen;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 8px rgba(0, 255, 0, 0.3);
+            font-weight: bold;
+            color: limegreen;
+        }
+        /* BLOCO DE INFORMAÇÃO IPTV */
+        .info-iptv {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 25px;
+            background-color: #111;
+            border: 2px solid red;
+            border-radius: 12px;
+            box-shadow: 0px 0px 12px rgba(255,0,0,0.4);
+            text-align: left;
+        }
+        .info-iptv h3 {
+            color: orange;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        .info-iptv p {
+            color: #ddd;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        /* ====== TABELA DE PLANOS (VERMELHO NEON) ====== */
+        .tabela-planos {
+            max-width: 1000px;
+            margin: 20px auto 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+        }
+        .plano-card {
+            background-color: #111;
+            border: 2px solid red;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(255,0,0,0.45);
+            padding: 18px;
+            text-align: center;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+        .plano-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 16px rgba(255,0,0,0.6), 0 0 28px rgba(255,0,0,0.25);
+        }
+        .plano-card .tag {
+            display: inline-block;
+            font-size: 12px;
+            color: #111;
+            background: #ff4d4d;
+            border-radius: 999px;
+            padding: 6px 10px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .plano-card h4 {
+            color: #fff;
+            font-size: 22px;
+            margin: 8px 0 6px;
+        }
+        .plano-card .preco {
+            font-size: 34px;
+            font-weight: 800;
+            color: #ff3b3b;
+            margin: 6px 0 4px;
+            text-shadow: 0 0 10px rgba(255,0,0,0.55);
+        }
+        .plano-card .detalhe {
+            color: #bbb;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .plano-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 16px;
+            text-align: left;
+            color: #ddd;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        .plano-card ul li {
+            margin: 6px 0;
+        }
+        .btn-assinar {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            border: 2px solid red;
+            border-radius: 10px;
+            padding: 10px 14px;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(255,0,0,0.45);
+            transition: background .2s ease, box-shadow .2s ease;
+        }
+        .btn-assinar:hover {
+            background: #d81111;
+            box-shadow: 0 0 16px rgba(255,0,0,0.7), 0 0 26px rgba(255,0,0,0.3);
+        }
+        /* BOTÃO WHATSAPP (FLUTUANTE) */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 60px; 
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50px;
+            padding: 12px 18px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 0 6px #25D366, 0 0 12px #25D366;
+            transition: 0.3s;
+        }
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+            box-shadow: 0 0 10px #25D366, 0 0 20px #25D366;
+        }
+        .whatsapp-button img {
+            width: 22px;
+            height: 22px;
+        }
+        /* RODAPÉ */
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            color: gray;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
-  <header>
+
     <h1>TrollIPTV</h1>
-    <a href="https://wa.me/5584996126008?text=Quero%20testar%20o%20IPTV%20grátis" class="btn-teste">Quero Testar Agora</a>
-  </header>
+    <h2>+2.000 Canais | Futebol Ao Vivo | Sem Travamentos | Qualidade HD</h2>
 
-  <div class="info-iptv">
-    <h2>Por que escolher a TrollIPTV?</h2>
-    <p>A TrollIPTV oferece o melhor em IPTV, garantindo estabilidade, qualidade e diversidade de conteúdo. Nosso serviço foi desenvolvido para quem busca praticidade e entretenimento ilimitado.</p>
-
-    <p><strong>O que você vai encontrar:</strong></p>
-    <ul>
-      <li>✔ Mais de 2.000 canais nacionais e internacionais, incluindo esportes, filmes, séries, documentários e muito mais.</li>
-      <li>✔ Futebol ao vivo dos principais campeonatos, para você não perder nenhum lance do seu time favorito.</li>
-      <li>✔ Filmes e séries em alta definição (HD), disponíveis a qualquer momento.</li>
-    </ul>
-
-    <h3>Compatibilidade total</h3>
-    <p>Nosso sistema funciona em Smart TVs, celulares, computadores e TV Box, oferecendo flexibilidade para você assistir onde quiser.</p>
-
-    <h3>Suporte dedicado</h3>
-    <p>Nosso atendimento é feito diretamente pelo WhatsApp, garantindo resposta rápida e suporte eficiente sempre que você precisar.</p>
-  </div>
-
-  <!-- ====== TABELA DE ASSINATURAS (VERMELHO NEON) ====== -->
-  <div class="tabela-planos">
-    <!-- MENSAL -->
-    <div class="plano-card">
-      <span class="tag">Plano Mensal</span>
-      <h4>Assinatura 30 dias</h4>
-      <div class="preco">R$ 25<span style="font-size:16px; color:#ddd;">/mês</span></div>
-      <div class="detalhe">Renovação simples e suporte rápido</div>
-      <ul>
-        <li>✔ Acesso completo em HD</li>
-        <li>✔ Esportes e muito futebol</li>
-        <li>✔ Filmes e séries</li>
-        <li>✔ 1 dispositivo por vez</li>
-      </ul>
-      <a class="btn-assinar" href="https://wa.me/5584996126008?text=Quero%20assinar%20o%20Plano%20Mensal%20(30%20dias)" target="_blank">Assinar Mensal</a>
+    <div class="plano">
+        <h3>VALOR DO PLANO</h3>
+        <p>R$25/MÊS</p>
     </div>
 
-    <!-- TRIMESTRAL -->
-    <div class="plano-card">
-      <span class="tag">Mais Popular</span>
-      <h4>Assinatura 3 meses</h4>
-      <div class="preco">R$ 69<span style="font-size:16px; color:#ddd;">/trimestre</span></div>
-      <div class="detalhe">Economia vs. mensal</div>
-      <ul>
-        <li>✔ Acesso completo em HD</li>
-        <li>✔ Programação ao vivo e sob demanda</li>
-        <li>✔ Filmes, séries e esportes</li>
-        <li>✔ 1–2 dispositivos (conforme disponibilidade)</li>
-      </ul>
-      <a class="btn-assinar" href="https://wa.me/5584996126008?text=Quero%20assinar%20o%20Plano%20Trimestral%20(3%20meses)" target="_blank">Assinar Trimestral</a>
+    <!-- BENEFÍCIOS (restaurado) -->
+    <div class="beneficios">
+        <div class="beneficio-box">● Mais de 2.000 canais nacionais e internacionais</div>
+        <div class="beneficio-box">● Futebol ao vivo dos principais campeonatos</div>
+        <div class="beneficio-box">● Streaming em alta qualidade HD, sem travamentos</div>
+        <div class="beneficio-box">● Compatível com Smart TVs, celulares e computadores</div>
+        <div class="beneficio-box">● Suporte rápido e atendimento via WhatsApp</div>
+        <div class="beneficio-box">● Lista 100% atualizada (atualização diária)</div>
     </div>
 
-    <!-- ANUAL -->
-    <div class="plano-card">
-      <span class="tag">Melhor Custo-Benefício</span>
-      <h4>Assinatura 12 meses</h4>
-      <div class="preco">R$ 239<span style="font-size:16px; color:#ddd;">/ano</span></div>
-      <div class="detalhe">Pague menos por mês</div>
-      <ul>
-        <li>✔ Acesso completo em HD o ano todo</li>
-        <li>✔ Esportes (inclui futebol) + entretenimento</li>
-        <li>✔ Filmes e séries atualizados</li>
-        <li>✔ Suporte prioritário</li>
-      </ul>
-      <a class="btn-assinar" href="https://wa.me/5584996126008?text=Quero%20assinar%20o%20Plano%20Anual%20(12%20meses)" target="_blank">Assinar Anual</a>
+    <!-- Grande bloco de informação -->
+    <div class="info-iptv">
+        <h3>Por que escolher a TrollIPTV?</h3>
+        <p>A <b>TrollIPTV</b> oferece o melhor em IPTV, garantindo estabilidade, qualidade e diversidade de conteúdo. Nosso serviço foi desenvolvido para quem busca praticidade e entretenimento ilimitado.</p>
+
+        <h3>O que você vai encontrar:</h3>
+        <p>✔ Mais de <b>2.000 canais</b> nacionais e internacionais, incluindo esportes, filmes, séries, documentários e muito mais.</p>
+        <p>✔ Futebol ao vivo dos principais campeonatos, para você não perder nenhum lance do seu time favorito.</p>
+        <p>✔ Filmes e séries em alta definição (HD), disponíveis a qualquer momento.</p>
+
+        <h3>Compatibilidade total</h3>
+        <p>Nosso sistema funciona em <b>Smart TVs, celulares, computadores e TV Box</b>, oferecendo flexibilidade para você assistir onde quiser.</p>
+
+        <h3>Suporte dedicado</h3>
+        <p>Nosso atendimento é feito diretamente pelo <b>WhatsApp</b>, garantindo resposta rápida e suporte eficiente sempre que você precisar.</p>
     </div>
-  </div>
-  <!-- ====== /TABELA DE ASSINATURAS ====== -->
+
+    <!-- ====== TABELA DE ASSINATURAS (VERMELHO NEON) ====== -->
+    <div class="tabela-planos">
+      <!-- MENSAL -->
+      <div class="plano-card">
+        <span class="tag">Plano Mensal</span>
+        <h4>Assinatura 30 dias</h4>
+        <div class="preco">R$ 25<span style="font-size:16px; color:#ddd;">/mês</span></div>
+        <div class="detalhe">Renovação simples e suporte rápido</div>
+        <ul>
+          <li>✔ Acesso completo em HD</li>
+          <li>✔ Esportes e muito futebol</li>
+          <li>✔ Filmes e séries</li>
+          <li>✔ 1 dispositivo por vez</li>
+        </ul>
+        <a class="btn-assinar" href="https://wa.me/5584996126008?text=Quero%20assinar%20o%20Plano%20Mensal%20(30%20dias)" target="_blank">Assinar Mensal</a>
+      </div>
+
+      <!-- TRIMESTRAL -->
+      <div class="plano-card">
+        <span class="tag">Mais Popular</span>
+        <h4>Assinatura 3 meses</h4>
+        <div class="preco">R$ 69<span style="font-size:16px; color:#ddd;">/trimestre</span></div>
+        <div class="detalhe">Economia vs. mensal</div>
+        <ul>
+          <li>✔ Acesso completo em HD</li>
+          <li>✔ Programação ao vivo e sob demanda</li>
+          <li>✔ Filmes, séries e esportes</li>
+          <li>✔ 1–2 dispositivos (conforme disponibilidade)</li>
+        </ul>
+        <a class="btn-assinar" href="https://wa.me/5584996126008?text=Quero%20assinar%20o%20Plano%20Trimestral%20(3%20meses)" target="_blank">Assinar Trimestral</a>
+      </div>
+
+      <!-- ANUAL -->
+      <div class="plano-card">
+        <span class="tag">Melhor Custo-Benefício</span>
+        <h4>Assinatura 12 meses</h4>
+        <div class="preco">R$ 239<span style="font-size:16px; color:#ddd;">/ano</span></div>
+        <div class="detalhe">Pague menos por mês</div>
+        <ul>
+          <li>✔ Acesso completo em HD o ano todo</li>
+          <li>✔ Esportes (inclui futebol) + entretenimento</li>
+          <li>✔ Filmes e séries atualizados</li>
+          <li>✔ Suporte prioritário</li>
+        </ul>
+        <a class="btn-assinar" href="https://wa.me/5584996126008?text=Quero%20assinar%20o%20Plano%20Anual%20(12%20meses)" target="_blank">Assinar Anual</a>
+      </div>
+    </div>
+    <!-- ====== /TABELA DE ASSINATURAS ====== -->
+
+    <!-- Botão WhatsApp flutuante (restaurado) -->
+    <a class="whatsapp-button" href="https://wa.me/5584996126008?text=Ol%C3%A1%20tenho%20interesse%20no%20IPTV" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        𝙏𝙀𝙎𝙏𝙀 𝙂𝙍𝘼́𝙏𝙄𝙎
+    </a>
+
+    <footer>
+        ©2025 TrollIPTV
+    </footer>
+
 </body>
 </html>
