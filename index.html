@@ -301,6 +301,12 @@
       .btn-assinar { font-size: 13px; padding: 8px 12px; }
       .whatsapp-button { font-size: 12px; padding: 10px 14px; }
     }
+
+    /* === Animação do modal (APENAS ADIÇÕES) === */
+    .promo-modal-overlay { opacity: 0; transition: opacity .4s ease; }
+    .promo-modal-overlay.is-visible { opacity: 1; }
+    .promo-modal-box { transform: translateY(-24px); opacity: 0; transition: transform .4s ease, opacity .4s ease; }
+    .promo-modal-overlay.is-visible .promo-modal-box { transform: translateY(0); opacity: 1; }
   </style>
 </head>
 <body>
@@ -410,6 +416,43 @@
       function closeModal(){
         if(modal) modal.style.display = 'none';
       }
+
+      /* === Animação do modal (APENAS ADIÇÕES) === */
+      var _openModalOriginal = openModal;
+      openModal = function () {
+        _openModalOriginal();            // mantém seu display = 'flex'
+        if (modal) {
+          // adiciona a classe no próximo frame pra transição funcionar
+          requestAnimationFrame(function () {
+            modal.classList.add('is-visible');
+          });
+        }
+      };
+
+      var _closeModalOriginal = closeModal;
+      closeModal = function () {
+        if (modal) {
+          // inicia fade/slide out
+          modal.classList.remove('is-visible');
+
+          // quando a transição do overlay terminar, esconde de fato
+          var handler = function (e) {
+            if (e.target === modal) {
+              modal.removeEventListener('transitionend', handler);
+              _closeModalOriginal();     // chama seu display = 'none'
+            }
+          };
+          modal.addEventListener('transitionend', handler);
+
+          // fallback caso o transitionend não dispare
+          setTimeout(function () {
+            try { modal.removeEventListener('transitionend', handler); } catch (e) {}
+            _closeModalOriginal();
+          }, 500);
+        } else {
+          _closeModalOriginal();
+        }
+      };
 
       // abre após 2000ms (2 segundos)
       window.addEventListener('load', function(){
