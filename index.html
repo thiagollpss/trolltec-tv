@@ -55,6 +55,26 @@
     ul li {
       margin: 10px 0;
     }
+    .beneficios {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 40px auto;
+    }
+    .beneficio {
+      background: #111;
+      border: 1px solid red;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 8px rgba(255,0,0,0.5);
+    }
+    .beneficio h4 {
+      color: red;
+      margin-bottom: 10px;
+    }
+
+    /* Tabela de planos */
     .tabela-planos {
       display: flex;
       justify-content: center;
@@ -154,18 +174,28 @@
   <h3>Por que escolher a TrollIPTV?</h3>
   <p>A TrollIPTV oferece o melhor em IPTV, garantindo estabilidade, qualidade e diversidade de conteúdo. Nosso serviço foi desenvolvido para quem busca praticidade e entretenimento ilimitado.</p>
 
-  <h3>O que você vai encontrar:</h3>
-  <ul>
-    <li>✔ Mais de 2.000 canais nacionais e internacionais, incluindo esportes, filmes, séries, documentários e muito mais.</li>
-    <li>✔ Futebol ao vivo dos principais campeonatos, para você não perder nenhum lance do seu time favorito.</li>
-    <li>✔ Filmes e séries em alta definição (HD), disponíveis a qualquer momento.</li>
-  </ul>
-
-  <h3>Compatibilidade total</h3>
-  <p>Nosso sistema funciona em Smart TVs, celulares, computadores e TV Box, oferecendo flexibilidade para você assistir onde quiser.</p>
-
-  <h3>Suporte dedicado</h3>
-  <p>Nosso atendimento é feito diretamente pelo WhatsApp, garantindo resposta rápida e suporte eficiente sempre que você precisar.</p>
+  <div class="beneficios">
+    <div class="beneficio">
+      <h4>+2000 Canais</h4>
+      <p>Esportes, filmes, séries, documentários e muito mais em qualidade HD.</p>
+    </div>
+    <div class="beneficio">
+      <h4>Futebol ao Vivo</h4>
+      <p>Acompanhe os principais campeonatos sem perder nenhum lance.</p>
+    </div>
+    <div class="beneficio">
+      <h4>Filmes e Séries</h4>
+      <p>Assista quando quiser, direto na sua TV, celular, computador ou TV Box.</p>
+    </div>
+    <div class="beneficio">
+      <h4>Compatibilidade Total</h4>
+      <p>Nosso sistema funciona em todos os dispositivos modernos.</p>
+    </div>
+    <div class="beneficio">
+      <h4>Suporte Rápido</h4>
+      <p>Atendimento direto pelo WhatsApp, rápido e eficiente.</p>
+    </div>
+  </div>
 
   <h3>Nossos Planos</h3>
   <div class="tabela-planos">
@@ -209,20 +239,15 @@
     // Modal
     const modal = document.getElementById("popupModal");
     const span = document.getElementsByClassName("close")[0];
-    const STORAGE_KEY = "popup_shown";
-
-    function shouldShow() {
-      return !localStorage.getItem(STORAGE_KEY);
-    }
 
     function openModal() {
       modal.style.display = "block";
-      localStorage.setItem(STORAGE_KEY, "true");
     }
 
-    if (shouldShow()) {
-      setTimeout(openModal, 2000); // abre sozinho na 1ª visita
-    }
+    // Abre automaticamente ao carregar a página
+    window.onload = function() {
+      setTimeout(openModal, 1500); 
+    };
 
     span.onclick = function() {
       modal.style.display = "none";
