@@ -8,12 +8,15 @@
   <meta name="keywords" content="IPTV 2025, IPTV atualizado, lista IPTV grátis, canais ao vivo, futebol ao vivo 2025, filmes em HD, séries online, TrollIPTV, IPTV Brasil, IPTV barato">
   <meta name="author" content="TrollIPTV">
   <meta name="robots" content="index, follow">
+  <!-- CANONICAL -->
   <link rel="canonical" href="https://trolliptv.com.br/" />
+  <!-- FAVICON -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1D9881ST18"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -22,126 +25,148 @@
     gtag('config', 'G-1D9881ST18');
   </script>
 
+  <!-- Título com ano automático -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const ano = new Date().getFullYear();
-      document.title = "TV ONLINE EM HD " + ano + ": FUTEBOL, FILMES E SÉRIES | TESTE IPTV GRÁTIS";
+      document.title = "TV Online em HD " + ano + ": Futebol, Filmes e Séries | Teste IPTV Grátis";
     });
   </script>
 
   <style>
     body {
-      background-color: #000;
-      color: #fff;
+      background-color: black;
+      color: white;
       font-family: Arial, sans-serif;
       text-align: center;
       margin: 0;
       padding: 0;
     }
 
-    /* TÍTULOS */
+    /* Título principal */
     h1 {
-      color: #ff1a1a;
+      color: red;
       margin-top: 30px;
       font-size: 48px;
       font-style: italic;
       font-weight: bold;
-      text-shadow: 0 0 12px rgba(255,0,0,0.6);
+      text-shadow: 0px 0px 12px rgba(255,0,0,0.6);
     }
     h2 {
-      color: #fff;
+      color: white;
       margin-top: 10px;
       margin-bottom: 25px;
       font-size: 20px;
-      letter-spacing: .5px;
+    }
+
+    /* QUADRO DO PLANO (ANTIGO) */
+    .plano {
+      border: 2px solid white;
+      display: inline-block;
+      padding: 25px 20px;
+      margin: 20px auto;
+      border-radius: 12px;
+      background-color: #111;
+      width: 90%;
+      max-width: 320px;
+      box-shadow: 0px 0px 12px rgba(255,255,255,0.4);
+    }
+    .plano h3 {
+      color: white;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+    .plano p {
+      color: red;
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 0;
     }
 
     /* === CHECKLIST NEON VERMELHO (SUBSTITUI O QUADRO DO PLANO) === */
-    .seletor {
+    .plano-checklist {
+      border: 2px solid #ff1a1a;
       display: inline-block;
-      width: 92%;
-      max-width: 720px;
-      margin: 22px auto 10px;
       padding: 22px 20px;
-      border-radius: 14px;
-      background: #0d0d0d;
-      border: 2px solid #ff2020;
-      box-shadow: 0 0 16px rgba(255,0,0,0.55), inset 0 0 10px rgba(255,0,0,0.25);
+      margin: 20px auto 10px;
+      border-radius: 12px;
+      background-color: #0b0000;
+      width: 92%;
+      max-width: 560px;
+      box-shadow: 0 0 14px rgba(255,0,0,.55), inset 0 0 12px rgba(255,0,0,.25);
       text-align: left;
     }
-    .seletor h3 {
-      margin: 0 0 14px;
+    .plano-checklist h3 {
+      margin: 0 0 12px;
       font-size: 22px;
       color: #fff;
-      text-shadow: 0 0 10px rgba(255,0,0,0.6);
-      letter-spacing: .6px;
-    }
-    .grupo {
-      margin-bottom: 16px;
-      padding: 14px;
-      border: 1px solid rgba(255,32,32,0.6);
-      border-radius: 10px;
-      background: linear-gradient(180deg, rgba(255,0,0,0.05), rgba(0,0,0,0.25));
-      box-shadow: inset 0 0 8px rgba(255,0,0,0.2);
-    }
-    .grupo legend, .grupo-title {
-      font-size: 14px;
-      color: #ff4a4a;
-      font-weight: bold;
-      margin-bottom: 10px;
-      display: block;
-      letter-spacing: .6px;
-    }
-    .lista-opcoes {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 10px 16px;
-    }
-    .opcao {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 14px;
+      text-align: center;
+      text-shadow: 0 0 12px rgba(255,0,0,.7), 0 0 22px rgba(255,0,0,.35);
       letter-spacing: .5px;
     }
-    .opcao input[type="checkbox"]{
-      width: 18px;
-      height: 18px;
-      accent-color: #ff2a2a; /* suporta navegadores modernos */
-      cursor: pointer;
+    .grupo {
+      margin: 12px 0;
+      padding: 12px 12px 6px;
+      border: 1px solid rgba(255,0,0,.35);
+      border-radius: 10px;
+      background: rgba(255,0,0,.06);
     }
-    .opcao label{
-      cursor: pointer;
+    .grupo legend,
+    .grupo-label {
+      display: block;
+      font-weight: 700;
+      color: #ff4d4d;
+      margin-bottom: 8px;
+      font-size: 14px;
+      letter-spacing: .6px;
+      text-shadow: 0 0 8px rgba(255,0,0,.45);
     }
-    .cta-wrap {
+    .opcoes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 8px 14px;
+    }
+    .op {
       display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 12px;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: #eee;
     }
-    .btn-cta {
+    .op input[type="checkbox"],
+    .op input[type="radio"] {
+      width: 17px;
+      height: 17px;
+      accent-color: #ff2a2a;
+      cursor: pointer;
+    }
+    .plano-checklist .btn-enviar {
+      width: 100%;
+      margin-top: 14px;
       display: inline-block;
       text-decoration: none;
+      text-align: center;
       color: #fff;
-      border: 2px solid #ff1f1f;
+      border: 2px solid red;
       border-radius: 10px;
-      padding: 10px 14px;
+      padding: 12px 14px;
       font-weight: bold;
       box-shadow: 0 0 12px rgba(255,0,0,0.55);
       transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
       font-size: 14px;
-      background: rgba(255,0,0,0.1);
+      background: #b30000;
     }
-    .btn-cta:hover { 
+    .plano-checklist .btn-enviar:hover {
       background: #d81111;
-      box-shadow: 0 0 18px rgba(255,0,0,0.8);
+      box-shadow: 0 0 18px rgba(255,0,0,0.8), 0 0 28px rgba(255,0,0,0.3);
       transform: translateY(-1px);
     }
-    .nota {
-      font-size: 12px;
+    .plano-checklist small {
+      display: block;
+      margin-top: 8px;
       color: #bbb;
-      margin-top: 6px;
-      letter-spacing: .3px;
+      font-size: 12px;
+      text-align: center;
     }
 
     /* BENEFÍCIOS */
@@ -158,7 +183,7 @@
       border: 2px solid limegreen;
       padding: 15px;
       border-radius: 12px;
-      box-shadow: 0 0 8px rgba(0,255,0,0.3);
+      box-shadow: 0px 0px 8px rgba(0, 255, 0, 0.3);
       font-weight: bold;
       color: limegreen;
       font-size: 15px;
@@ -172,7 +197,7 @@
       background-color: #111;
       border: 2px solid red;
       border-radius: 12px;
-      box-shadow: 0 0 12px rgba(255,0,0,0.4);
+      box-shadow: 0px 0px 12px rgba(255,0,0,0.4);
       text-align: left;
       font-size: 16px;
     }
@@ -219,7 +244,11 @@
       font-weight: bold;
       margin-bottom: 10px;
     }
-    .plano-card h4 { color: #fff; font-size: 20px; margin: 8px 0 6px; }
+    .plano-card h4 {
+      color: #fff;
+      font-size: 20px;
+      margin: 8px 0 6px;
+    }
     .plano-card .preco {
       font-size: 28px;
       font-weight: 800;
@@ -227,54 +256,129 @@
       margin: 6px 0 4px;
       text-shadow: 0 0 10px rgba(255,0,0,0.55);
     }
-    .plano-card .detalhe { color: #bbb; font-size: 14px; margin-bottom: 12px; }
-    .plano-card ul {
-      list-style: none; padding: 0; margin: 10px 0 16px;
-      text-align: left; color: #ddd; font-size: 14px; line-height: 1.5;
+    .plano-card .detalhe {
+      color: #bbb;
+      font-size: 14px;
+      margin-bottom: 12px;
     }
-    .plano-card ul li { margin: 6px 0; }
+    .plano-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 16px;
+      text-align: left;
+      color: #ddd;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .plano-card ul li {
+      margin: 6px 0;
+    }
     .btn-assinar {
-      display: inline-block; text-decoration: none; color: #fff; border: 2px solid red;
-      border-radius: 10px; padding: 10px 14px; font-weight: bold;
-      box-shadow: 0 0 10px rgba(255,0,0,0.45); transition: background .2s ease, box-shadow .2s ease;
+      display: inline-block;
+      text-decoration: none;
+      color: #fff;
+      border: 2px solid red;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(255,0,0,0.45);
+      transition: background .2s ease, box-shadow .2s ease;
       font-size: 14px;
     }
-    .btn-assinar:hover { background: #d81111; box-shadow: 0 0 16px rgba(255,0,0,0.7), 0 0 26px rgba(255,0,0,0.3); }
-
-    /* BOTÃO WHATSAPP FIXO */
-    .whatsapp-button {
-      position: fixed; bottom: 60px; right: 20px; background-color: #25D366; color: white;
-      border-radius: 50px; padding: 12px 18px; font-size: 14px; font-weight: bold; text-decoration: none;
-      display: flex; align-items: center; gap: 8px; box-shadow: 0 0 6px #25D366, 0 0 12px #25D366;
-      transition: 0.3s; z-index: 999;
+    .btn-assinar:hover {
+      background: #d81111;
+      box-shadow: 0 0 16px rgba(255,0,0,0.7), 0 0 26px rgba(255,0,0,0.3);
     }
-    .whatsapp-button:hover { background-color: #128C7E; box-shadow: 0 0 10px #25D366, 0 0 20px #25D366; }
-    .whatsapp-button img { width: 20px; height: 20px; }
+
+    /* BOTÃO WHATSAPP */
+    .whatsapp-button {
+      position: fixed;
+      bottom: 60px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50px;
+      padding: 12px 18px;
+      font-size: 14px;
+      font-weight: bold;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 0 6px #25D366, 0 0 12px #25D366;
+      transition: 0.3s;
+      z-index: 999;
+    }
+    .whatsapp-button:hover {
+      background-color: #128C7E;
+      box-shadow: 0 0 10px #25D366, 0 0 20px #25D366;
+    }
+    .whatsapp-button img {
+      width: 20px;
+      height: 20px;
+    }
 
     /* RODAPÉ */
-    footer { margin-top: 50px; padding: 20px; color: gray; font-size: 14px; }
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      color: gray;
+      font-size: 14px;
+    }
 
     /* MODAL PROMOCIONAL */
     .promo-modal-overlay {
-      display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 10000;
-      align-items: center; justify-content: center; opacity: 0; transition: opacity .4s ease;
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      z-index: 10000;
+      /* display: flex;  <-- esta linha fazia o modal aparecer imediatamente */
+      align-items: center;
+      justify-content: center;
     }
-    .promo-modal-overlay.is-visible { opacity: 1; }
     .promo-modal-box {
-      background: #111; width: 90%; max-width: 420px; border: 2px solid red; border-radius: 14px;
-      box-shadow: 0 0 20px red; color: #fff; text-align: center; padding: 20px 18px 16px; position: relative;
-      transform: translateY(-24px); opacity: 0; transition: transform .4s ease, opacity .4s ease;
+      background: #111;
+      width: 90%;
+      max-width: 420px;
+      border: 2px solid red;
+      border-radius: 14px;
+      box-shadow: 0 0 20px red;
+      color: #fff;
+      text-align: center;
+      padding: 20px 18px 16px;
+      position: relative;
     }
-    .promo-modal-overlay.is-visible .promo-modal-box { transform: translateY(0); opacity: 1; }
-    .promo-modal-close { position: absolute; top: 8px; right: 12px; font-size: 28px; color: #aaa; cursor: pointer; user-select: none; }
-    .promo-modal-close:hover { color: #fff; }
+    .promo-modal-close {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      font-size: 28px;
+      color: #aaa;
+      cursor: pointer;
+      user-select: none;
+    }
+    .promo-modal-close:hover {
+      color: #fff;
+    }
+    .promo-modal-box h2 {
+      margin: 6px 0 10px;
+      color: #fff;
+      font-size: 18px;
+    }
+    .promo-modal-box p {
+      margin: 0;
+      color: #ddd;
+      line-height: 1.5;
+      font-size: 15px;
+    }
 
-    /* RESPONSIVO */
+    /* Responsividade */
     @media (max-width: 600px) {
       h1 { font-size: 34px; }
       h2 { font-size: 16px; }
-      .seletor { padding: 16px; }
-      .lista-opcoes { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+      .plano { padding: 15px; }
+      .plano h3 { font-size: 20px; }
       .beneficio-box { font-size: 14px; padding: 12px; }
       .info-iptv { padding: 15px; font-size: 14px; }
       .plano-card { padding: 14px; }
@@ -283,171 +387,146 @@
       .btn-assinar { font-size: 13px; padding: 8px 12px; }
       .whatsapp-button { font-size: 12px; padding: 10px 14px; }
     }
+
+    /* === Animação do modal (APENAS ADIÇÕES) === */
+    .promo-modal-overlay { opacity: 0; transition: opacity .4s ease; }
+    .promo-modal-overlay.is-visible { opacity: 1; }
+    .promo-modal-box { transform: translateY(-24px); opacity: 0; transition: transform .4s ease, opacity .4s ease; }
+    .promo-modal-overlay.is-visible .promo-modal-box { transform: translateY(0); opacity: 1; }
   </style>
 </head>
 <body>
-  <h1>TROLLIPTV</h1>
-  <h2>+2.000 CANAIS | FUTEBOL AO VIVO | SEM TRAVAMENTOS | QUALIDADE HD</h2>
+  <h1>TrollIPTV</h1>
+  <h2>+2.000 Canais | Futebol Ao Vivo | Sem Travamentos | Qualidade HD</h2>
 
-  <!-- === CHECKLIST NEON VERMELHO (COM DISPOSITIVOS + MARCAS) === -->
-  <!-- ALTERADO AQUI -->
-  <section class="seletor" aria-labelledby="seletorTitulo">
-    <h3 id="seletorTitulo">ESCOLHA SEU DISPOSITIVO</h3>
+  <!-- === SUBSTITUI O QUADRO DE PREÇO PELO CHECKLIST NEON VERMELHO === -->
+  <div class="plano-checklist" id="planoChecklist">
+    <h3>ESCOLHA SEU DISPOSITIVO E PREFERÊNCIAS</h3>
 
-    <div class="grupo" role="group" aria-labelledby="lblDispositivos">
-      <span id="lblDispositivos" class="grupo-title">SELECIONE UM OU MAIS DISPOSITIVOS:</span>
-      <div class="lista-opcoes">
-        <div class="opcao"><input id="d-smarttv" type="checkbox" value="SMART TV"><label for="d-smarttv">SMART TV</label></div>
-        <div class="opcao"><input id="d-tvbox" type="checkbox" value="TV BOX"><label for="d-tvbox">TV BOX</label></div>
-        <div class="opcao"><input id="d-celular" type="checkbox" value="CELULAR / ANDROID"><label for="d-celular">CELULAR / ANDROID</label></div>
-        <div class="opcao"><input id="d-fire" type="checkbox" value="FIRE TV STICK"><label for="d-fire">FIRE TV STICK</label></div>
-        <div class="opcao"><input id="d-pc" type="checkbox" value="COMPUTADOR / PC"><label for="d-pc">COMPUTADOR / PC</label></div>
-        <div class="opcao"><input id="d-tablet" type="checkbox" value="TABLET"><label for="d-tablet">TABLET</label></div>
-        <div class="opcao"><input id="d-outro" type="checkbox" value="OUTRO"><label for="d-outro">OUTRO</label></div>
-      </div>
-      <p class="nota">VOCÊ PODE MARCAR VARIAS OPÇÕES.</p>
-    </div>
-
-    <div class="grupo" role="group" aria-labelledby="lblMarcas">
-      <span id="lblMarcas" class="grupo-title">ESCOLHA SUA MARCA DE TV:</span>
-      <div class="lista-opcoes">
-        <div class="opcao"><input id="m-samsung" type="checkbox" value="SAMSUNG"><label for="m-samsung">SAMSUNG</label></div>
-        <div class="opcao"><input id="m-lg" type="checkbox" value="LG"><label for="m-lg">LG</label></div>
-        <div class="opcao"><input id="m-philips" type="checkbox" value="PHILIPS"><label for="m-philips">PHILIPS</label></div>
-        <div class="opcao"><input id="m-sony" type="checkbox" value="SONY"><label for="m-sony">SONY</label></div>
-        <div class="opcao"><input id="m-tcl" type="checkbox" value="TCL"><label for="m-tcl">TCL</label></div>
-        <div class="opcao"><input id="m-philco" type="checkbox" value="PHILCO"><label for="m-philco">PHILCO</label></div>
-        <div class="opcao"><input id="m-aoc" type="checkbox" value="AOC"><label for="m-aoc">AOC</label></div>
-        <div class="opcao"><input id="m-panasonic" type="checkbox" value="PANASONIC"><label for="m-panasonic">PANASONIC</label></div>
-        <div class="opcao"><input id="m-outras" type="checkbox" value="OUTRAS"><label for="m-outras">OUTRAS</label></div>
+    <div class="grupo">
+      <span class="grupo-label">DISPOSITIVO</span>
+      <div class="opcoes">
+        <label class="op"><input type="checkbox" name="dispositivo" value="SMART TV"> SMART TV</label>
+        <label class="op"><input type="checkbox" name="dispositivo" value="CELULAR"> CELULAR</label>
+        <label class="op"><input type="checkbox" name="dispositivo" value="COMPUTADOR"> COMPUTADOR</label>
+        <label class="op"><input type="checkbox" name="dispositivo" value="TV BOX"> TV BOX</label>
+        <label class="op"><input type="checkbox" name="dispositivo" value="TABLET"> TABLET</label>
       </div>
     </div>
 
-    <div class="cta-wrap">
-      <a href="#" id="btnWhatsChecklist" class="btn-cta">ENVIAR ESCOLHAS PELO WHATSAPP</a>
-      <a href="https://wa.me/5584996126008?text=QUERO%20TESTE%20GR%C3%81TIS" target="_blank" class="btn-cta">TESTE GRÁTIS AGORA</a>
+    <div class="grupo">
+      <span class="grupo-label">SISTEMA</span>
+      <div class="opcoes">
+        <label class="op"><input type="checkbox" name="sistema" value="ANDROID"> ANDROID</label>
+        <label class="op"><input type="checkbox" name="sistema" value="IOS"> IOS</label>
+        <label class="op"><input type="checkbox" name="sistema" value="TIZEN (SAMSUNG)"> TIZEN (SAMSUNG)</label>
+        <label class="op"><input type="checkbox" name="sistema" value="WEBOS (LG)"> WEBOS (LG)</label>
+        <label class="op"><input type="checkbox" name="sistema" value="WINDOWS/MAC"> WINDOWS/MAC</label>
+      </div>
     </div>
-    <p class="nota">AO CLICAR, SUAS ESCOLHAS SERÃO ENVIADAS EM UMA MENSAGEM PARA O NOSSO WHATSAPP.</p>
-  </section>
-  <!-- /ALTERADO AQUI -->
+
+    <div class="grupo">
+      <span class="grupo-label">QUALIDADE</span>
+      <div class="opcoes">
+        <label class="op"><input type="radio" name="qualidade" value="HD" checked> HD</label>
+        <label class="op"><input type="radio" name="qualidade" value="FULL HD"> FULL HD</label>
+        <label class="op"><input type="radio" name="qualidade" value="4K"> 4K</label>
+      </div>
+    </div>
+
+    <a href="#" id="btnChecklistWhats" class="btn-enviar">ENVIAR ESCOLHAS PELO WHATSAPP</a>
+    <small>VOCÊ TAMBÉM PODE CLICAR NO BOTÃO FIXO “TESTE GRÁTIS”.</small>
+  </div>
+  <!-- === FIM DO CHECKLIST === -->
 
   <div class="beneficios">
-    <div class="beneficio-box">● MAIS DE 2.000 CANAIS NACIONAIS E INTERNACIONAIS</div>
-    <div class="beneficio-box">● FUTEBOL AO VIVO DOS PRINCIPAIS CAMPEONATOS</div>
-    <div class="beneficio-box">● STREAMING EM ALTA QUALIDADE HD, SEM TRAVAMENTOS</div>
-    <div class="beneficio-box">● COMPATÍVEL COM SMART TVS, CELULARES E COMPUTADORES</div>
-    <div class="beneficio-box">● SUPORTE RÁPIDO E ATENDIMENTO VIA WHATSAPP</div>
-    <div class="beneficio-box">● LISTA 100% ATUALIZADA (ATUALIZAÇÃO DIÁRIA)</div>
+    <div class="beneficio-box">● Mais de 2.000 canais nacionais e internacionais</div>
+    <div class="beneficio-box">● Futebol ao vivo dos principais campeonatos</div>
+    <div class="beneficio-box">● Streaming em alta qualidade HD, sem travamentos</div>
+    <div class="beneficio-box">● Compatível com Smart TVs, celulares e computadores</div>
+    <div class="beneficio-box">● Suporte rápido e atendimento via WhatsApp</div>
+    <div class="beneficio-box">● Lista 100% atualizada (atualização diária)</div>
   </div>
 
   <div class="info-iptv">
-    <h3>POR QUE ESCOLHER A TROLLIPTV?</h3>
-    <p>A <b>TROLLIPTV</b> OFERECE O MELHOR EM IPTV, GARANTINDO ESTABILIDADE, QUALIDADE E DIVERSIDADE DE CONTEÚDO. NOSSO SERVIÇO FOI DESENVOLVIDO PARA QUEM BUSCA PRATICIDADE E ENTRETENIMENTO ILIMITADO.</p>
+    <h3>Por que escolher a TrollIPTV?</h3>
+    <p>A <b>TrollIPTV</b> oferece o melhor em IPTV, garantindo estabilidade, qualidade e diversidade de conteúdo. Nosso serviço foi desenvolvido para quem busca praticidade e entretenimento ilimitado.</p>
 
-    <h3>O QUE VOCÊ VAI ENCONTRAR:</h3>
-    <p>✔ MAIS DE <b>2.000 CANAIS</b> NACIONAIS E INTERNACIONAIS, INCLUINDO ESPORTES, FILMES, SÉRIES, DOCUMENTÁRIOS E MUITO MAIS.</p>
-    <p>✔ FUTEBOL AO VIVO DOS PRINCIPAIS CAMPEONATOS, PARA VOCÊ NÃO PERDER NENHUM LANCE DO SEU TIME FAVORITO.</p>
-    <p>✔ FILMES E SÉRIES EM ALTA DEFINIÇÃO (HD), DISPONÍVEIS A QUALQUER MOMENTO.</p>
+    <h3>O que você vai encontrar:</h3>
+    <p>✔ Mais de <b>2.000 canais</b> nacionais e internacionais, incluindo esportes, filmes, séries, documentários e muito mais.</p>
+    <p>✔ Futebol ao vivo dos principais campeonatos, para você não perder nenhum lance do seu time favorito.</p>
+    <p>✔ Filmes e séries em alta definição (HD), disponíveis a qualquer momento.</p>
 
-    <h3>COMPATIBILIDADE TOTAL</h3>
-    <p>NOSSO SISTEMA FUNCIONA EM <b>SMART TVS, CELULARES, COMPUTADORES E TV BOX</b>, OFERECENDO FLEXIBILIDADE PARA VOCÊ ASSISTIR ONDE QUISER.</p>
+    <h3>Compatibilidade total</h3>
+    <p>Nosso sistema funciona em <b>Smart TVs, celulares, computadores e TV Box</b>, oferecendo flexibilidade para você assistir onde quiser.</p>
 
-    <h3>SUPORTE DEDICADO</h3>
-    <p>NOSSO ATENDIMENTO É FEITO DIRETAMENTE PELO <b>WHATSAPP</b>, GARANTINDO RESPOSTA RÁPIDA E SUPORTE EFICIENTE SEMPRE QUE VOCÊ PRECISAR.</p>
+    <h3>Suporte dedicado</h3>
+    <p>Nosso atendimento é feito diretamente pelo <b>WhatsApp</b>, garantindo resposta rápida e suporte eficiente sempre que você precisar.</p>
   </div>
 
   <div class="tabela-planos">
     <div class="plano-card">
-      <span class="tag">PLANO MENSAL</span>
-      <h4>ASSINATURA 30 DIAS</h4>
-      <div class="preco">R$ 25<span style="font-size:16px; color:#ddd;">/MÊS</span></div>
-      <div class="detalhe">RENOVAÇÃO SIMPLES E SUPORTE RÁPIDO</div>
+      <span class="tag">Plano Mensal</span>
+      <h4>Assinatura 30 dias</h4>
+      <div class="preco">R$ 25<span style="font-size:16px; color:#ddd;">/mês</span></div>
+      <div class="detalhe">Renovação simples e suporte rápido</div>
       <ul>
-        <li>✔ ACESSO COMPLETO EM HD</li>
-        <li>✔ ESPORTES E MUITO FUTEBOL</li>
-        <li>✔ FILMES E SÉRIES</li>
-        <li>✔ 1 DISPOSITIVO POR VEZ</li>
+        <li>✔ Acesso completo em HD</li>
+        <li>✔ Esportes e muito futebol</li>
+        <li>✔ Filmes e séries</li>
+        <li>✔ 1 dispositivo por vez</li>
       </ul>
-      <a class="btn-assinar" href="https://wa.me/5584996126008?text=QUERO%20ASSINAR%20O%20PLANO%20MENSAL%20(30%20DIAS)" target="_blank">ASSINAR MENSAL</a>
+      <a class="btn-assinar" href="https://wa.me/5584996126008?text=Quero%20assinar%20o%20Plano%20Mensal%20(30%20dias)" target="_blank">Assinar Mensal</a>
     </div>
 
     <div class="plano-card">
-      <span class="tag">MAIS POPULAR</span>
-      <h4>ASSINATURA 3 MESES</h4>
-      <div class="preco">R$ 69<span style="font-size:16px; color:#ddd;">/TRIMESTRE</span></div>
-      <div class="detalhe">ECONOMIA VS. MENSAL</div>
+      <span class="tag">Mais Popular</span>
+      <h4>Assinatura 3 meses</h4>
+      <div class="preco">R$ 69<span style="font-size:16px; color:#ddd;">/trimestre</span></div>
+      <div class="detalhe">Economia vs. mensal</div>
       <ul>
-        <li>✔ ACESSO COMPLETO EM HD</li>
-        <li>✔ PROGRAMAÇÃO AO VIVO E SOB DEMANDA</li>
-        <li>✔ FILMES, SÉRIES E ESPORTES</li>
-        <li>✔ 1–2 DISPOSITIVOS (CONFORME DISPONIBILIDADE)</li>
+        <li>✔ Acesso completo em HD</li>
+        <li>✔ Programação ao vivo e sob demanda</li>
+        <li>✔ Filmes, séries e esportes</li>
+        <li>✔ 1–2 dispositivos (conforme disponibilidade)</li>
       </ul>
-      <a class="btn-assinar" href="https://wa.me/5584996126008?text=QUERO%20ASSINAR%20O%20PLANO%20TRIMESTRAL%20(3%20MESES)" target="_blank">ASSINAR TRIMESTRAL</a>
+      <a class="btn-assinar" href="https://wa.me/5584996126008?text=Quero%20assinar%20o%20Plano%20Trimestral%20(3%20meses)" target="_blank">Assinar Trimestral</a>
     </div>
 
     <div class="plano-card">
-      <span class="tag">MELHOR CUSTO-BENEFÍCIO</span>
-      <h4>ASSINATURA 12 MESES</h4>
-      <div class="preco">R$ 239<span style="font-size:16px; color:#ddd;">/ANO</span></div>
-      <div class="detalhe">PAGUE MENOS POR MÊS</div>
+      <span class="tag">Melhor Custo-Benefício</span>
+      <h4>Assinatura 12 meses</h4>
+      <div class="preco">R$ 239<span style="font-size:16px; color:#ddd;">/ano</span></div>
+      <div class="detalhe">Pague menos por mês</div>
       <ul>
-        <li>✔ ACESSO COMPLETO EM HD O ANO TODO</li>
-        <li>✔ ESPORTES (INCLUI FUTEBOL) + ENTRETENIMENTO</li>
-        <li>✔ FILMES E SÉRIES ATUALIZADOS</li>
-        <li>✔ SUPORTE PRIORITÁRIO</li>
+        <li>✔ Acesso completo em HD o ano todo</li>
+        <li>✔ Esportes (inclui futebol) + entretenimento</li>
+        <li>✔ Filmes e séries atualizados</li>
+        <li>✔ Suporte prioritário</li>
       </ul>
-      <a class="btn-assinar" href="https://wa.me/5584996126008?text=QUERO%20ASSINAR%20O%20PLANO%20ANUAL%20(12%20MESES)" target="_blank">ASSINAR ANUAL</a>
+      <a class="btn-assinar" href="https://wa.me/5584996126008?text=Quero%20assinar%20o%20Plano%20Anual%20(12%20meses)" target="_blank">Assinar Anual</a>
     </div>
   </div>
 
-  <a class="whatsapp-button" href="https://wa.me/5584996126008?text=OL%C3%81%20TENHO%20INTERESSE%20NO%20IPTV" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WHATSAPP"> 𝙏𝙀𝙎𝙏𝙀 𝙂𝙍𝘼́𝙏𝙄𝙎
+  <a class="whatsapp-button" href="https://wa.me/5584996126008?text=Ol%C3%A1%20tenho%20interesse%20no%20IPTV" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"> 𝙏𝙀𝙎𝙏𝙀 𝙂𝙍𝘼́𝙏𝙄𝙎
   </a>
 
-  <!-- MODAL -->
+  <!-- Modal -->
   <div class="promo-modal-overlay" id="promoModal" role="dialog" aria-modal="true" aria-labelledby="promoTitle">
     <div class="promo-modal-box">
-      <span class="promo-modal-close" id="promoClose" aria-label="FECHAR">&times;</span>
-      <h2 id="promoTitle">SEJA MUITO BEM-VINDOª!</h2>
-      <p>VOCÊ ACABOU DE ENCONTRAR UM DOS MELHORES SERVIÇOS DE IPTV DA ATUALIDADE.<br>
-      PEGUE SEU TESTE GRATUITO AGORA, BASTA CLICAR NO BOTÃO DE WHATSAPP.</p>
+      <span class="promo-modal-close" id="promoClose" aria-label="Fechar">&times;</span>
+      <h2 id="promoTitle">Seja muito bem-vindoª!</h2>
+      <p>você acabou de encontrar um dos melhores serviços de iptv da atualidade<br>
+      pegue seu teste gratuito agora,basta clicar no botão de whatsapp.</p>
     </div>
   </div>
 
-  <footer>©<span id="ano"></span> TROLLIPTV</footer>
+  <footer>©<span id="ano"></span> TrollIPTV</footer>
 
   <script>
     document.getElementById("ano").textContent = new Date().getFullYear();
 
-    /* MONTA MENSAGEM DO WHATSAPP COM AS ESCOLHAS */
-    (function(){
-      const btn = document.getElementById('btnWhatsChecklist');
-      function coletaSelecionados(seletor){
-        return Array.from(document.querySelectorAll(seletor))
-          .filter(c => c.checked)
-          .map(c => c.value.toUpperCase());
-      }
-      function montarTexto(){
-        const disp = coletaSelecionados('.seletor [id^="d-"]');
-        const marcas = coletaSelecionados('.seletor [id^="m-"]');
-        const linhas = [];
-        linhas.push("OLÁ! QUERO TESTE GRÁTIS/ASSINATURA.");
-        if(disp.length) linhas.push("DISPOSITIVOS: " + disp.join(", "));
-        if(marcas.length) linhas.push("MARCAS DE TV: " + marcas.join(", "));
-        linhas.push("VIM PELO SITE TROLLIPTV.");
-        return linhas.join("%0A");
-      }
-      if(btn){
-        btn.addEventListener('click', function(e){
-          e.preventDefault();
-          const texto = montarTexto();
-          const url = "https://wa.me/5584996126008?text=" + texto;
-          window.open(url, '_blank');
-        });
-      }
-    })();
-
-    /* MODAL PROMOCIONAL COM ANIMAÇÃO */
     (function(){
       var modal = document.getElementById('promoModal');
       var closeBtn = document.getElementById('promoClose');
@@ -459,10 +538,12 @@
         if(modal) modal.style.display = 'none';
       }
 
+      /* === Animação do modal (APENAS ADIÇÕES) === */
       var _openModalOriginal = openModal;
       openModal = function () {
-        _openModalOriginal();
+        _openModalOriginal();            // mantém seu display = 'flex'
         if (modal) {
+          // adiciona a classe no próximo frame pra transição funcionar
           requestAnimationFrame(function () {
             modal.classList.add('is-visible');
           });
@@ -472,14 +553,19 @@
       var _closeModalOriginal = closeModal;
       closeModal = function () {
         if (modal) {
+          // inicia fade/slide out
           modal.classList.remove('is-visible');
+
+          // quando a transição do overlay terminar, esconde de fato
           var handler = function (e) {
             if (e.target === modal) {
               modal.removeEventListener('transitionend', handler);
-              _closeModalOriginal();
+              _closeModalOriginal();     // chama seu display = 'none'
             }
           };
           modal.addEventListener('transitionend', handler);
+
+          // fallback caso o transitionend não dispare
           setTimeout(function () {
             try { modal.removeEventListener('transitionend', handler); } catch (e) {}
             _closeModalOriginal();
@@ -489,14 +575,50 @@
         }
       };
 
+      // abre após 2000ms (2 segundos)
       window.addEventListener('load', function(){
         setTimeout(openModal, 2000);
       });
+
+      // fecha no X
       if(closeBtn){
         closeBtn.addEventListener('click', closeModal);
       }
+
+      // fecha com ESC
       window.addEventListener('keydown', function(e){
         if(e.key === 'Escape'){ closeModal(); }
+      });
+    })();
+
+    // === ENVIO DAS ESCOLHAS DO CHECKLIST PARA O WHATSAPP ===
+    (function(){
+      var btn = document.getElementById('btnChecklistWhats');
+      if(!btn) return;
+
+      function coletar(nome){
+        return Array.from(document.querySelectorAll('input[name="'+nome+'"]:checked')).map(function(i){
+          return i.value;
+        });
+      }
+
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        var dispositivos = coletar('dispositivo');
+        var sistemas = coletar('sistema');
+        var qualidade = (document.querySelector('input[name="qualidade"]:checked')||{}).value || 'HD';
+
+        var linhas = [];
+        linhas.push('OLÁ! QUERO TESTAR O IPTV.');
+        if(dispositivos.length) linhas.push('DISPOSITIVO: ' + dispositivos.join(', '));
+        if(sistemas.length) linhas.push('SISTEMA: ' + sistemas.join(', '));
+        linhas.push('QUALIDADE: ' + qualidade);
+        linhas.push('PODEM ME AJUDAR A CONFIGURAR?');
+
+        var texto = encodeURIComponent(linhas.join('\n'));
+        var numero = '5584996126008';
+        var url = 'https://wa.me/' + numero + '?text=' + texto;
+        window.open(url, '_blank');
       });
     })();
   </script>
