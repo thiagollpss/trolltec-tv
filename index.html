@@ -403,34 +403,52 @@
   <div class="plano-checklist" id="planoChecklist">
     <h3>ESCOLHA SEU DISPOSITIVO E PREFERÊNCIAS</h3>
 
+    <!-- DISPOSITIVO (AGORA RADIO: ESCOLHA ÚNICA) -->
     <div class="grupo">
       <span class="grupo-label">DISPOSITIVO</span>
       <div class="opcoes">
-        <label class="op"><input type="checkbox" name="dispositivo" value="SMART TV"> SMART TV</label>
-        <label class="op"><input type="checkbox" name="dispositivo" value="CELULAR"> CELULAR</label>
-        <label class="op"><input type="checkbox" name="dispositivo" value="COMPUTADOR"> COMPUTADOR</label>
-        <label class="op"><input type="checkbox" name="dispositivo" value="TV BOX"> TV BOX</label>
-        <label class="op"><input type="checkbox" name="dispositivo" value="TABLET"> TABLET</label>
+        <label class="op"><input type="radio" name="dispositivo" value="SMART TV"> SMART TV</label>
+        <label class="op"><input type="radio" name="dispositivo" value="CELULAR"> CELULAR</label>
+        <label class="op"><input type="radio" name="dispositivo" value="COMPUTADOR"> COMPUTADOR</label>
+        <label class="op"><input type="radio" name="dispositivo" value="TV BOX"> TV BOX</label>
+        <label class="op"><input type="radio" name="dispositivo" value="TABLET"> TABLET</label>
       </div>
     </div>
 
+    <!-- MARCA DA TV (NOVO BLOCO) -->
+    <div class="grupo">
+      <span class="grupo-label">MARCA DA TV</span>
+      <div class="opcoes">
+        <label class="op"><input type="radio" name="marca" value="SAMSUNG"> SAMSUNG</label>
+        <label class="op"><input type="radio" name="marca" value="LG"> LG</label>
+        <label class="op"><input type="radio" name="marca" value="TCL"> TCL</label>
+        <label class="op"><input type="radio" name="marca" value="SONY"> SONY</label>
+        <label class="op"><input type="radio" name="marca" value="PHILIPS"> PHILIPS</label>
+        <label class="op"><input type="radio" name="marca" value="AOC"> AOC</label>
+        <label class="op"><input type="radio" name="marca" value="PHILCO"> PHILCO</label>
+        <label class="op"><input type="radio" name="marca" value="XIAOMI"> XIAOMI</label>
+        <label class="op"><input type="radio" name="marca" value="OUTRA"> OUTRA</label>
+      </div>
+    </div>
+
+    <!-- SISTEMA (AGORA RADIO: ESCOLHA ÚNICA) -->
     <div class="grupo">
       <span class="grupo-label">SISTEMA</span>
       <div class="opcoes">
-        <label class="op"><input type="checkbox" name="sistema" value="ANDROID"> ANDROID</label>
-        <label class="op"><input type="checkbox" name="sistema" value="IOS"> IOS</label>
-        <label class="op"><input type="checkbox" name="sistema" value="TIZEN (SAMSUNG)"> TIZEN (SAMSUNG)</label>
-        <label class="op"><input type="checkbox" name="sistema" value="WEBOS (LG)"> WEBOS (LG)</label>
-        <label class="op"><input type="checkbox" name="sistema" value="WINDOWS/MAC"> WINDOWS/MAC</label>
+        <label class="op"><input type="radio" name="sistema" value="ANDROID"> ANDROID</label>
+        <label class="op"><input type="radio" name="sistema" value="IOS"> IOS</label>
+        <label class="op"><input type="radio" name="sistema" value="TIZEN (SAMSUNG)"> TIZEN (SAMSUNG)</label>
+        <label class="op"><input type="radio" name="sistema" value="WEBOS (LG)"> WEBOS (LG)</label>
+        <label class="op"><input type="radio" name="sistema" value="WINDOWS/MAC"> WINDOWS/MAC</label>
       </div>
     </div>
 
+    <!-- TROCA DE QUALIDADE -> TESTE (4H / 6H) -->
     <div class="grupo">
-      <span class="grupo-label">QUALIDADE</span>
+      <span class="grupo-label">TESTE</span>
       <div class="opcoes">
-        <label class="op"><input type="radio" name="qualidade" value="HD" checked> HD</label>
-        <label class="op"><input type="radio" name="qualidade" value="FULL HD"> FULL HD</label>
-        <label class="op"><input type="radio" name="qualidade" value="4K"> 4K</label>
+        <label class="op"><input type="radio" name="teste" value="4 HORAS"> 4 HORAS</label>
+        <label class="op"><input type="radio" name="teste" value="6 HORAS"> 6 HORAS</label>
       </div>
     </div>
 
@@ -596,23 +614,25 @@
       var btn = document.getElementById('btnChecklistWhats');
       if(!btn) return;
 
-      function coletar(nome){
-        return Array.from(document.querySelectorAll('input[name="'+nome+'"]:checked')).map(function(i){
-          return i.value;
-        });
+      function pegarUnico(nome){
+        var el = document.querySelector('input[name="'+nome+'"]:checked');
+        return el ? el.value : '';
       }
 
       btn.addEventListener('click', function(e){
         e.preventDefault();
-        var dispositivos = coletar('dispositivo');
-        var sistemas = coletar('sistema');
-        var qualidade = (document.querySelector('input[name="qualidade"]:checked')||{}).value || 'HD';
+
+        var dispositivo = pegarUnico('dispositivo');
+        var marca = pegarUnico('marca');
+        var sistema = pegarUnico('sistema');
+        var teste = pegarUnico('teste');
 
         var linhas = [];
         linhas.push('OLÁ! QUERO TESTAR O IPTV.');
-        if(dispositivos.length) linhas.push('DISPOSITIVO: ' + dispositivos.join(', '));
-        if(sistemas.length) linhas.push('SISTEMA: ' + sistemas.join(', '));
-        linhas.push('QUALIDADE: ' + qualidade);
+        if(dispositivo) linhas.push('DISPOSITIVO: ' + dispositivo);
+        if(marca) linhas.push('MARCA: ' + marca);
+        if(sistema) linhas.push('SISTEMA: ' + sistema);
+        if(teste) linhas.push('TESTE: ' + teste);
         linhas.push('PODEM ME AJUDAR A CONFIGURAR?');
 
         var texto = encodeURIComponent(linhas.join('\n'));
