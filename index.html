@@ -59,7 +59,7 @@
       font-size: 20px;
     }
 
-    /* QUADRO DO PLANO */
+    /* QUADRO DO PLANO (ANTIGO) */
     .plano {
       border: 2px solid white;
       display: inline-block;
@@ -81,6 +81,92 @@
       font-size: 20px;
       font-weight: bold;
       margin-bottom: 0;
+    }
+
+    /* === CHECKLIST NEON VERMELHO (SUBSTITUI O QUADRO DO PLANO) === */
+    .plano-checklist {
+      border: 2px solid #ff1a1a;
+      display: inline-block;
+      padding: 22px 20px;
+      margin: 20px auto 10px;
+      border-radius: 12px;
+      background-color: #0b0000;
+      width: 92%;
+      max-width: 560px;
+      box-shadow: 0 0 14px rgba(255,0,0,.55), inset 0 0 12px rgba(255,0,0,.25);
+      text-align: left;
+    }
+    .plano-checklist h3 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      color: #fff;
+      text-align: center;
+      text-shadow: 0 0 12px rgba(255,0,0,.7), 0 0 22px rgba(255,0,0,.35);
+      letter-spacing: .5px;
+    }
+    .grupo {
+      margin: 12px 0;
+      padding: 12px 12px 6px;
+      border: 1px solid rgba(255,0,0,.35);
+      border-radius: 10px;
+      background: rgba(255,0,0,.06);
+    }
+    .grupo legend,
+    .grupo-label {
+      display: block;
+      font-weight: 700;
+      color: #ff4d4d;
+      margin-bottom: 8px;
+      font-size: 14px;
+      letter-spacing: .6px;
+      text-shadow: 0 0 8px rgba(255,0,0,.45);
+    }
+    .opcoes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 8px 14px;
+    }
+    .op {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: #eee;
+    }
+    .op input[type="checkbox"],
+    .op input[type="radio"] {
+      width: 17px;
+      height: 17px;
+      accent-color: #ff2a2a;
+      cursor: pointer;
+    }
+    .plano-checklist .btn-enviar {
+      width: 100%;
+      margin-top: 14px;
+      display: inline-block;
+      text-decoration: none;
+      text-align: center;
+      color: #fff;
+      border: 2px solid red;
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-weight: bold;
+      box-shadow: 0 0 12px rgba(255,0,0,0.55);
+      transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
+      font-size: 14px;
+      background: #b30000;
+    }
+    .plano-checklist .btn-enviar:hover {
+      background: #d81111;
+      box-shadow: 0 0 18px rgba(255,0,0,0.8), 0 0 28px rgba(255,0,0,0.3);
+      transform: translateY(-1px);
+    }
+    .plano-checklist small {
+      display: block;
+      margin-top: 8px;
+      color: #bbb;
+      font-size: 12px;
+      text-align: center;
     }
 
     /* BENEFÍCIOS */
@@ -313,10 +399,45 @@
   <h1>TrollIPTV</h1>
   <h2>+2.000 Canais | Futebol Ao Vivo | Sem Travamentos | Qualidade HD</h2>
 
-  <div class="plano">
-    <h3>VALOR DO PLANO</h3>
-    <p>R$25/MÊS</p>
+  <!-- === SUBSTITUI O QUADRO DE PREÇO PELO CHECKLIST NEON VERMELHO === -->
+  <div class="plano-checklist" id="planoChecklist">
+    <h3>ESCOLHA SEU DISPOSITIVO E PREFERÊNCIAS</h3>
+
+    <div class="grupo">
+      <span class="grupo-label">DISPOSITIVO</span>
+      <div class="opcoes">
+        <label class="op"><input type="checkbox" name="dispositivo" value="SMART TV"> SMART TV</label>
+        <label class="op"><input type="checkbox" name="dispositivo" value="CELULAR"> CELULAR</label>
+        <label class="op"><input type="checkbox" name="dispositivo" value="COMPUTADOR"> COMPUTADOR</label>
+        <label class="op"><input type="checkbox" name="dispositivo" value="TV BOX"> TV BOX</label>
+        <label class="op"><input type="checkbox" name="dispositivo" value="TABLET"> TABLET</label>
+      </div>
+    </div>
+
+    <div class="grupo">
+      <span class="grupo-label">SISTEMA</span>
+      <div class="opcoes">
+        <label class="op"><input type="checkbox" name="sistema" value="ANDROID"> ANDROID</label>
+        <label class="op"><input type="checkbox" name="sistema" value="IOS"> IOS</label>
+        <label class="op"><input type="checkbox" name="sistema" value="TIZEN (SAMSUNG)"> TIZEN (SAMSUNG)</label>
+        <label class="op"><input type="checkbox" name="sistema" value="WEBOS (LG)"> WEBOS (LG)</label>
+        <label class="op"><input type="checkbox" name="sistema" value="WINDOWS/MAC"> WINDOWS/MAC</label>
+      </div>
+    </div>
+
+    <div class="grupo">
+      <span class="grupo-label">QUALIDADE</span>
+      <div class="opcoes">
+        <label class="op"><input type="radio" name="qualidade" value="HD" checked> HD</label>
+        <label class="op"><input type="radio" name="qualidade" value="FULL HD"> FULL HD</label>
+        <label class="op"><input type="radio" name="qualidade" value="4K"> 4K</label>
+      </div>
+    </div>
+
+    <a href="#" id="btnChecklistWhats" class="btn-enviar">ENVIAR ESCOLHAS PELO WHATSAPP</a>
+    <small>VOCÊ TAMBÉM PODE CLICAR NO BOTÃO FIXO “TESTE GRÁTIS”.</small>
   </div>
+  <!-- === FIM DO CHECKLIST === -->
 
   <div class="beneficios">
     <div class="beneficio-box">● Mais de 2.000 canais nacionais e internacionais</div>
@@ -467,6 +588,37 @@
       // fecha com ESC
       window.addEventListener('keydown', function(e){
         if(e.key === 'Escape'){ closeModal(); }
+      });
+    })();
+
+    // === ENVIO DAS ESCOLHAS DO CHECKLIST PARA O WHATSAPP ===
+    (function(){
+      var btn = document.getElementById('btnChecklistWhats');
+      if(!btn) return;
+
+      function coletar(nome){
+        return Array.from(document.querySelectorAll('input[name="'+nome+'"]:checked')).map(function(i){
+          return i.value;
+        });
+      }
+
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        var dispositivos = coletar('dispositivo');
+        var sistemas = coletar('sistema');
+        var qualidade = (document.querySelector('input[name="qualidade"]:checked')||{}).value || 'HD';
+
+        var linhas = [];
+        linhas.push('OLÁ! QUERO TESTAR O IPTV.');
+        if(dispositivos.length) linhas.push('DISPOSITIVO: ' + dispositivos.join(', '));
+        if(sistemas.length) linhas.push('SISTEMA: ' + sistemas.join(', '));
+        linhas.push('QUALIDADE: ' + qualidade);
+        linhas.push('PODEM ME AJUDAR A CONFIGURAR?');
+
+        var texto = encodeURIComponent(linhas.join('\n'));
+        var numero = '5584996126008';
+        var url = 'https://wa.me/' + numero + '?text=' + texto;
+        window.open(url, '_blank');
       });
     })();
   </script>
