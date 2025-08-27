@@ -247,7 +247,6 @@
       inset: 0;
       background: rgba(0,0,0,0.8);
       z-index: 10000;
-      /* display: flex;  <-- esta linha fazia o modal aparecer imediatamente */
       align-items: center;
       justify-content: center;
     }
@@ -313,83 +312,7 @@
   <h1>TrollIPTV</h1>
   <h2>+2.000 Canais | Futebol Ao Vivo | Sem Travamentos | Qualidade HD</h2>
 
-  <div class="plano">
-    <h3>VALOR DO PLANO</h3>
-    <p>R$25/MÊS</p>
-  </div>
-
-  <div class="beneficios">
-    <div class="beneficio-box">● Mais de 2.000 canais nacionais e internacionais</div>
-    <div class="beneficio-box">● Futebol ao vivo dos principais campeonatos</div>
-    <div class="beneficio-box">● Streaming em alta qualidade HD, sem travamentos</div>
-    <div class="beneficio-box">● Compatível com Smart TVs, celulares e computadores</div>
-    <div class="beneficio-box">● Suporte rápido e atendimento via WhatsApp</div>
-    <div class="beneficio-box">● Lista 100% atualizada (atualização diária)</div>
-  </div>
-
-  <div class="info-iptv">
-    <h3>Por que escolher a TrollIPTV?</h3>
-    <p>A <b>TrollIPTV</b> oferece o melhor em IPTV, garantindo estabilidade, qualidade e diversidade de conteúdo. Nosso serviço foi desenvolvido para quem busca praticidade e entretenimento ilimitado.</p>
-
-    <h3>O que você vai encontrar:</h3>
-    <p>✔ Mais de <b>2.000 canais</b> nacionais e internacionais, incluindo esportes, filmes, séries, documentários e muito mais.</p>
-    <p>✔ Futebol ao vivo dos principais campeonatos, para você não perder nenhum lance do seu time favorito.</p>
-    <p>✔ Filmes e séries em alta definição (HD), disponíveis a qualquer momento.</p>
-
-    <h3>Compatibilidade total</h3>
-    <p>Nosso sistema funciona em <b>Smart TVs, celulares, computadores e TV Box</b>, oferecendo flexibilidade para você assistir onde quiser.</p>
-
-    <h3>Suporte dedicado</h3>
-    <p>Nosso atendimento é feito diretamente pelo <b>WhatsApp</b>, garantindo resposta rápida e suporte eficiente sempre que você precisar.</p>
-  </div>
-
-  <div class="tabela-planos">
-    <div class="plano-card">
-      <span class="tag">Plano Mensal</span>
-      <h4>Assinatura 30 dias</h4>
-      <div class="preco">R$ 25<span style="font-size:16px; color:#ddd;">/mês</span></div>
-      <div class="detalhe">Renovação simples e suporte rápido</div>
-      <ul>
-        <li>✔ Acesso completo em HD</li>
-        <li>✔ Esportes e muito futebol</li>
-        <li>✔ Filmes e séries</li>
-        <li>✔ 1 dispositivo por vez</li>
-      </ul>
-      <a class="btn-assinar" href="https://wa.me/5584996126008?text=Quero%20assinar%20o%20Plano%20Mensal%20(30%20dias)" target="_blank">Assinar Mensal</a>
-    </div>
-
-    <div class="plano-card">
-      <span class="tag">Mais Popular</span>
-      <h4>Assinatura 3 meses</h4>
-      <div class="preco">R$ 69<span style="font-size:16px; color:#ddd;">/trimestre</span></div>
-      <div class="detalhe">Economia vs. mensal</div>
-      <ul>
-        <li>✔ Acesso completo em HD</li>
-        <li>✔ Programação ao vivo e sob demanda</li>
-        <li>✔ Filmes, séries e esportes</li>
-        <li>✔ 1–2 dispositivos (conforme disponibilidade)</li>
-      </ul>
-      <a class="btn-assinar" href="https://wa.me/5584996126008?text=Quero%20assinar%20o%20Plano%20Trimestral%20(3%20meses)" target="_blank">Assinar Trimestral</a>
-    </div>
-
-    <div class="plano-card">
-      <span class="tag">Melhor Custo-Benefício</span>
-      <h4>Assinatura 12 meses</h4>
-      <div class="preco">R$ 239<span style="font-size:16px; color:#ddd;">/ano</span></div>
-      <div class="detalhe">Pague menos por mês</div>
-      <ul>
-        <li>✔ Acesso completo em HD o ano todo</li>
-        <li>✔ Esportes (inclui futebol) + entretenimento</li>
-        <li>✔ Filmes e séries atualizados</li>
-        <li>✔ Suporte prioritário</li>
-      </ul>
-      <a class="btn-assinar" href="https://wa.me/5584996126008?text=Quero%20assinar%20o%20Plano%20Anual%20(12%20meses)" target="_blank">Assinar Anual</a>
-    </div>
-  </div>
-
-  <a class="whatsapp-button" href="https://wa.me/5584996126008?text=Ol%C3%A1%20tenho%20interesse%20no%20IPTV" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"> 𝙏𝙀𝙎𝙏𝙀 𝙂𝙍𝘼́𝙏𝙄𝙎
-  </a>
+  <!-- ... resto do corpo igual ao seu ... -->
 
   <!-- Modal -->
   <div class="promo-modal-overlay" id="promoModal" role="dialog" aria-modal="true" aria-labelledby="promoTitle">
@@ -411,68 +334,29 @@
       var closeBtn = document.getElementById('promoClose');
 
       function openModal(){
-        if(modal) modal.style.display = 'flex';
-      }
-      function closeModal(){
-        if(modal) modal.style.display = 'none';
-      }
-
-      /* === Animação do modal (APENAS ADIÇÕES) === */
-      var _openModalOriginal = openModal;
-      openModal = function () {
-        _openModalOriginal();            // mantém seu display = 'flex'
-        if (modal) {
-          // adiciona a classe no próximo frame pra transição funcionar
+        if(modal){
+          modal.style.display = 'flex';
           requestAnimationFrame(function () {
             modal.classList.add('is-visible');
           });
         }
-      };
-
-      var _closeModalOriginal = closeModal;
-      closeModal = function () {
-        if (modal) {
-          // inicia fade/slide out
+      }
+      function closeModal(){
+        if(modal){
           modal.classList.remove('is-visible');
-
-          // quando a transição do overlay terminar, esconde de fato
-          var handler = function (e) {
-            if (e.target === modal) {
-              modal.removeEventListener('transitionend', handler);
-              _closeModalOriginal();     // chama seu display = 'none'
-            }
-          };
-          modal.addEventListener('transitionend', handler);
-
-          // fallback caso o transitionend não dispare
-          setTimeout(function () {
-            try { modal.removeEventListener('transitionend', handler); } catch (e) {}
-            _closeModalOriginal();
-          }, 500);
-        } else {
-          _closeModalOriginal();
+          setTimeout(()=> modal.style.display = 'none', 400);
         }
-      };
+      }
 
       // abre após 2000ms (2 segundos)
       window.addEventListener('load', function(){
         setTimeout(openModal, 2000);
       });
 
-      // fecha no X
+      // fecha só no X
       if(closeBtn){
         closeBtn.addEventListener('click', closeModal);
       }
-
-      // fecha ao clicar fora da caixa
-      window.addEventListener('click', function(e){
-        if(e.target === modal){ closeModal(); }
-      });
-
-      // fecha com ESC
-      window.addEventListener('keydown', function(e){
-        if(e.key === 'Escape'){ closeModal(); }
-      });
     })();
   </script>
 </body>
