@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IPTV - Teste grátis 2025: melhor lista do momento</title>
-  <meta name="description" content="IPTV 2025 atualizado: futebol ao vivo, filmes e séries lançamentos em HD sem travamentos. Teste agora no TrollIPTV!">
+  <title>TV Online em HD: Futebol, Filmes e Séries | Teste IPTV Grátis</title>
+  <meta name="description" content="Assista IPTV grátis atualizado 2025 no TrollIPTV: +2.000 canais nacionais e internacionais, filmes, séries e futebol ao vivo em HD sem travamentos. Teste agora mesmo!">
   <meta name="keywords" content="IPTV 2025, IPTV atualizado, lista IPTV grátis, canais ao vivo, futebol ao vivo 2025, filmes em HD, séries online, TrollIPTV, IPTV Brasil, IPTV barato">
   <meta name="author" content="TrollIPTV">
   <meta name="robots" content="index, follow">
@@ -29,7 +29,7 @@
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const ano = new Date().getFullYear();
-      document.title = "IPTV - Teste grátis " + ano + ": melhor lista do momento";
+      document.title = "TV Online em HD " + ano + ": Futebol, Filmes e Séries | Teste IPTV Grátis";
     });
   </script>
 
@@ -642,5 +642,36 @@
       });
     })();
   </script>
+
+<!-- Som único -->
+<audio id="soundClick" src="clique.mp3" preload="auto"></audio>
+
+<script>
+  function playSound() {
+    var el = document.getElementById("soundClick");
+    if (el) {
+      el.currentTime = 0; // reinicia sempre
+      el.play();
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    // Som ao fechar modal (X)
+    var closeBtn = document.getElementById("promoClose");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function() {
+        playSound();
+      });
+    }
+
+    // Som ao marcar/desmarcar opções
+    document.querySelectorAll("input[type=radio], input[type=checkbox]").forEach(function(el) {
+      el.addEventListener("change", function() {
+        playSound();
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
