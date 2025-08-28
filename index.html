@@ -393,7 +393,59 @@
     .promo-modal-overlay.is-visible { opacity: 1; }
     .promo-modal-box { transform: translateY(-24px); opacity: 0; transition: transform .4s ease, opacity .4s ease; }
     .promo-modal-overlay.is-visible .promo-modal-box { transform: translateY(0); opacity: 1; }
-  </style>
+  
+  /* BOTÃO WHATSAPP DENTRO DO QUADRO */
+  .plano-checklist .btn-enviar {
+    width: 100%;
+    margin-top: 10px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    border: 2px solid red;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(255,0,0,0.55);
+    transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
+    font-size: 13px;
+    background: #b30000;
+  }
+  .plano-checklist .btn-enviar:hover {
+    background: #d81111;
+    box-shadow: 0 0 16px rgba(255,0,0,0.8), 0 0 22px rgba(255,0,0,0.3);
+    transform: translateY(-1px);
+  }
+
+  /* MOBILE RESPONSIVO */
+  @media (max-width: 600px) {
+    h1 { font-size: 28px; }
+    h2 { font-size: 14px; margin-bottom: 15px; }
+
+    .plano-checklist {
+      padding: 12px 10px;
+      margin: 12px auto;
+      font-size: 13px;
+    }
+    .grupo { padding: 8px; }
+    .op { font-size: 13px; }
+    .plano-checklist .btn-enviar {
+      padding: 9px 10px;
+      font-size: 12px;
+    }
+
+    .beneficio-box {
+      font-size: 13px;
+      padding: 10px;
+    }
+    .info-iptv { padding: 12px; font-size: 13px; }
+    .plano-card { padding: 12px; }
+    .plano-card h4 { font-size: 16px; }
+    .plano-card .preco { font-size: 20px; }
+    .btn-assinar { font-size: 12px; padding: 7px 10px; }
+    .whatsapp-button { font-size: 11px; padding: 8px 12px; }
+  }
+
+</style>
 </head>
 <body>
   <h1>TrollIPTV</h1>
