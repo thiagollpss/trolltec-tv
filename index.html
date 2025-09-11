@@ -323,6 +323,31 @@
       z-index: 999;
     }
     .whatsapp-button:hover {
+
+/* BOTÃO CATÁLOGO */
+.catalogo-button {
+  position: fixed;
+  bottom: 120px; /* fica logo acima do botão WhatsApp */
+  right: 20px;
+  background: linear-gradient(180deg, #ff1a1a, #b30000);
+  color: white;
+  border-radius: 50px;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 0 8px #ff1a1a, 0 0 16px rgba(255,0,0,0.8);
+  transition: 0.3s;
+  z-index: 999;
+}
+.catalogo-button:hover {
+  background: #d40000;
+  box-shadow: 0 0 12px #ff1a1a, 0 0 22px rgba(255,0,0,1);
+}
+
       background-color: #128C7E;
       box-shadow: 0 0 10px #25D366, 0 0 20px #25D366;
     }
@@ -558,6 +583,31 @@
       }
     }
 
+
+/* BOTÃO CATÁLOGO (fixo em cima do WhatsApp) */
+.catalogo-button {
+  position: fixed;
+  bottom: 120px; /* fica 60px acima do botão verde */
+  right: 20px;
+  background: linear-gradient(180deg, #ff1a1a, #b30000);
+  color: white;
+  border-radius: 50px;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 0 8px #ff1a1a, 0 0 16px rgba(255,0,0,0.8);
+  transition: 0.3s;
+  z-index: 1000;
+}
+.catalogo-button:hover {
+  background: #d40000;
+  box-shadow: 0 0 12px #ff1a1a, 0 0 22px rgba(255,0,0,1);
+}
+
 </style>
 </head>
 <body>
@@ -690,6 +740,12 @@
       <a class="btn-assinar" href="https://wa.me/5584996126008?text=Quero%20assinar%20o%20Plano%20Anual%20(12%20meses)" target="_blank">Assinar Anual</a>
     </div>
   </div>
+
+  
+<a class="catalogo-button" href="https://trolliptv.com.br/filmes.html" target="_blank">
+  🎬 Ver Catálogo
+</a>
+
 
   <a class="whatsapp-button" href="https://wa.me/5584996126008?text=Ol%C3%A1%20tenho%20interesse%20no%20IPTV" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"> 𝙏𝙀𝙎𝙏𝙀 𝙂𝙍𝘼́𝙏𝙄𝙎
