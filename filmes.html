@@ -108,7 +108,12 @@
       color: #4fc3f7;
       text-decoration: none;
     }
-  </style>
+  
+    /* Tornar todo o cartão clicável e manter estilo */
+    .filme a { display: block; color: inherit; text-decoration: none; }
+    .filme a:hover { text-decoration: none; }
+    
+</style>
 </head>
 <body>
   <header>🎬 Catálogo de Filmes Atualizado</header>
@@ -190,12 +195,14 @@
           div.classList.add("filme");
 
           div.innerHTML = `
-            <img src="https://image.tmdb.org/t/p/w300${filme.poster_path}" alt="${filme.title}">
-            <div class="info">
-              <div class="titulo">${filme.title}</div>
-              <div class="nota">⭐ ${filme.vote_average.toFixed(1)}</div>
-              <div class="sinopse">${filme.overview ? filme.overview.substring(0, 100) + '...' : 'Sem sinopse.'}</div>
-            </div>
+            <a href="https://www.themoviedb.org/movie/${filme.id}" target="_blank" class="filme-link">
+              <img src="https://image.tmdb.org/t/p/w300${filme.poster_path}" alt="${filme.title}">
+              <div class="info">
+                <div class="titulo">${filme.title}</div>
+                <div class="nota">⭐ ${filme.vote_average.toFixed(1)}</div>
+                <div class="sinopse">${filme.overview ? filme.overview.substring(0, 100) + '...' : 'Sem sinopse.'}</div>
+              </div>
+            </a>
           `;
 
           catalogo.appendChild(div);
