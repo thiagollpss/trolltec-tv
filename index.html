@@ -5,18 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Google tag (gtag.js) -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1D9881ST18"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-1D9881ST18');
+    gtag("js", new Date());
+    gtag("config", "G-1D9881ST18");
   </script>
 
   <!-- Título otimizado para SEO -->
-  <title>Teste IPTV Grátis | +2.000 Canais HD, Futebol Ao Vivo, Séries e Filmes – TrollIPTV</title>
-  <meta name="description" content="Teste IPTV grátis por 4 horas com +2.000 canais em HD/Full HD. Assista futebol ao vivo, filmes e séries premium com qualidade." />
-  <meta name="keywords" content="IPTV, TrollIPTV, futebol ao vivo, canais HD, séries, filmes, IPTV Brasil" />
+  <title>Teste IPTV Grátis por 4h | +2000 Canais HD, Futebol Ao Vivo e Séries – TrollIPTV</title>
+  <meta name="description" content="Teste IPTV grátis por 4 horas com mais de 2.000 canais em HD/Full HD. Futebol ao vivo, filmes e séries premium com qualidade e suporte via WhatsApp." />
+  <meta name="keywords" content="IPTV, TrollIPTV, futebol ao vivo, canais HD, séries, filmes, IPTV Brasil, teste IPTV grátis" />
   <meta name="author" content="TrollIPTV" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://trolliptv.com.br/" />
@@ -26,13 +28,13 @@
 
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="TrollIPTV – IPTV HD, Futebol Ao Vivo e Séries" />
-  <meta property="og:description" content="Mais de 2.000 canais, futebol, filmes e séries em HD. Teste grátis! Suporte via WhatsApp." />
+  <meta property="og:description" content="Mais de 2.000 canais, futebol, filmes e séries em HD. Teste grátis agora mesmo!" />
   <meta property="og:image" content="https://trolliptv.com.br/banner.jpg" />
   <meta property="og:url" content="https://trolliptv.com.br/" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Schema.org dados estruturados -->
+  <!-- Schema.org dados estruturados (Service + FAQPage) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -46,250 +48,164 @@
     }
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "É legal usar IPTV?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "IPTV é legal desde que o conteúdo seja devidamente licenciado e autorizado pelos detentores dos direitos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quais dispositivos funcionam?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O TrollIPTV funciona em Smart TVs, TV Box, celulares Android e iOS, computadores Windows e Mac."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qual a velocidade recomendada?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Para assistir em HD, recomenda-se internet de 10-15 Mbps. Para múltiplas transmissões, 20-30 Mbps."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como funciona o teste grátis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Você recebe acesso gratuito por 4 horas para testar qualidade, canais e estabilidade do serviço."
+        }
+      }
+    ]
+  }
+  </script>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    /* Reset & base */
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    html {font-size: 16px;}
     body {
-      font-family: Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       background-color: #000;
       color: #eee;
       line-height: 1.6;
-      padding-top: 70px;
+      padding-top: 74px;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
-    a {
-      color: #fff;
-      text-decoration: none;
-    }
-    a:hover {
-      color: #ff4444;
-    }
-    .container {
-      width: 90%;
-      max-width: 1100px;
-      margin: auto;
-      padding: 20px 0;
-    }
-    h1 {
-      color: #4CAF50;
-      margin-bottom: 15px;
-      font-size: 2.4rem;
-    }
-    h2, h3, h4 {
-      color: #4CAF50;
-      margin-bottom: 15px;
-    }
-
-    p {
-      margin-bottom: 15px;
-    }
+    a {color: inherit; text-decoration: none;}
+    .container {width: 90%; max-width: 1100px; margin: auto; padding: 20px 0;}
+    h1,h2,h3,h4 {color: #e6ffe6; margin-bottom: 15px;}
+    h1 {color:#4CAF50;font-size:2.2rem;}
+    p {margin-bottom: 15px; color:#dcdcdc;}
 
     /* NAVBAR */
     .navbar {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      background-color: #111;
+      position: fixed; top: 0; left: 0; right: 0;
+      background-color: rgba(17,17,17,0.98);
       border-bottom: 2px solid #ff4444;
       z-index: 9999;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex; justify-content: space-between; align-items: center;
       padding: 12px 24px;
+      backdrop-filter: blur(6px);
     }
-    .nav-logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: #ff4444;
-    }
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
+    .nav-logo {font-size: 20px; font-weight: 800; color: #ff4444;}
+    .nav-links {list-style:none; display:flex; gap:20px; align-items:center;}
     .nav-links li a {
-      font-size: 15px;
-      padding: 6px 12px;
-      border-radius: 4px;
-      transition: background 0.3s, color 0.3s;
-      color: #ff4444;
+      font-size: 15px; padding: 6px 12px; border-radius: 6px;
+      color: #ff4444; transition: all .18s ease;
     }
-    .nav-links li a:hover {
-      background-color: #ff4444;
-      color: #000;
-    }
-    .menu-toggle {
-      display: none;
-      font-size: 26px;
-      color: #ff4444;
-      cursor: pointer;
-    }
-    @media (max-width: 768px) {
+    .nav-links li a:hover {background:#ff4444;color:#000;}
+    .menu-toggle {display:none; font-size:26px; color:#ff4444; cursor:pointer;}
+    .menu-toggle[aria-expanded="true"] {color:#4CAF50;}
+    @media (max-width:768px) {
       .nav-links {
-        position: absolute;
-        top: 60px; right: 20px;
-        background-color: #111;
-        flex-direction: column;
-        gap: 12px;
-        padding: 12px;
-        border: 1px solid #ff4444;
-        display: none;
+        position: absolute; top: 64px; right: 16px;
+        background-color: #0d0d0d; flex-direction: column;
+        gap: 12px; padding: 12px; border:1px solid #ff4444;
+        display:none; width: calc(100% - 32px); max-width: 260px; border-radius:8px;
       }
-      .navbar.active .nav-links {
-        display: flex;
-      }
-      .menu-toggle {
-        display: block;
-      }
+      .navbar.active .nav-links {display:flex; animation: slideDown .25s ease;}
+      .menu-toggle {display:block;}
+      @keyframes slideDown {from {opacity:0; transform:translateY(-8px);} to {opacity:1; transform:translateY(0);} }
     }
 
-    section {
-      margin-bottom: 60px;
-    }
+    /* Hero */
+    #section-hero {text-align:left; padding-top:6px;}
+    #section-hero h1 {font-size:1.9rem;}
+    .hero-cta {margin-top:12px;}
 
     .btn-whatsapp {
-      display: inline-block;
-      background-color: #25D366;
-      color: #fff;
-      border-radius: 50px;
-      padding: 14px 24px;
-      font-size: 18px;
-      font-weight: bold;
-      box-shadow: 0 0 10px #25D366;
-      transition: background 0.3s, transform 0.2s;
+      display:inline-block; background-color:#25D366; color:#fff;
+      border-radius:50px; padding:12px 20px; font-size:16px; font-weight:700;
+      box-shadow:0 6px 18px rgba(37,211,102,0.12);
+      transition: transform .14s ease, box-shadow .14s ease;
     }
-    .btn-whatsapp:hover {
-      background-color: #1ebe5d;
-      transform: scale(1.05);
-    }
+    .btn-whatsapp:hover {transform:translateY(-3px); box-shadow:0 10px 30px rgba(37,211,102,0.18);}
 
-    .beneficios {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-    }
+    /* Grid sections */
+    .beneficios {display:grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap:18px;}
     .beneficio-box {
-      background-color: #111;
-      border: 2px solid #4CAF50;
-      border-radius: 8px;
-      padding: 20px;
-      transition: transform 0.2s, box-shadow 0.3s;
+      background:#0e0e0e; border:1px solid rgba(76,175,80,0.12);
+      border-radius:10px; padding:18px; transition:transform .12s ease, box-shadow .12s ease;
     }
-    .beneficio-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 20px #4CAF50;
-    }
-    .beneficio-box h3 {
-      margin-bottom: 10px;
-      font-size: 20px;
-    }
+    .beneficio-box:hover {transform:translateY(-6px); box-shadow:0 10px 30px rgba(76,175,80,0.06);}
+    .beneficio-box h3{color:#bff2c7;}
 
-    .faq-item {
-      margin-bottom: 20px;
-    }
-    .faq-item h4 {
-      cursor: pointer;
-      background: #222;
-      padding: 12px 15px;
-      border: 1px solid #444;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: #4CAF50;
-    }
-    .faq-item h4::after {
-      content: "+";
-      font-size: 20px;
-      color: #4CAF50;
-    }
-    .faq-item p {
-      padding: 12px 15px;
-      background: #111;
-      border-left: 4px solid #4CAF50;
-      display: none;
-    }
-
-    .plano-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-    }
+    /* Planos */
+    .plano-cards {display:grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap:18px;}
     .plano-card {
-      background-color: #111;
-      border: 2px solid #4CAF50;
-      border-radius: 10px;
-      padding: 24px;
-      text-align: center;
-      transition: transform 0.2s, box-shadow 0.3s;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      background:#0d0d0d; border:1px solid rgba(76,175,80,0.12);
+      border-radius:10px; padding:20px; display:flex; flex-direction:column;
+      justify-content:space-between; min-height:220px;
     }
-    .plano-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 20px #4CAF50;
+    .plano-card.popular {border-color:#ff6b6b; box-shadow: 0 10px 30px rgba(255,68,68,0.06);}
+    .plano-card h3 {color:#c8ffda;}
+    .preco {font-size:28px; font-weight:800; color:#4CAF50; margin:10px 0;}
+    .selo {display:inline-block; background:#ff4444; color:#fff; padding:6px 10px; border-radius:999px; font-size:13px; margin-bottom:10px;}
+
+    /* FAQ */
+    .faq-item {margin-bottom:12px;}
+    .faq-item h4 {
+      cursor:pointer; background:#141414; padding:12px 14px; border-radius:8px;
+      border:1px solid #222; display:flex; justify-content:space-between; align-items:center;
+      color:#9ff6b7; font-weight:700;
     }
-    .plano-card h3 {
-      margin-bottom: 12px;
-      color: #4CAF50;
-    }
-    .plano-card .preco {
-      font-size: 32px;
-      font-weight: bold;
-      margin: 15px 0;
-      color: #4CAF50;
-    }
-    .plano-card p {
-      flex-grow: 1;
-      font-size: 16px;
-      margin-bottom: 20px;
-      color: #ccc;
-    }
-    .plano-card a.btn-whatsapp {
-      margin-top: auto;
-      font-size: 16px;
-      padding: 12px;
-      border-radius: 40px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      box-shadow: 0 0 10px #25D366;
-      background-color: #25D366;
-      color: #fff;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-    }
-    .plano-card a.btn-whatsapp:hover {
-      background-color: #1ebe5d;
-      box-shadow: 0 0 15px #1ebe5d;
-      color: #fff;
-      transform: scale(1.05);
+    .faq-item p {padding:12px 14px; background:#0d0d0d; border-left:4px solid #4CAF50; margin-top:8px; display:none; color:#d6d6d6; border-radius:6px;}
+    .faq-item.open h4 {border-color:#4CAF50;}
+    .faq-item.open p {display:block;}
+
+    /* Video */
+    #video-iptv {max-width:100%; height:auto; border-radius:10px; border:2px solid #ff4444; box-shadow:0 8px 30px rgba(255,68,68,0.08);}
+
+    /* Footer */
+    footer {background:#0b0b0b; color:#9a9a9a; text-align:center; padding:28px 0; border-top:1px solid #111;}
+
+    /* Accessibility helpers */
+    .sr-only {position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;}
+
+    /* Small screens */
+    @media (max-width:420px) {
+      .nav-logo {font-size:18px;}
+      h1 {font-size:1.4rem;}
+      .preco {font-size:22px;}
     }
 
-    #video-iptv {
-      max-width: 100%;
-      height: auto;
-      border: 2px solid #ff4444;
-      border-radius: 10px;
-      box-shadow: 0 0 16px #ff4444;
-      margin-top: 20px;
-    }
-
-    footer {
-      background-color: #111;
-      color: #777;
-      text-align: center;
-      padding: 30px 0;
-      border-top: 1px solid #333;
-    }
   </style>
 </head>
-
 <body>
-  <nav class="navbar">
+  <nav class="navbar" role="navigation" aria-label="Menu principal">
     <div class="nav-logo">TrollIPTV</div>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" onclick="toggleMenu()" id="menuToggle">☰</button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#section-hero">Home</a></li>
       <li><a href="#section-iptv">O que é IPTV?</a></li>
@@ -300,138 +216,192 @@
     </ul>
   </nav>
 
-  <section class="container" id="section-hero">
-    <h1>Teste IPTV Grátis: teste grátis por 4 horas-melhor lista do momento</h1>
-    <p>Mais de 2.000 canais nacionais e internacionais, streaming estável, apps compatíveis com Smart TV, TV Box, celular e PC.</p>
-    <a href="https://wa.me/5584996126008?text=ol%C3%A1%2Cquero%20um%20teste%20do%20iptv%20%F0%9F%8D%BF!" class="btn-whatsapp" target="_blank">Teste grátis via WhatsApp</a>
-  </section>
+  <main>
+    <section class="container" id="section-hero" aria-labelledby="hero-heading">
+      <h1 id="hero-heading">Teste IPTV Grátis por 4h – +2.000 Canais HD e Futebol Ao Vivo</h1>
+      <p>Mais de 2.000 canais nacionais e internacionais em HD/Full HD, streaming estável, compatível com Smart TV, TV Box, celular e computador. Teste grátis por 4 horas sem compromisso.</p>
+      <div class="hero-cta">
+        <a class="btn-whatsapp" href="https://wa.me/5584996126008?text=Ol%C3%A1,%20quero%20um%20teste%20do%20IPTV%20%F0%9F%8D%BF" target="_blank" rel="noopener" aria-label="Abrir WhatsApp para solicitar teste">Teste grátis via WhatsApp</a>
+      </div>
+    </section>
 
-  <section class="container" id="section-iptv">
-    <h2>O que é IPTV?</h2>
-    <p>IPTV (Televisão por Protocolo de Internet) transmite sinal de TV por rede de internet, sem antena ou satélite. Você acessa canais ao vivo, filmes, séries, conteúdo sob demanda – tudo pela internet.</p>
-    <h3>Como funciona o TrollIPTV?</h3>
-    <ul>
-      <li>Você escolhe um plano</li>
-      <li>Recebe lista de canais ou painel de acesso</li>
-      <li>Instala em dispositivo (Smart TV, TV Box, celular, computador)</li>
-      <li>Assiste ao vivo, esportes, filmes, séries com qualidade HD ou Full HD</li>
-    </ul>
-  </section>
+    <section class="container" id="section-iptv" aria-labelledby="iptv-heading">
+      <h2 id="iptv-heading">O que é IPTV?</h2>
+      <p>IPTV (Internet Protocol Television) é a forma de transmitir sinais de televisão através da internet — sem antenas ou satélite. Permite assistir canais ao vivo, conteúdo sob demanda, filmes e séries com multiplataforma.</p>
+      <h3>Como funciona o TrollIPTV?</h3>
+      <ul>
+        <li>Escolha um plano</li>
+        <li>Receba acesso via painel ou lista de reprodução</li>
+        <li>Configure em seu dispositivo (Smart TV, TV Box, celular, PC)</li>
+        <li>Assista com qualidade HD/Full HD</li>
+      </ul>
+    </section>
 
-  <section class="container" id="section-beneficios">
-    <h2>Por que escolher o TrollIPTV?</h2>
-    <div class="beneficios">
-      <div class="beneficio-box">
-        <h3>Alta Qualidade de Imagem</h3>
-        <p>Full HD, alta definição, sem travamentos ou buffers longos.</p>
+    <section class="container" id="section-beneficios" aria-labelledby="beneficios-heading">
+      <h2 id="beneficios-heading">Por que escolher o TrollIPTV?</h2>
+      <div class="beneficios" role="list">
+        <div class="beneficio-box" role="listitem" aria-label="Alta qualidade de imagem">
+          <h3>Alta Qualidade</h3>
+          <p>Transmissão em Full HD, otimizada para baixa latência e poucos buffers.</p>
+        </div>
+        <div class="beneficio-box" role="listitem" aria-label="Futebol ao vivo">
+          <h3>Futebol Ao Vivo</h3>
+          <p>Transmissões dos principais campeonatos nacionais e internacionais em tempo real.</p>
+        </div>
+        <div class="beneficio-box" role="listitem" aria-label="Catálogo atualizado">
+          <h3>Catálogo Atualizado</h3>
+          <p>Filmes e séries novos adicionados frequentemente com curadoria.</p>
+        </div>
+        <div class="beneficio-box" role="listitem" aria-label="Compatibilidade">
+          <h3>Compatibilidade Total</h3>
+          <p>Suporte para Smart TVs (LG, Samsung, Android TV), TV Boxes, Android, iOS, Windows e Mac.</p>
+        </div>
+        <div class="beneficio-box" role="listitem" aria-label="Suporte rápido">
+          <h3>Suporte Rápido</h3>
+          <p>Atendimento via WhatsApp com suporte técnico e ajuda na configuração.</p>
+        </div>
+        <div class="beneficio-box" role="listitem" aria-label="Estabilidade">
+          <h3>Estabilidade</h3>
+          <p>Servidores redundantes e monitoramento para alta disponibilidade.</p>
+        </div>
       </div>
-      <div class="beneficio-box">
-        <h3>Futebol Ao Vivo</h3>
-        <p>Principais campeonatos nacionais e internacionais, transmissões em tempo real.</p>
-      </div>
-      <div class="beneficio-box">
-        <h3>Catálogo Atualizado</h3>
-        <p>Filmes e séries novos, listas revisadas frequentemente para garantir qualidade.</p>
-      </div>
-      <div class="beneficio-box">
-        <h3>Compatibilidade Total</h3>
-        <p>Smart TV, Android, iOS, Windows, Mac, TV Box, Tablets – tudo compatível.</p>
-      </div>
-      <div class="beneficio-box">
-        <h3>Suporte Dedicado</h3>
-        <p>Atendimento via WhatsApp, rápido e personalizado.</p>
-      </div>
-      <div class="beneficio-box">
-        <h3>Segurança & Estabilidade</h3>
-        <p>Servidores robustos, uptime alto, experiência consistente para o usuário.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="container" id="section-planos">
-    <h2>Planos & Preços</h2>
-    <div class="plano-cards">
-      <div class="plano-card">
-        <h3>Plano Mensal</h3>
-        <div class="preco">R$ 25 / mês</div>
-        <p>Acesso total, renovar mensalmente.</p>
-        <a href="https://wa.me/5584996126008?text=ol%C3%A1%2Cquero%20um%20teste%20do%20iptv%20%F0%9F%8D%BF!" class="btn-whatsapp" target="_blank">Assinar Mensal</a>
-      </div>
-      <div class="plano-card">
-        <h3>Plano Trimestral</h3>
-        <div class="preco">R$ 70 / 3 meses</div>
-        <p>Desconto versus mensal + bônus.</p>
-        <a href="https://wa.me/5584996126008?text=ol%C3%A1%2Cquero%20um%20teste%20do%20iptv%20%F0%9F%8D%BF!" class="btn-whatsapp" target="_blank">Assinar Trimestral</a>
-      </div>
-      <div class="plano-card">
-        <h3>Plano Anual</h3>
-        <div class="preco">R$ 240 / ano</div>
-        <p>Melhor custo-benefício, economia garantida.</p>
-        <a href="https://wa.me/5584996126008?text=ol%C3%A1%2Cquero%20um%20teste%20do%20iptv%20%F0%9F%8D%BF!" class="btn-whatsapp" target="_blank">Assinar Anual</a>
-      </div>
-    </div>
-  </section>
+    <section class="container" id="section-planos" aria-labelledby="planos-heading">
+      <h2 id="planos-heading">Planos & Preços</h2>
+      <div class="plano-cards" role="list">
+        <article class="plano-card" role="listitem" aria-labelledby="mensal-title">
+          <h3 id="mensal-title">Plano Mensal</h3>
+          <div class="preco">R$ 25 / mês</div>
+          <p>Acesso total com renovação mensal — indicado para quem quer testar o serviço sem compromisso.</p>
+          <a class="btn-whatsapp" href="https://wa.me/5584996126008?text=Quero%20assinar%20o%20plano%20mensal%20do%20IPTV" target="_blank" rel="noopener" aria-label="Assinar plano mensal via WhatsApp">Assinar Mensal</a>
+        </article>
 
-  <section class="container" id="section-video">
-    <h2>Conheça o TrollIPTV em Vídeo</h2>
-    <video id="video-iptv" controls>
-      <source src="trolliptv.mp4" type="video/mp4" />
-      Seu navegador não suporta vídeo.
-    </video>
-    <div style="text-align: center; margin-top: 20px;">
-      <a href="https://wa.me/5584996126008?text=ol%C3%A1%2Cquero%20um%20teste%20do%20iptv%20%F0%9F%8D%BF!" class="btn-whatsapp" target="_blank">Assinar Agora</a>
-    </div>
-  </section>
+        <article class="plano-card popular" role="listitem" aria-labelledby="trimestral-title">
+          <span class="selo" aria-hidden="true">Mais Popular</span>
+          <h3 id="trimestral-title">Plano Trimestral</h3>
+          <div class="preco">R$ 70 / 3 meses</div>
+          <p>Melhor equilíbrio entre preço e validade. Economize comparado ao mensal e receba bônus exclusivo.</p>
+          <a class="btn-whatsapp" href="https://wa.me/5584996126008?text=Quero%20assinar%20o%20plano%20trimestral%20do%20IPTV" target="_blank" rel="noopener" aria-label="Assinar plano trimestral via WhatsApp">Assinar Trimestral</a>
+        </article>
 
-  <section class="container" id="section-faq">
-    <h2>Perguntas Frequentes (FAQ)</h2>
-    <div class="faq-item">
-      <h4>É legal usar IPTV?</h4>
-      <p>IPTV é legal se o conteúdo for licenciado...</p>
-    </div>
-    <div class="faq-item">
-      <h4>Quais dispositivos funcionam?</h4>
-      <p>Smart TVs, TV Box, etc.</p>
-    </div>
-    <div class="faq-item">
-      <h4>Qual a velocidade recomendada?</h4>
-      <p>Para HD: 10‑15 Mbps. Para múltiplas transmissões: 20‑30 Mbps.</p>
-    </div>
-    <div class="faq-item">
-      <h4>Como funciona o teste grátis?</h4>
-      <p>Você recebe acesso por 4 horas gratuitas para testar...</p>
-    </div>
-  </section>
+        <article class="plano-card" role="listitem" aria-labelledby="anual-title">
+          <h3 id="anual-title">Plano Anual</h3>
+          <div class="preco">R$ 240 / ano</div>
+          <p>Melhor custo-benefício para uso prolongado — pague uma vez e aproveite por 12 meses.</p>
+          <a class="btn-whatsapp" href="https://wa.me/5584996126008?text=Quero%20assinar%20o%20plano%20anual%20do%20IPTV" target="_blank" rel="noopener" aria-label="Assinar plano anual via WhatsApp">Assinar Anual</a>
+        </article>
+      </div>
+    </section>
 
-  <section class="container" id="section-contato">
-    <h2>Contato & Suporte</h2>
-    <p>WhatsApp: <strong>+55 84 9612‑6008</strong></p>
-    <a href="https://wa.me/5584996126008?text=ol%C3%A1%2Cquero%20um%20teste%20do%20iptv%20%F0%9F%8D%BF!" class="btn-whatsapp" target="_blank">Abrir WhatsApp</a>
-  </section>
+    <section class="container" id="section-video" aria-labelledby="video-heading">
+      <h2 id="video-heading">Conheça o TrollIPTV em Vídeo</h2>
+      <video id="video-iptv" controls preload="none" poster="banner.jpg" aria-label="Vídeo demonstrativo do TrollIPTV">
+        <source src="trolliptv.mp4" type="video/mp4" />
+        Seu navegador não suporta vídeo.
+      </video>
+      <div style="text-align:center; margin-top:16px;">
+        <a class="btn-whatsapp" href="https://wa.me/5584996126008?text=Quero%20assinar%20agora%20o%20IPTV" target="_blank" rel="noopener" aria-label="Assinar agora via WhatsApp">Assinar Agora</a>
+      </div>
+    </section>
+
+    <section class="container" id="section-faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">Perguntas Frequentes (FAQ)</h2>
+
+      <div class="faq-item" id="faq1">
+        <h4>É legal usar IPTV?</h4>
+        <p>IPTV é legal quando o conteúdo é distribuído com autorização dos detentores dos direitos autorais. Serviços que transmitem conteúdo pirata são ilegais e devem ser evitados.</p>
+      </div>
+
+      <div class="faq-item" id="faq2">
+        <h4>Quais dispositivos funcionam?</h4>
+        <p>Smart TVs (LG WebOS, Samsung Tizen, Android TV), TV Boxes (Android), aparelhos Amazon Fire, celulares Android e iOS, além de PCs com players compatíveis.</p>
+      </div>
+
+      <div class="faq-item" id="faq3">
+        <h4>Qual a velocidade recomendada?</h4>
+        <p>Para uma única transmissão em HD, recomendamos 10–15 Mbps. Para Full HD ou múltiplas transmissões simultâneas, 20–30 Mbps ou mais dependendo da quantidade de dispositivos.</p>
+      </div>
+
+      <div class="faq-item" id="faq4">
+        <h4>Como funciona o teste grátis?</h4>
+        <p>Ao solicitar o teste via WhatsApp, você recebe acesso temporário por 4 horas para testar canais, qualidade e compatibilidade. O teste expira automaticamente após o período.</p>
+      </div>
+
+      <div class="faq-item" id="faq5">
+        <h4>Posso usar em várias telas ao mesmo tempo?</h4>
+        <p>Isso depende do plano contratado. Os planos indicam quantas conexões simultâneas são permitidas; consulte o suporte via WhatsApp para ajustar conforme sua necessidade.</p>
+      </div>
+
+    </section>
+
+    <section class="container" id="section-contato" aria-labelledby="contato-heading">
+      <h2 id="contato-heading">Contato & Suporte</h2>
+      <p>Suporte via WhatsApp: <strong>+55 84 9612-6008</strong></p>
+      <p>Email de suporte: <a href="mailto:suporte@trolliptv.com.br">suporte@trolliptv.com.br</a></p>
+      <a class="btn-whatsapp" href="https://wa.me/5584996126008?text=Ol%C3%A1,%20preciso%20de%20suporte" target="_blank" rel="noopener" aria-label="Abrir WhatsApp para suporte">Abrir WhatsApp</a>
+    </section>
+  </main>
 
   <footer>
     <div class="container">
       <p>© <span id="ano"></span> TrollIPTV — Todos os direitos reservados.</p>
+      <p style="margin-top:8px; font-size:0.92rem; color:#8f8f8f;">Termos e Condições | Política de Privacidade</p>
     </div>
   </footer>
 
   <script>
-    document.getElementById("ano").textContent = new Date().getFullYear();
+    // Atualiza ano do rodapé
+    document.getElementById('ano').textContent = new Date().getFullYear();
 
+    // Menu mobile toggle (acessível)
     function toggleMenu() {
-      document.querySelector(".navbar").classList.toggle("active");
+      var navbar = document.querySelector('.navbar');
+      navbar.classList.toggle('active');
+      var btn = document.getElementById('menuToggle');
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
     }
 
-    document.querySelectorAll(".faq-item h4").forEach(function(el) {
-      el.addEventListener("click", function() {
-        var p = this.nextElementSibling;
-        if (p.style.display === "block") {
-          p.style.display = "none";
-        } else {
-          p.style.display = "block";
+    // Smooth scrolling for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener('click', function(e) {
+        var href = this.getAttribute('href');
+        if (href.length > 1) {
+          e.preventDefault();
+          var target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({behavior:'smooth', block:'start'});
+            // close mobile menu
+            var navbar = document.querySelector('.navbar');
+            if (navbar.classList.contains('active')) {
+              toggleMenu();
+            }
+          }
         }
       });
     });
+
+    // FAQ toggle with keyboard accessibility
+    document.querySelectorAll('.faq-item').forEach(function(item, idx) {
+      var header = item.querySelector('h4');
+      header.setAttribute('tabindex', '0');
+      header.addEventListener('click', function() {
+        item.classList.toggle('open');
+      });
+      header.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          item.classList.toggle('open');
+        }
+      });
+    });
+
+    // Prefer-reduced-motion respect
+    var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (prefersReduced.matches) {
+      document.documentElement.style.scrollBehavior = 'auto';
+    }
   </script>
 </body>
 </html>
