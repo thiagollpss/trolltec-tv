@@ -14,14 +14,38 @@
   </script>
 
   <!-- Título otimizado para SEO -->
-  <title>TrollIPTV Brasil – IPTV HD, Futebol ao Vivo, Filmes e Séries | Melhor IPTV</title>
-
-  <!-- Meta descrição -->
-  <meta name="description" content="TrollIPTV: +2.000 canais em HD/Full HD, transmissões de futebol ao vivo, filmes, séries, suporte via WhatsApp +55 84 9612‑6008. Teste grátis por 4 horas!" />
-  <meta name="keywords" content="IPTV, TrollIPTV, TV online, futebol ao vivo, canais HD, séries, filmes, IPTV Brasil, IPTV legal" />
+  <title>TrollIPTV Brasil – IPTV HD, Futebol ao Vivo & Séries | Melhor IPTV</title>
+  <meta name="description" content="🎁TESTE GRÁTIS: +2.000 canais em HD/Full HD, futebol ao vivo, filmes, séries." />
+  <meta name="keywords" content="IPTV, TrollIPTV, futebol ao vivo, canais HD, séries, filmes, IPTV Brasil" />
   <meta name="author" content="TrollIPTV" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://trolliptv.com.br/" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="TrollIPTV – IPTV HD, Futebol Ao Vivo e Séries" />
+  <meta property="og:description" content="Mais de 2.000 canais, futebol, filmes e séries em HD. Teste grátis! Suporte via WhatsApp." />
+  <meta property="og:image" content="https://trolliptv.com.br/banner.jpg" />
+  <meta property="og:url" content="https://trolliptv.com.br/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Schema.org dados estruturados -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "TrollIPTV",
+    "description": "IPTV com +2.000 canais em HD/Full HD, futebol ao vivo, filmes e séries.",
+    "url": "https://trolliptv.com.br/",
+    "provider": {
+      "@type": "Organization",
+      "name": "TrollIPTV"
+    }
+  }
+  </script>
 
   <style>
     * {
@@ -34,7 +58,7 @@
       background-color: #000;
       color: #eee;
       line-height: 1.6;
-      padding-top: 70px; /* espaço para navbar fixa */
+      padding-top: 70px;
     }
     a {
       color: #fff;
@@ -49,13 +73,14 @@
       margin: auto;
       padding: 20px 0;
     }
-    h1, h2, h3 {
-      color: #4CAF50; /* verde para todos os títulos, menos nav */
+    h1 {
+      color: #4CAF50;
       margin-bottom: 15px;
+      font-size: 2.4rem;
     }
-    /* exceto nav */
-    .navbar .nav-logo, .nav-links li a {
-      color: #ff4444;
+    h2, h3, h4 {
+      color: #4CAF50;
+      margin-bottom: 15px;
     }
 
     p {
@@ -65,9 +90,7 @@
     /* NAVBAR */
     .navbar {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       background-color: #111;
       border-bottom: 2px solid #ff4444;
       z-index: 9999;
@@ -79,6 +102,7 @@
     .nav-logo {
       font-size: 24px;
       font-weight: bold;
+      color: #ff4444;
     }
     .nav-links {
       list-style: none;
@@ -90,6 +114,7 @@
       padding: 6px 12px;
       border-radius: 4px;
       transition: background 0.3s, color 0.3s;
+      color: #ff4444;
     }
     .nav-links li a:hover {
       background-color: #ff4444;
@@ -104,8 +129,7 @@
     @media (max-width: 768px) {
       .nav-links {
         position: absolute;
-        top: 60px;
-        right: 20px;
+        top: 60px; right: 20px;
         background-color: #111;
         flex-direction: column;
         gap: 12px;
@@ -121,7 +145,6 @@
       }
     }
 
-    /* SEÇÕES */
     section {
       margin-bottom: 60px;
     }
@@ -149,7 +172,7 @@
     }
     .beneficio-box {
       background-color: #111;
-      border: 2px solid #4CAF50; /* verde nos boxes */
+      border: 2px solid #4CAF50;
       border-radius: 8px;
       padding: 20px;
       transition: transform 0.2s, box-shadow 0.3s;
@@ -195,11 +218,14 @@
     }
     .plano-card {
       background-color: #111;
-      border: 2px solid #4CAF50; /* verde */
+      border: 2px solid #4CAF50;
       border-radius: 10px;
       padding: 24px;
       text-align: center;
       transition: transform 0.2s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     .plano-card:hover {
       transform: translateY(-5px);
@@ -215,6 +241,40 @@
       margin: 15px 0;
       color: #4CAF50;
     }
+    .plano-card p {
+      flex-grow: 1;
+      font-size: 16px;
+      margin-bottom: 20px;
+      color: #ccc;
+    }
+    .plano-card a.btn-whatsapp {
+      margin-top: auto;
+      font-size: 16px;
+      padding: 12px;
+      border-radius: 40px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      box-shadow: 0 0 10px #25D366;
+      background-color: #25D366;
+      color: #fff;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    .plano-card a.btn-whatsapp:hover {
+      background-color: #1ebe5d;
+      box-shadow: 0 0 15px #1ebe5d;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    #video-iptv {
+      max-width: 100%;
+      height: auto;
+      border: 2px solid #ff4444;
+      border-radius: 10px;
+      box-shadow: 0 0 16px #ff4444;
+      margin-top: 20px;
+    }
 
     footer {
       background-color: #111;
@@ -222,15 +282,6 @@
       text-align: center;
       padding: 30px 0;
       border-top: 1px solid #333;
-    }
-
-    /* Video section */
-    #video-iptv {
-      max-width: 800px;
-      margin: 0 auto 60px auto;
-      display: block;
-      border-radius: 10px;
-      box-shadow: 0 0 20px #4CAF50;
     }
   </style>
 </head>
@@ -252,7 +303,7 @@
   <section class="container" id="section-hero">
     <h1>TrollIPTV Brasil: IPTV HD, Futebol Ao Vivo & Séries Premium</h1>
     <p>Mais de 2.000 canais nacionais e internacionais, streaming estável, apps compatíveis com Smart TV, TV Box, celular e PC.</p>
-    <a href="https://wa.me/558496126008" class="btn-whatsapp" target="_blank">Teste grátis via WhatsApp</a>
+    <a href="https://wa.me/5584996126008?text=ol%C3%A1%2Cquero%20um%20teste%20do%20iptv%20%F0%9F%8D%BF!" class="btn-whatsapp" target="_blank">Teste grátis via WhatsApp</a>
   </section>
 
   <section class="container" id="section-iptv">
@@ -288,7 +339,7 @@
       </div>
       <div class="beneficio-box">
         <h3>Suporte Dedicado</h3>
-        <p>Atendimento via WhatsApp +55 84 9612‑6008, rápido e personalizado.</p>
+        <p>Atendimento via WhatsApp, rápido e personalizado.</p>
       </div>
       <div class="beneficio-box">
         <h3>Segurança & Estabilidade</h3>
@@ -321,39 +372,41 @@
     </div>
   </section>
 
-  <!-- Vídeo sobre o IPTV -->
   <section class="container" id="section-video">
-    <h2>Conheça o TrollIPTV</h2>
+    <h2>Conheça o TrollIPTV em Vídeo</h2>
     <video id="video-iptv" controls>
-      <source src="seu-video.mp4" type="video/mp4" />
-      Seu navegador não suporta o elemento de vídeo.
+      <source src="trolliptv.mp4" type="video/mp4" />
+      Seu navegador não suporta vídeo.
     </video>
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="https://wa.me/5584996126008?text=ol%C3%A1%2Cquero%20um%20teste%20do%20iptv%20%F0%9F%8D%BF!" class="btn-whatsapp" target="_blank">Assinar Agora</a>
+    </div>
   </section>
 
   <section class="container" id="section-faq">
     <h2>Perguntas Frequentes (FAQ)</h2>
     <div class="faq-item">
       <h4>É legal usar IPTV?</h4>
-      <p>IPTV é legal se o conteúdo for licenciado. TrollIPTV trabalha com conteúdo autorizado ou licenças para transmissões. Você deve sempre usar fontes legais para evitar infrações.</p>
+      <p>IPTV é legal se o conteúdo for licenciado...</p>
     </div>
     <div class="faq-item">
       <h4>Quais dispositivos funcionam?</h4>
-      <p>Smart TVs, TV Box, Android/iOS, Windows, Mac e outros dispositivos compatíveis com IPTV.</p>
+      <p>Smart TVs, TV Box, etc.</p>
     </div>
     <div class="faq-item">
-      <h4>Qual a velocidade recomendada de internet?</h4>
-      <p>Para HD, mínimo de 10‑15 Mbps; para Full HD ou múltiplas transmissões, 20‑30 Mbps ou mais.</p>
+      <h4>Qual a velocidade recomendada?</h4>
+      <p>Para HD: 10‑15 Mbps. Para múltiplas transmissões: 20‑30 Mbps.</p>
     </div>
     <div class="faq-item">
-      <h4>Como é o teste grátis?</h4>
-      <p>Você receberá acesso por 4 horas gratuitas para testar qualidade, estabilidade e compatibilidade. Se satisfeito, pode assinar qualquer plano.</p>
+      <h4>Como funciona o teste grátis?</h4>
+      <p>Você recebe acesso por 4 horas gratuitas para testar...</p>
     </div>
   </section>
 
   <section class="container" id="section-contato">
     <h2>Contato & Suporte</h2>
     <p>WhatsApp: <strong>+55 84 9612‑6008</strong></p>
-    <a href="https://wa.me/558496126008" class="btn-whatsapp" target="_blank">Abrir WhatsApp</a>
+    <a href="https://wa.me/5584996126008?text=ol%C3%A1%2Cquero%20um%20teste%20do%20iptv%20%F0%9F%8D%BF!" class="btn-whatsapp" target="_blank">Abrir WhatsApp</a>
   </section>
 
   <footer>
