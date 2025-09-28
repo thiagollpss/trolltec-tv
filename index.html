@@ -231,6 +231,17 @@
     <section class="container" id="section-faq" aria-labelledby="faq-heading">
       <h2 id="faq-heading">Perguntas Frequentes (FAQ)</h2>
 
+      <!-- 🔻 QUADRO DE DESTAQUE COM IMAGEM E TEXTO (ADICIONADO) 🔻 -->
+      <div class="faq-highlight">
+        <img src="https://raw.githubusercontent.com/thiagollpss/trolltec-tv/main/imagem1.jpg" alt="IPTV TrollTec" class="faq-highlight-img" />
+        <div class="faq-highlight-text">
+          <h3>O melhor IPTV do Brasil!</h3>
+          <p>Assista +2.000 canais em HD, futebol ao vivo, filmes e séries. Compatível com Smart TV, TV Box, celular e muito mais. Teste grátis por 4h — sem compromisso!</p>
+          <a class="btn-whatsapp" href="https://wa.me/5584996126008?text=Ol%C3%A1,%20quero%20um%20teste%20do%20IPTV%20%F0%9F%8D%BF" target="_blank" rel="noopener" aria-label="Pedir teste grátis via WhatsApp" role="button">Pedir Teste Grátis</a>
+        </div>
+      </div>
+      <!-- 🔺 FIM DO QUADRO 🔺 -->
+
       <div class="faq-item" id="faq1">
         <h4>É legal usar IPTV?</h4>
         <p>IPTV é legal quando o conteúdo é distribuído com autorização dos detentores dos direitos autorais. Serviços que transmitem conteúdo pirata são ilegais e devem ser evitados.</p>
@@ -243,7 +254,7 @@
 
       <div class="faq-item" id="faq3">
         <h4>Qual a velocidade recomendada?</h4>
-        <p>Para uma única transmissão em HD, recomendamos 10–15 Mbps. Para Full HD ou múltiplas transmissões simultâneas, 20–30 Mbps ou mais dependendo da quantidade de dispositivos.</p>
+        <p>Para uma única transmissão em HD, recomendamos 10–15 Mbps. Para Full HD ou múltiplas transmissões simultâneas, 20-30 Mbps ou mais dependendo da quantidade de dispositivos.</p>
       </div>
 
       <div class="faq-item" id="faq4">
@@ -452,6 +463,10 @@
     display: block;
   }
 
+  .faq-item p {
+    display: none;
+  }
+
   /* Video */
   #video-iptv {max-width:100%; height:auto; border-radius:10px; border:2px solid #ff4444; box-shadow:0 8px 30px rgba(255,68,68,0.08);}
 
@@ -498,6 +513,45 @@
   #section-hero h1 {
     color: #ff0000 !important;
   }
+
+  /* === ESTILOS DO QUADRO DESTAQUE (ADICIONADOS) === */
+  .faq-highlight {
+    display: flex;
+    gap: 20px;
+    margin: 30px 0;
+    background: rgba(0, 0, 0, 0.65);
+    border: 1px solid #4CAF50;
+    border-radius: 10px;
+    padding: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .faq-highlight-img {
+    max-width: 280px;
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid #ff4444;
+    box-shadow: 0 6px 20px rgba(255, 68, 68, 0.1);
+    object-fit: cover;
+  }
+
+  .faq-highlight-text {
+    flex: 1;
+    min-width: 220px;
+  }
+
+  .faq-highlight-text h3 {
+    color: #4CAF50;
+    margin-bottom: 10px;
+  }
+
+  .faq-highlight-text p {
+    color: #f2f2f2;
+    margin-bottom: 16px;
+  }
+  /* === FIM DOS ESTILOS ADICIONADOS === */
+
   </style>
 </body>
 </html>
