@@ -192,12 +192,13 @@
   <style>
     /* ESTILOS GERAIS */
     :root {
-        --cor-primaria: #4CAF50;
-        --cor-secundaria: #ff4444;
+        --cor-primaria: #4CAF50; /* Verde mais vibrante */
+        --cor-secundaria: #FFD700; /* Amarelo ouro para destaque */
         --cor-fundo: #080808;
         --cor-fundo-card: rgba(18, 18, 18, 0.8);
         --cor-texto: #eee;
         --cor-texto-secundario: #cccccc;
+        --cor-destaque-borda: #FF4500; /* Laranja avermelhado para a borda pulsante */
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { font-size: 16px; scroll-behavior: smooth; }
@@ -207,13 +208,12 @@
       line-height: 1.6;
       padding-top: 70px;
       
-      /* Garante o fundo escuro mesmo sem a imagem */
       background-color: var(--cor-fundo); 
-      /* background-image: url("fundo.webp"); */
+      background-image: url("fundo.webp"); /* Imagem de fundo reinserida */
       background-repeat: no-repeat;
       background-position: center center;
       background-attachment: fixed;
-      background-size: cover;
+      background-size: cover; /* Garante que a imagem cubra toda a tela */
     }
     a { color: var(--cor-primaria); text-decoration: none; transition: color 0.3s ease; }
     a:hover { color: var(--cor-secundaria); }
@@ -288,13 +288,47 @@
     
     /* SEÇÕES (PLANOS, BENEFÍCIOS, ETC) */
     .plano-cards { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 18px; }
-    .plano-card { background:#1a1a1a; border:1px solid #333; border-radius:10px; padding:25px; text-align: center; transition: transform 0.3s; }
+    .plano-card { 
+        background:#1a1a1a; 
+        border:1px solid #333; 
+        border-radius:10px; 
+        padding:25px; 
+        text-align: center; 
+        transition: transform 0.3s; 
+        position: relative; /* Necessário para o pseudo-elemento */
+        overflow: hidden; /* Garante que a borda piscante fique dentro */
+    }
     .plano-card:hover { transform: scale(1.05); }
-    .plano-card.popular { border-color:#ff6b6b; transform: scale(1.05); }
-    .plano-card.popular:hover { transform: scale(1.08); }
-    .preco { font-size:2rem; font-weight:bold; color:var(--cor-primaria); margin:10px 0; }
-    .selo { display:inline-block; background:var(--cor-secundaria); color:#fff; padding:6px 10px; border-radius:50px; font-size:13px; margin-bottom:10px; }
     
+    .plano-card.popular { 
+        border-color: var(--cor-destaque-borda); 
+        transform: scale(1.05); 
+        animation: pulseBorder 2s infinite alternate, pulseShadow 2s infinite alternate; /* Animação de pulso */
+    }
+    .plano-card.popular:hover { transform: scale(1.08); }
+
+    /* Animações para o efeito "piscando" */
+    @keyframes pulseBorder {
+        0% { border-color: var(--cor-destaque-borda); box-shadow: 0 0 5px var(--cor-destaque-borda); }
+        50% { border-color: var(--cor-secundaria); box-shadow: 0 0 15px var(--cor-secundaria), 0 0 30px var(--cor-secundaria) inset; }
+        100% { border-color: var(--cor-destaque-borda); box-shadow: 0 0 5px var(--cor-destaque-borda); }
+    }
+    @keyframes pulseShadow {
+        0% { box-shadow: 0 0 5px rgba(255, 69, 0, 0.7); }
+        50% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.9), 0 0 40px rgba(255, 215, 0, 0.5); }
+        100% { box-shadow: 0 0 5px rgba(255, 69, 0, 0.7); }
+    }
+
+
+    .preco { font-size:2rem; font-weight:bold; color:var(--cor-primaria); margin:10px 0; }
+    .selo { display:inline-block; background:var(--cor-destaque-borda); color:#fff; padding:6px 10px; border-radius:50px; font-size:13px; margin-bottom:10px; animation: glowSelo 1.5s infinite alternate; }
+    
+    @keyframes glowSelo {
+      0% { box-shadow: 0 0 5px var(--cor-destaque-borda), 0 0 10px var(--cor-destaque-borda); }
+      100% { box-shadow: 0 0 10px var(--cor-destaque-borda), 0 0 20px var(--cor-destaque-borda); }
+    }
+
+
     /* NOVA SEÇÃO: GUIA DE INSTALAÇÃO */
     .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
     .step-card { background: #1c1c1c; border-radius: 10px; padding: 20px; position: relative; border-left: 3px solid var(--cor-secundaria); }
@@ -491,7 +525,7 @@
             <ul>
               <li><b>Pluto TV:</b> Totalmente gratuito e legal, sustentado por anúncios. Oferece uma grande variedade de canais ao vivo e conteúdo sob demanda.</li>
               <li><b>Claro Box tv+ e SKY+:</b> São as versões IPTV das operadoras tradicionais. Oferecem planos completos com canais da TV por assinatura, mas via internet, sem necessidade de instalação de antenas.</li>
-              <li><b>Samsung TV Plus & LG Channels:</b> Serviços gratuitos embarcados nas Smart TVs das respectivas marcas, com dezenas de canais de notícias, filmes e variedades.</li>
+              <li><b>Samsung TV Plus & LG Channels:</b> Serviços gratuitos embarcados nas Smart TVs das respectivas marcas, com dezenas de canais de notícias, filmes, e variedades.</li>
             </ul>
             <h4>Players de IPTV (Reprodutores)</h4>
             <p>É importante entender que aplicativos como <b>IPTV Smarters</b>, <b>SS IPTV</b> ou <b>XCIPTV Player</b> são apenas "reprodutores de vídeo". Eles são como o VLC ou o Windows Media Player: o app em si é legal, mas o que você coloca para tocar nele pode não ser. Eles são usados para organizar e reproduzir as "listas M3U", que podem ser de fontes legais ou ilegais. Um serviço legítimo, como o nosso, fornece um acesso seguro para ser usado nesses players.</p>
