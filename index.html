@@ -374,7 +374,7 @@
     /* FOOTER */
     footer { text-align:center; padding: 28px 0; margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); }
 
-    /* === NOVA SEÇÃO: DEPOIMENTOS === */
+    /* === SEÇÃO DEPOIMENTOS (COM AVATARES) === */
     .depoimentos-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -393,11 +393,35 @@
       font-style: italic;
       color: var(--cor-texto-secundario);
       flex-grow: 1;
-      margin-bottom: 15px;
+      margin-bottom: 0; /* Ajustado */
+    }
+    .depoimento-header {
+      display: flex;
+      align-items: center;
+      margin-top: 15px; /* Espaço entre o texto e o avatar/nome */
+    }
+    .depoimento-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #333;
+      color: var(--cor-primaria);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-right: 15px;
+      flex-shrink: 0; /* Impede que o avatar encolha */
+      border: 2px solid var(--cor-primaria);
+    }
+    .depoimento-info {
+      display: flex;
+      flex-direction: column;
     }
     .depoimento-card h3 {
       color: #ffffff;
-      margin-bottom: 5px;
+      margin-bottom: 0; /* Ajustado */
       font-size: 1.1rem;
     }
     .depoimento-card span {
@@ -405,6 +429,47 @@
       color: var(--cor-secundaria);
     }
     /* === FIM DOS ESTILOS DE DEPOIMENTOS === */
+
+    /* === SEÇÃO VÍDEOS === */
+    .videos-grid {
+      display: grid;
+      /* Ajustado para centralizar um único vídeo */
+      grid-template-columns: 1fr;
+      justify-items: center;
+      gap: 25px;
+      margin-top: 30px;
+    }
+    .video-card {
+      background: #1c1c1c;
+      border-radius: 10px;
+      overflow: hidden; /* Garante que o iframe não vaze da borda */
+      border: 1px solid #222;
+      width: 100%;
+      max-width: 640px; /* Limita o tamanho do card do vídeo */
+    }
+    .video-card h3 {
+      font-size: 1.2rem;
+      color: var(--cor-primaria);
+      padding: 20px 20px 0 20px; /* Espaçamento do título */
+      margin-bottom: 15px;
+    }
+    .video-responsive {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      padding-top: 56.25%; /* Proporção de 16:9 (para vídeos widescreen) */
+    }
+    .video-responsive iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    /* === FIM DOS ESTILOS DE VÍDEOS === */
 
     /* RESPONSIVIDADE */
     @media (max-width:768px) {
@@ -442,9 +507,10 @@
       <li><a href="#section-news">Notícias</a></li>
       <li><a href="#section-escolha">Diferenciais</a></li>
       <li><a href="#section-instalacao">Como Instalar</a></li>
-      <li><a href="#section-apps">Guia de Apps</a></li>
+      <li><a href="#section-videos">Vídeos</a></li> <li><a href="#section-apps">Guia de Apps</a></li>
       <li><a href="#section-faq">FAQ</a></li>
-      <li><a href="#section-depoimentos">Depoimentos</a></li> <li><a href="#section-contato">Contato</a></li>
+      <li><a href="#section-depoimentos">Depoimentos</a></li>
+      <li><a href="#section-contato">Contato</a></li>
     </ul>
     <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
   </nav>
@@ -636,6 +702,26 @@
         </div>
     </section>
 
+    <section class="container" id="section-videos">
+      <h2>Veja em Ação</h2>
+      <p>Confira nossos vídeos demonstrativos e tutoriais de instalação.</p>
+      
+      <div class="videos-grid">
+        
+        <article class="video-card">
+          <h3>Conteúdo do Nosso Servidor</h3> <div class="video-responsive">
+            <iframe 
+              src="https://www.youtube.com/embed/CdX60ccZtH4" 
+              title="YouTube video player" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        </article>
+        
+        </div>
+    </section>
     <section class="container" id="section-apps">
         <h2>Guia Definitivo de IPTV: O Que os Usuários Buscam</h2>
         
@@ -647,7 +733,7 @@
                 <div class="guide-box"><h4>TiviMate</h4><p>Famoso pela sua interface moderna e foco na experiência de TV ao vivo. O EPG é um dos melhores do mercado, ideal para quem gosta de ziguezaguear pelos canais.</p></div>
                 <div class="guide-box"><h4>SS IPTV</h4><p>Um dos mais antigos e confiáveis, especialmente para Smart TVs LG e Samsung. A configuração é um pouco mais manual, mas a estabilidade compensa.</p></div>
                 <div class="guide-box"><h4>VLC Media Player</h4><p>Sim, o famoso player de vídeo para PC também reproduz listas M3U. É uma opção simples e direta para quem quer assistir no computador sem instalar nada novo.</p></div>
-                  <div class="guide-box"><h4>Perfect Player</h4><p>Ótima opção para Android TV e Fire Stick, com suporte avançado para EPG e um layout visualmente agradável que simula um decodificador de TV a cabo.</p></div>
+                <div class="guide-box"><h4>Perfect Player</h4><p>Ótima opção para Android TV e Fire Stick, com suporte avançado para EPG e um layout visualmente agradável que simula um decodificador de TV a cabo.</p></div>
             </div>
         </div>
 
@@ -703,36 +789,67 @@
       <div class="depoimentos-grid">
         <article class="depoimento-card">
           <p>"Depois de testar vários, o TrollIPTV foi o único que não travou no jogo do meu time. O teste grátis de 4 horas me convenceu na hora. Recomendo!"</p>
-          <h3>Marcos R.</h3>
-          <span>São Paulo, SP</span>
+          <div class="depoimento-header">
+            <div class="depoimento-avatar">M</div>
+            <div class="depoimento-info">
+              <h3>Marcos R.</h3>
+              <span>São Paulo, SP</span>
+            </div>
+          </div>
         </article>
         <article class="depoimento-card">
           <p>"Atendimento nota 10! Tive uma dúvida na instalação na minha Smart TV e o suporte no WhatsApp me ajudou em 5 minutos. Muito atenciosos."</p>
-          <h3>Juliana F.</h3>
-          <span>Rio de Janeiro, RJ</span>
+          <div class="depoimento-header">
+            <div class="depoimento-avatar">J</div>
+            <div class="depoimento-info">
+              <h3>Juliana F.</h3>
+              <span>Rio de Janeiro, RJ</span>
+            </div>
+          </div>
         </article>
         <article class="depoimento-card">
           <p>"A biblioteca de filmes e séries é gigante e atualiza rápido. Minha família adorou. Vale cada centavo, muito melhor que TV a cabo."</p>
-          <h3>Carlos Eduardo S.</h3>
-          <span>Belo Horizonte, MG</span>
+          <div class="depoimento-header">
+            <div class="depoimento-avatar">C</div>
+            <div class="depoimento-info">
+              <h3>Carlos Eduardo S.</h3>
+              <span>Belo Horizonte, MG</span>
+            </div>
+          </div>
         </article>
         <article class="depoimento-card">
           <p>"Pedi o teste grátis e em poucos minutos já estava assistindo. Sem burocracia. Qualidade de imagem 4K é top. Já assinei o plano anual."</p>
-          <h3>Fernanda L.</h3>
-          <span>Curitiba, PR</span>
+          <div class="depoimento-header">
+            <div class="depoimento-avatar">F</div>
+            <div class="depoimento-info">
+              <h3>Fernanda L.</h3>
+              <span>Curitiba, PR</span>
+            </div>
+          </div>
         </article>
         <article class="depoimento-card">
           <p>"Estava com medo de ser complicado, mas é super simples. Funciona liso no meu Fire Stick. Adeus mensalidades caras de streaming!"</p>
-          <h3>Rafael T.</h3>
-          <span>Porto Alegre, RS</span>
+          <div class="depoimento-header">
+            <div class="depoimento-avatar">R</div>
+            <div class="depoimento-info">
+              <h3>Rafael T.</h3>
+              <span>Porto Alegre, RS</span>
+            </div>
+          </div>
         </article>
         <article class="depoimento-card">
           <p>"O melhor EPG (guia de programação) que já vi. Fácil de achar o que está passando. A estabilidade é o ponto forte. Podem confiar."</p>
-          <h3>Lucas M.</h3>
-          <span>Salvador, BA</span>
+          <div class="depoimento-header">
+            <div class="depoimento-avatar">L</div>
+            <div class="depoimento-info">
+              <h3>Lucas M.</h3>
+              <span>Salvador, BA</span>
+            </div>
+          </div>
         </article>
       </div>
     </section>
+
     <section class="container" id="section-contato">
       <h2>Contato e Suporte Técnico</h2>
       <p>Precisa de ajuda para configurar ou tem alguma dúvida? Fale conosco!</p>
