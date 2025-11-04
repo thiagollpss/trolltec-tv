@@ -160,12 +160,12 @@
   <style>
     /* ESTILOS GERAIS */
     :root {
-        --cor-primaria: #4CAF50; /* Verde */
-        --cor-secundaria: #FFD700; /* Amarelo Ouro */
-        --cor-destaque: #FF4500; /* Laranja */
+        --cor-primaria: #FF0000; /* Vermelho vibrante */
+        --cor-secundaria: #FFD700; /* Amarelo Ouro (combina bem com vermelho) */
+        --cor-destaque: #FFA500; /* Laranja (combina bem com vermelho) */
         --cor-fundo: #0a0a0a; /* Preto/Cinza bem escuro */
-        --cor-fundo-card: #141414; /* Card um pouco mais claro */
-        --cor-fundo-transparente: rgba(18, 18, 18, 0.8); /* Card Transparente */
+        --cor-fundo-card: #2A0000; /* Vermelho escuro sólido para cards internos */
+        --cor-fundo-transparente: rgba(50, 0, 0, 0.8); /* Vermelho escuro transparente para seções */
         --cor-texto: #f0f0f0;
         --cor-texto-secundario: #a0a0a0;
     }
@@ -271,7 +271,7 @@
     .btn-cta { 
       display: inline-block; 
       padding: 18px 40px; 
-      background: #25D366; 
+      background: var(--cor-primaria); /* Usando o novo vermelho */
       color: #ffffff !important; 
       border: none; 
       border-radius: 50px; 
@@ -279,22 +279,36 @@
       transition: all 0.3s ease; 
       font-weight: bold; 
       font-size: 1.2rem;
-      animation: pulse-green 2s infinite;
-      box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
+      animation: pulse-red 2s infinite; /* Nova animação de pulso */
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* Sombra vermelha */
     }
     .btn-cta:hover { 
-      background: #128C7E; 
+      background: #CC0000; /* Tom mais escuro de vermelho no hover */
       transform: translateY(-3px) scale(1.05); 
-      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+      box-shadow: 0 8px 30px rgba(255, 0, 0, 0.4);
       animation: none;
     }
-    @keyframes pulse-green {
-      0% { box-shadow: 0 0 20px rgba(37, 211, 102, 0.5); }
-      50% { box-shadow: 0 0 35px rgba(37, 211, 102, 0.8); }
-      100% { box-shadow: 0 0 20px rgba(37, 211, 102, 0.5); }
+    @keyframes pulse-red {
+      0% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); }
+      50% { box-shadow: 0 0 35px rgba(255, 0, 0, 0.8); }
+      100% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); }
     }
-    .btn-whatsapp { display: inline-block; padding: 12px 25px; background: #25D366; color: #ffffff !important; border: none; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: bold; }
-    .btn-whatsapp:hover { background: #128C7E; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(37,211,102,0.2); }
+    .btn-whatsapp { 
+      display: inline-block; 
+      padding: 12px 25px; 
+      background: var(--cor-primaria); /* Usando o novo vermelho */
+      color: #ffffff !important; 
+      border: none; 
+      border-radius: 50px; 
+      text-decoration: none; 
+      transition: all 0.3s ease; 
+      font-weight: bold; 
+    }
+    .btn-whatsapp:hover { 
+      background: #CC0000; /* Tom mais escuro de vermelho no hover */
+      transform: translateY(-3px); 
+      box-shadow: 0 8px 20px rgba(255, 0, 0, 0.2); 
+    }
     
     /* SEÇÃO DE PLANOS */
     .plano-cards { 
@@ -304,7 +318,7 @@
       align-items: center; /* Alinha os cards na vertical */
     }
     .plano-card { 
-        background: #1a1a1a; /* Fundo mais escuro para cards */
+        background: var(--cor-fundo-card); /* Fundo mais escuro para cards */
         border: 1px solid #333; 
         border-radius: 10px; 
         padding: 30px; 
@@ -320,8 +334,8 @@
     .plano-card.popular { 
         transform: scale(1.05); /* Ligeiramente maior */
         border: 2px solid transparent;
-        background-image: linear-gradient(rgba(20, 20, 20, 0.9), rgba(20, 20, 20, 0.9)), /* Fundo interno */
-                          linear-gradient(120deg, var(--cor-primaria), var(--cor-secundaria)); /* Borda gradiente */
+        background-image: linear-gradient(var(--cor-fundo-card), var(--cor-fundo-card)), 
+                          linear-gradient(120deg, var(--cor-primaria), var(--cor-secundaria));
         background-origin: border-box;
         background-clip: padding-box, border-box;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
@@ -333,7 +347,7 @@
     .preco { font-size:2.2rem; font-weight:bold; color:var(--cor-primaria); margin:10px 0; }
     .selo { 
       display:inline-block; 
-      background: linear-gradient(120deg, var(--cor-primaria), #a8ff78);
+      background: linear-gradient(120deg, var(--cor-primaria), #FF4500); /* Ajustado para vermelho/laranja */
       color:#111; 
       padding: 6px 15px; 
       border-radius:50px; 
@@ -354,7 +368,7 @@
       margin-top: 30px;
     }
     .conteudo-box {
-      background: #1c1c1c;
+      background: var(--cor-fundo-card); /* Usando fundo de card interno */
       border-radius: 8px;
       padding: 25px;
       border-top: 3px solid var(--cor-primaria);
@@ -381,7 +395,7 @@
       margin-top: 30px;
     }
     .recurso-box {
-      background: #1c1c1c; /* Fundo de card interno */
+      background: var(--cor-fundo-card); /* Fundo de card interno */
       border-radius: 8px;
       padding: 25px;
       text-align: center;
@@ -423,7 +437,7 @@
       gap: 25px;
     }
     .step-card { 
-      background: #1c1c1c; 
+      background: var(--cor-fundo-card); /* Fundo de card interno */
       border-radius: 10px; 
       padding: 20px; 
       position: relative; 
@@ -482,7 +496,7 @@
 
     /* FAQ */
     .faq-item {
-      background: #1c1c1c;
+      background: var(--cor-fundo-card); /* Fundo de card interno */
       border-radius: 8px;
       margin-bottom: 10px;
       border: 1px solid #222;
@@ -499,7 +513,7 @@
     .faq-item p { 
       display: none; 
       padding: 0 20px 20px 20px; 
-      background: #1c1c1c; 
+      background: var(--cor-fundo-card); /* Fundo de card interno */
       border-top: 1px solid #333; 
       margin-bottom: 0; 
       font-size: 1rem;
@@ -531,7 +545,7 @@
       gap: 20px;
     }
     .depoimento-card {
-      background: #1c1c1c;
+      background: var(--cor-fundo-card); /* Fundo de card interno */
       border: 1px solid #222;
       border-radius: 8px;
       padding: 25px;
@@ -582,7 +596,7 @@
     #section-cta-final {
       background: var(--cor-fundo-transparente); /* Aplicando transparência */
       border: 1px solid var(--cor-primaria);
-      box-shadow: 0 0 20px rgba(76, 175, 80, 0.3); /* Brilho verde */
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.3); /* Brilho vermelho */
     }
     #section-cta-final h2 {
       font-size: 2rem;
