@@ -136,13 +136,13 @@
   <style>
     /* ESTILOS GERAIS */
     :root {
-        --cor-primaria: #4CAF50; /* Verde mais vibrante */
-        --cor-secundaria: #FFD700; /* Amarelo ouro para destaque */
-        --cor-fundo: #080808;
-        --cor-fundo-card: rgba(18, 18, 18, 0.8);
-        --cor-texto: #eee;
-        --cor-texto-secundario: #cccccc;
-        --cor-destaque-borda: #FF4500; /* Laranja avermelhado para a borda pulsante */
+        --cor-primaria: #4CAF50; /* Verde */
+        --cor-secundaria: #FFD700; /* Amarelo Ouro */
+        --cor-destaque: #FF4500; /* Laranja */
+        --cor-fundo: #0a0a0a; /* Preto/Cinza bem escuro */
+        --cor-fundo-card: #141414; /* Card um pouco mais claro */
+        --cor-texto: #f0f0f0;
+        --cor-texto-secundario: #a0a0a0;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { font-size: 16px; scroll-behavior: smooth; }
@@ -152,30 +152,44 @@
       line-height: 1.6;
       padding-top: 70px;
       
-      background-color: var(--cor-fundo); 
-      background-image: url("fundo.webp"); /* Imagem de fundo reinserida */
+      /* Fundo mais limpo e profissional */
+      background-color: var(--cor-fundo);
+      background-image: linear-gradient(rgba(8, 8, 8, 0.95), rgba(8, 8, 8, 0.95)), url("fundo.webp");
       background-repeat: no-repeat;
       background-position: center center;
       background-attachment: fixed;
-      background-size: cover; /* Garante que a imagem cubra toda a tela */
+      background-size: cover;
     }
     a { color: var(--cor-primaria); text-decoration: none; transition: color 0.3s ease; }
     a:hover { color: var(--cor-secundaria); }
-    .container { width: 90%; max-width: 1100px; margin: 0 auto; padding: 40px 0; }
-    h1, h2, h3, h4 { color: #ffffff; margin-bottom: 20px; line-height: 1.3; }
-    h1 { font-size: 2.5rem; color: var(--cor-secundaria); }
-    h2 { font-size: 2rem; border-left: 4px solid var(--cor-primaria); padding-left: 15px; }
-    p { margin-bottom: 15px; color: var(--cor-texto-secundario); }
+    .container { 
+      width: 90%; 
+      max-width: 1100px; 
+      margin: 0 auto; 
+      padding: 60px 0; /* Aumenta o espaçamento entre seções */
+    }
+    /* Linha sutil para separar seções */
+    section:not(#section-hero) {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
 
-    /* Estilo de "Card Transparente" para seções */
-    .container:not(#section-hero) {
-        background: var(--cor-fundo-card);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 10px;
-        padding: 40px; 
-        margin-top: 30px;
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
+    h1, h2, h3, h4 { color: #ffffff; margin-bottom: 20px; line-height: 1.3; }
+    h1 { font-size: 2.8rem; color: var(--cor-texto); }
+    h2 { 
+      font-size: 2.2rem; 
+      text-align: center; 
+      margin-bottom: 40px; 
+      color: var(--cor-texto);
+    }
+    h2 span { /* Destaque no H2 */
+      color: var(--cor-primaria);
+    }
+    p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; }
+    .subtitle {
+      font-size: 1.2rem;
+      color: var(--cor-texto-secundario);
+      max-width: 700px;
+      margin: 0 auto 30px auto;
     }
 
     /* NAVBAR */
@@ -198,81 +212,105 @@
     /* HERO */
     #section-hero {
         text-align: center;
-        padding: 60px 0;
-        background: rgba(0,0,0,0.5);
-        border-radius: 10px;
-        margin-top: 0; 
+        padding-top: 80px; /* Mais espaço no topo */
+        padding-bottom: 80px;
     }
-    #section-hero h1 { font-size: 2.8rem; }
-    #section-hero p { font-size: 1.1rem; max-width: 700px; margin: 0 auto 25px auto; }
+    #section-hero h1 {
+      font-size: 3rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #section-hero h1 span {
+      background: -webkit-linear-gradient(45deg, var(--cor-primaria), var(--cor-secundaria));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    #section-hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 20px auto 30px auto;
+    }
+    /* Botão CTA Principal */
+    .btn-cta { 
+      display: inline-block; 
+      padding: 18px 40px; 
+      background: #25D366; 
+      color: #ffffff !important; 
+      border: none; 
+      border-radius: 50px; 
+      text-decoration: none; 
+      transition: all 0.3s ease; 
+      font-weight: bold; 
+      font-size: 1.2rem;
+      animation: pulse-green 2s infinite;
+      box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
+    }
+    .btn-cta:hover { 
+      background: #128C7E; 
+      transform: translateY(-3px) scale(1.05); 
+      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+      animation: none;
+    }
+    @keyframes pulse-green {
+      0% { box-shadow: 0 0 20px rgba(37, 211, 102, 0.5); }
+      50% { box-shadow: 0 0 35px rgba(37, 211, 102, 0.8); }
+      100% { box-shadow: 0 0 20px rgba(37, 211, 102, 0.5); }
+    }
     .btn-whatsapp { display: inline-block; padding: 12px 25px; background: #25D366; color: #ffffff !important; border: none; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: bold; }
     .btn-whatsapp:hover { background: #128C7E; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(37,211,102,0.2); }
     
-    /* SEÇÃO DE ARTIGOS / BOXES */
-    .articles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-    .article-card { background: var(--cor-fundo-card); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 20px; transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column;}
-    .article-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-    .article-card h3 { color: var(--cor-primaria); font-size: 1.4rem; }
-    .article-card p { font-size: 0.95rem; flex-grow: 1;}
-    .btn-read-more { display: inline-block; margin-top: 15px; color: var(--cor-secundaria); font-weight: bold; }
-
-    /* CONTEÚDO EXPANSÍVEL DO ARTIGO */
-    .article-content { max-height: 0; overflow: hidden; transition: max-height 0.7s ease-out, padding 0.5s ease; background-color: rgba(0,0,0,0.4); border-radius: 8px; margin-top: 15px; }
-    .article-content.open { padding: 20px; border-top: 1px solid #333; }
-    .article-content h4 { color: var(--cor-secundaria); margin-top: 15px; }
-    .article-content ul { list-style-position: inside; padding-left: 10px; }
-    .article-content li { margin-bottom: 10px; }
-
-    /* NOVA SEÇÃO: POR QUE ESCOLHER */
-    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: center; }
-    .feature-box { background: var(--cor-fundo-card); border-radius: 8px; padding: 25px; border: 1px solid #222; transition: transform 0.3s, box-shadow 0.3s; }
-    .feature-box:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.4); }
-    .feature-box .icon { font-size: 2.5rem; margin-bottom: 15px; color: var(--cor-primaria); }
-    .feature-box h3 { font-size: 1.3rem; color: #fff; }
-    
-    /* SEÇÕES (PLANOS, BENEFÍCIOS, ETC) */
-    .plano-cards { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 18px; }
+    /* SEÇÃO DE PLANOS */
+    .plano-cards { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); 
+      gap: 25px; 
+      align-items: center; /* Alinha os cards na vertical */
+    }
     .plano-card { 
-        background:#1a1a1a; 
-        border:1px solid #333; 
-        border-radius:10px; 
-        padding:25px; 
+        background: var(--cor-fundo-card); 
+        border: 1px solid #333; 
+        border-radius: 10px; 
+        padding: 30px; 
         text-align: center; 
-        transition: transform 0.3s; 
-        position: relative; /* Necessário para o pseudo-elemento */
-        overflow: hidden; /* Garante que a borda piscante fique dentro */
+        transition: transform 0.3s, box-shadow 0.3s; 
     }
-    .plano-card:hover { transform: scale(1.05); }
+    .plano-card:hover { 
+      transform: scale(1.05); 
+      border-color: var(--cor-primaria);
+    }
     
+    /* Novo Destaque do Plano Popular */
     .plano-card.popular { 
-        border-color: var(--cor-destaque-borda); 
-        transform: scale(1.05); 
-        animation: pulseBorder 2s infinite alternate, pulseShadow 2s infinite alternate; /* Animação de pulso */
+        transform: scale(1.05); /* Ligeiramente maior */
+        border: 2px solid transparent;
+        background-image: linear-gradient(var(--cor-fundo-card), var(--cor-fundo-card)), 
+                          linear-gradient(120deg, var(--cor-primaria), var(--cor-secundaria));
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     }
-    .plano-card.popular:hover { transform: scale(1.08); }
-
-    /* Animações para o efeito "piscando" */
-    @keyframes pulseBorder {
-        0% { border-color: var(--cor-destaque-borda); box-shadow: 0 0 5px var(--cor-destaque-borda); }
-        50% { border-color: var(--cor-secundaria); box-shadow: 0 0 15px var(--cor-secundaria), 0 0 30px var(--cor-secundaria) inset; }
-        100% { border-color: var(--cor-destaque-borda); box-shadow: 0 0 5px var(--cor-destaque-borda); }
-    }
-    @keyframes pulseShadow {
-        0% { box-shadow: 0 0 5px rgba(255, 69, 0, 0.7); }
-        50% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.9), 0 0 40px rgba(255, 215, 0, 0.5); }
-        100% { box-shadow: 0 0 5px rgba(255, 69, 0, 0.7); }
+    .plano-card.popular:hover { 
+      transform: scale(1.1); 
     }
 
-
-    .preco { font-size:2rem; font-weight:bold; color:var(--cor-primaria); margin:10px 0; }
-    .selo { display:inline-block; background:var(--cor-destaque-borda); color:#fff; padding:6px 10px; border-radius:50px; font-size:13px; margin-bottom:10px; animation: glowSelo 1.5s infinite alternate; }
-    
-    @keyframes glowSelo {
-      0% { box-shadow: 0 0 5px var(--cor-destaque-borda), 0 0 10px var(--cor-destaque-borda); }
-      100% { box-shadow: 0 0 10px var(--cor-destaque-borda), 0 0 20px var(--cor-destaque-borda); }
+    .preco { font-size:2.2rem; font-weight:bold; color:var(--cor-primaria); margin:10px 0; }
+    .selo { 
+      display:inline-block; 
+      background: linear-gradient(120deg, var(--cor-primaria), #a8ff78);
+      color:#111; 
+      padding: 6px 15px; 
+      border-radius:50px; 
+      font-size:14px; 
+      font-weight: bold;
+      margin-bottom:15px;
+    }
+    .plano-card.popular .selo {
+      background: linear-gradient(120deg, var(--cor-secundaria), var(--cor-destaque));
+      color: #111;
     }
 
-    /* === NOVA SEÇÃO DE CONTEÚDO (SEO) === */
+    /* SEÇÃO CONTEÚDO (SEO) */
     .conteudo-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -280,161 +318,83 @@
       margin-top: 30px;
     }
     .conteudo-box {
-      background: #1c1c1c;
+      background: var(--cor-fundo-card);
       border-radius: 8px;
       padding: 25px;
-      border-left: 3px solid var(--cor-primaria);
+      border-top: 3px solid var(--cor-primaria);
+      transition: transform 0.3s;
+    }
+    .conteudo-box:hover {
+      transform: translateY(-5px);
     }
     .conteudo-box h3 {
-      color: var(--cor-primaria);
-      font-size: 1.3rem;
+      color: var(--cor-texto);
+      font-size: 1.5rem;
       margin-bottom: 10px;
     }
     .conteudo-box p {
-      font-size: 0.95rem;
+      font-size: 1rem;
       margin-bottom: 0;
     }
-    /* === FIM DOS ESTILOS === */
 
-
-    /* NOVA SEÇÃO: GUIA DE INSTALAÇÃO */
-    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
-    .step-card { background: #1c1c1c; border-radius: 10px; padding: 20px; position: relative; border-left: 3px solid var(--cor-secundaria); }
-    .step-number { position: absolute; top: -15px; left: -15px; background: var(--cor-secundaria); color: #fff; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: bold; }
-    .step-card h3 { color: var(--cor-primaria); margin-top: 10px; }
-    
-    /* Responsividade da Tabela */
-    .table-responsive {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch; 
-        border-radius: 8px;
-    }
-    .comparison-table {
-        width: 100%;
-        min-width: 600px; 
-        border-collapse: collapse;
-        margin-top: 30px;
-    }
-    .comparison-table th, .comparison-table td { padding: 15px; text-align: center; border: 1px solid #333; }
-    .comparison-table thead { background-color: var(--cor-secundaria); color: #fff; }
-    .comparison-table tbody tr:nth-child(odd) { background-color: #1a1a1a; }
-    .comparison-table tbody tr { background-color: #111; }
-    .comparison-table td:first-child { text-align: left; font-weight: bold; color: var(--cor-primaria); }
-
-    .beneficios { display:grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap:18px;}
-    .beneficio-box { background: rgba(20,20,20,0.7); border: 1px solid #333; border-radius:8px; padding:18px; }
-
-    /* SEÇÃO DE GUIA DEFINITIVO */
-    .guide-section { margin-top: 30px; }
-    .guide-section h3 { font-size: 1.5rem; color: var(--cor-secundaria); text-align: center; margin-bottom: 25px; }
-    .guide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-    .guide-box { background: var(--cor-fundo-card); border: 1px solid #222; border-radius: 8px; padding: 20px; }
-    .guide-box h4 { font-size: 1.2rem; color: var(--cor-primaria); margin-bottom: 10px; }
-    .guide-box p { font-size: 0.9rem; color: var(--cor-texto-secundario); }
-
-    /* FAQ */
-    .faq-item h4 { cursor:pointer; background:#141414; padding:15px; border-radius:8px; border:1px solid #222; display:flex; justify-content:space-between; align-items:center; color:#9ff6b7; }
-    .faq-item p { display: none; padding: 15px; background: #1c1c1c; border-top: 1px solid #333; margin-bottom: 0; }
-    .faq-item.open p { display: block; }
-    .faq-item h4::after { content: "+"; font-size: 22px; color: var(--cor-secundaria); transition: transform 0.3s; }
-    .faq-item.open h4::after { content: "–"; color: var(--cor-primaria); transform: rotate(180deg); }
-
-    /* FOOTER */
-    footer { text-align:center; padding: 28px 0; margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); }
-
-    /* === SEÇÃO DEPOIMENTOS (COM AVATARES) === */
-    /* Subtítulo para SEO (Reddit) */
-    .section-subtitle {
-      text-align: center;
-      font-size: 1.1rem;
-      color: var(--cor-texto-secundario);
-      margin-top: -15px;
-      margin-bottom: 30px;
-    }
-    
-    .depoimentos-grid {
+    /* SEÇÃO COMO INSTALAR (COM VÍDEO) */
+    .instalacao-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
     }
-    .depoimento-card {
-      background: #1c1c1c;
-      border-left: 3px solid var(--cor-primaria);
-      border-radius: 8px;
-      padding: 25px;
+    .steps-list {
       display: flex;
       flex-direction: column;
-    }
-    .depoimento-card p {
-      font-style: italic;
-      color: var(--cor-texto-secundario);
-      flex-grow: 1;
-      margin-bottom: 0; /* Ajustado */
-    }
-    .depoimento-header {
-      display: flex;
-      align-items: center;
-      margin-top: 15px; /* Espaço entre o texto e o avatar/nome */
-    }
-    .depoimento-avatar {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background-color: #333;
-      color: var(--cor-primaria);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      font-weight: bold;
-      margin-right: 15px;
-      flex-shrink: 0; /* Impede que o avatar encolha */
-      border: 2px solid var(--cor-primaria);
-    }
-    .depoimento-info {
-      display: flex;
-      flex-direction: column;
-    }
-    .depoimento-card h3 {
-      color: #ffffff;
-      margin-bottom: 0; /* Ajustado */
-      font-size: 1.1rem;
-    }
-    .depoimento-card span {
-      font-size: 0.9rem;
-      color: var(--cor-secundaria);
-    }
-    /* === FIM DOS ESTILOS DE DEPOIMENTOS === */
-
-    /* === SEÇÃO VÍDEOS === */
-    .videos-grid {
-      display: grid;
-      /* Ajustado para centralizar um único vídeo */
-      grid-template-columns: 1fr;
-      justify-items: center;
       gap: 25px;
-      margin-top: 30px;
     }
+    .step-card { 
+      background: var(--cor-fundo-card); 
+      border-radius: 10px; 
+      padding: 20px; 
+      position: relative; 
+      border-left: 3px solid var(--cor-primaria);
+    }
+    .step-number { 
+      position: absolute; 
+      top: 20px; 
+      left: -18px; 
+      background: var(--cor-primaria); 
+      color: #111; 
+      width: 36px; 
+      height: 36px; 
+      border-radius: 50%; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      font-size: 1.2rem; 
+      font-weight: bold; 
+      border: 2px solid var(--cor-fundo);
+    }
+    .step-card h3 { color: var(--cor-texto); margin-top: 0; margin-left: 25px; }
+    .step-card p { margin-bottom: 0; margin-left: 25px; font-size: 1rem;}
+
+    /* VÍDEO TUTORIAL */
     .video-card {
-      background: #1c1c1c;
+      background: #000;
       border-radius: 10px;
-      overflow: hidden; /* Garante que o iframe não vaze da borda */
+      overflow: hidden; 
       border: 1px solid #222;
       width: 100%;
-      max-width: 640px; /* Limita o tamanho do card do vídeo */
     }
     .video-card h3 {
       font-size: 1.2rem;
       color: var(--cor-primaria);
-      padding: 20px 20px 0 20px; /* Espaçamento do título */
+      padding: 20px 20px 0 20px; 
       margin-bottom: 15px;
+      text-align: center;
     }
     .video-responsive {
       position: relative;
       overflow: hidden;
       width: 100%;
-      padding-top: 56.25%; /* Proporção de 16:9 (para vídeos widescreen) */
+      padding-top: 56.25%; /* 16:9 */
     }
     .video-responsive iframe {
       position: absolute;
@@ -446,18 +406,135 @@
       height: 100%;
       border: none;
     }
-    /* === FIM DOS ESTILOS DE VÍDEOS === */
+
+    /* FAQ */
+    .faq-item {
+      background: var(--cor-fundo-card);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #222;
+    }
+    .faq-item h4 { 
+      cursor:pointer; 
+      padding: 20px;
+      display:flex; 
+      justify-content:space-between; 
+      align-items:center; 
+      color:var(--cor-texto); 
+      margin-bottom: 0;
+    }
+    .faq-item p { 
+      display: none; 
+      padding: 0 20px 20px 20px; 
+      background: var(--cor-fundo-card); 
+      border-top: 1px solid #333; 
+      margin-bottom: 0; 
+      font-size: 1rem;
+      border-radius: 0 0 8px 8px;
+    }
+    .faq-item.open p { display: block; }
+    .faq-item h4::after { content: "+"; font-size: 28px; color: var(--cor-primaria); transition: transform 0.3s; }
+    .faq-item.open h4::after { content: "–"; transform: rotate(180deg); }
+
+    /* FOOTER */
+    footer { 
+      text-align:center; 
+      padding: 40px 0; 
+      margin-top: 40px; 
+      border-top: 1px solid rgba(255,255,255,0.1); 
+    }
+
+    /* SEÇÃO DEPOIMENTOS */
+    .depoimentos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .depoimento-card {
+      background: var(--cor-fundo-card);
+      border: 1px solid #222;
+      border-radius: 8px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+    }
+    .depoimento-card p {
+      font-style: italic;
+      color: var(--cor-texto-secundario);
+      flex-grow: 1;
+      margin-bottom: 0; 
+      font-size: 1rem;
+    }
+    .depoimento-header {
+      display: flex;
+      align-items: center;
+      margin-top: 15px; 
+    }
+    .depoimento-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: var(--cor-primaria);
+      color: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-right: 15px;
+      flex-shrink: 0; 
+    }
+    .depoimento-info {
+      display: flex;
+      flex-direction: column;
+    }
+    .depoimento-card h3 {
+      color: #ffffff;
+      margin-bottom: 0; 
+      font-size: 1.1rem;
+    }
+    .depoimento-card span {
+      font-size: 0.9rem;
+      color: var(--cor-texto-secundario);
+    }
+    
+    /* SEÇÃO CTA FINAL */
+    #section-cta-final {
+      background: var(--cor-fundo-card);
+      border-radius: 10px;
+      padding: 50px;
+      text-align: center;
+      border: 1px solid var(--cor-primaria);
+    }
+    #section-cta-final h2 {
+      font-size: 2rem;
+      color: var(--cor-texto);
+      margin-bottom: 15px;
+    }
+    #section-cta-final p {
+      font-size: 1.1rem;
+      color: var(--cor-texto-secundario);
+      max-width: 600px;
+      margin: 0 auto 30px auto;
+    }
+
 
     /* RESPONSIVIDADE */
     @media (max-width:768px) {
-      h1 { font-size: 2rem; }
-      #section-hero h1 { font-size: 2.2rem; }
-        #section-hero p { padding: 0 10px; } 
+      h1, #section-hero h1 { font-size: 2.2rem; }
+      h2 { font-size: 1.8rem; }
 
-        /* Padding dos cards transparentes no mobile */
-        .container:not(#section-hero) {
-            padding: 30px 20px; 
-        }
+      .container {
+        padding: 40px 0;
+      }
+      
+      .instalacao-grid {
+        grid-template-columns: 1fr; /* Coluna única no mobile */
+      }
+      
+      .video-card {
+        margin-top: 30px; /* Espaço entre os passos e o vídeo */
+      }
 
       .menu-toggle { display:block; }
       .nav-links {
@@ -479,29 +556,60 @@
   <nav class="navbar" role="navigation" aria-label="Menu principal">
     <div class="nav-logo">TrollIPTV</div>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#section-hero">Início</a></li>
       <li><a href="#section-planos">Planos</a></li>
-      <li><a href="#section-conteudo">Conteúdo</a></li> <li><a href="#section-news">Notícias</a></li>
-      <li><a href="#section-escolha">Diferenciais</a></li>
-      <li><a href="#section-instalacao">Como Instalar</a></li>
-      <li><a href="#section-videos">Vídeos</a></li>
-      <li><a href="#section-apps">Guia de Apps</a></li>
-      <li><a href="#section-faq">FAQ</a></li>
+      <li><a href="#section-conteudo">Conteúdo</a></li>
+      <li><a href="#section-instalacao">Como Funciona</a></li>
       <li><a href="#section-depoimentos">Depoimentos</a></li>
-      <li><a href="#section-contato">Contato</a></li>
+      <li><a href="#section-faq">FAQ</a></li>
     </ul>
     <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
   </nav>
 
   <main>
     <section class="container" id="section-hero">
-      <h1>O Melhor IPTV do Brasil 2025? Guias, Notícias e Teste Grátis</h1>
-      <p>Bem-vindo ao portal TrollIPTV. Aqui você encontra as últimas notícias, guias completos e o serviço de IPTV mais estável do Brasil. Explore, aprenda e peça um teste grátis.</p>
-      <a class="btn-whatsapp" href="https://wa.me/5584996126008?text=Ol%C3%A1,%20quero%20um%20teste%20gr%C3%A1tis%20do%20IPTV" target="_blank" rel="noopener">Pedir Teste Grátis via WhatsApp</a>
+      <h1>O Melhor IPTV do Brasil 2025:<br><span>A Estabilidade que Você Procura</span></h1>
+      <p class="subtitle">Teste o servidor de IPTV pago mais estável do mercado. Assista futebol ao vivo, filmes e canais em 4K sem travamentos.</p>
+      <a class="btn-cta" href="https://wa.me/5584996126008?text=Ol%C3%A1,%20quero%20um%20teste%20gr%C3%A1tis%20do%20IPTV" target="_blank" rel="noopener">Pedir Teste Grátis de 4 Horas</a>
+    </section>
+
+    <section class="container" id="section-depoimentos">
+      <h2>O que nossos <span>clientes dizem</span></h2>
+      <div class="depoimentos-grid">
+        <article class="depoimento-card">
+          <p>"Depois de testar vários, o TrollIPTV foi o único que não travou no jogo do meu time. O teste grátis de 4 horas me convenceu na hora. Recomendo!"</p>
+          <div class="depoimento-header">
+            <div class="depoimento-avatar">M</div>
+            <div class="depoimento-info">
+              <h3>Marcos R.</h3>
+              <span>São Paulo, SP</span>
+            </div>
+          </div>
+        </article>
+        <article class="depoimento-card">
+          <p>"Atendimento nota 10! Tive uma dúvida na instalação e o suporte no WhatsApp me ajudou em 5 minutos. Muito atenciosos."</p>
+          <div class="depoimento-header">
+            <div class="depoimento-avatar">J</div>
+            <div class="depoimento-info">
+              <h3>Juliana F.</h3>
+              <span>Rio de Janeiro, RJ</span>
+            </div>
+          </div>
+        </article>
+        <article class="depoimento-card">
+          <p>"A biblioteca de filmes e séries é gigante e atualiza rápido. Minha família adorou. Vale cada centavo, muito melhor que TV a cabo."</p>
+          <div class="depoimento-header">
+            <div class="depoimento-avatar">C</div>
+            <div class="depoimento-info">
+              <h3>Carlos Eduardo S.</h3>
+              <span>Belo Horizonte, MG</span>
+            </div>
+          </div>
+        </article>
+      </div>
     </section>
 
     <section class="container" id="section-planos">
-      <h2>Nossos Planos de IPTV</h2>
+      <h2>Escolha o <span>Plano Ideal</span></h2>
       <div class="plano-cards">
         <article class="plano-card" role="region" aria-labelledby="mensal-title">
           <h3 id="mensal-title">Plano Mensal</h3>
@@ -526,7 +634,7 @@
     </section>
 
     <section class="container" id="section-conteudo">
-      <h2>Todo o Conteúdo Que Você Procura</h2>
+      <h2>O Melhor Conteúdo <span>em um só lugar</span></h2>
       <div class="conteudo-grid">
         <article class="conteudo-box">
           <h3>Futebol ao Vivo</h3>
@@ -542,163 +650,29 @@
         </article>
       </div>
     </section>
-    <section class="container" id="section-news">
-      <h2>Notícias e Artigos Essenciais</h2>
-      <div class="articles-grid">
-
-        <article class="article-card">
-          <h3>Qual é o Melhor IPTV do Brasil? Análise 2025</h3>
-          <p>Uma análise completa sobre o que define o melhor IPTV pago: estabilidade do servidor, apps P2P, preço e como nosso serviço se compara.</p>
-          <a href="#article-4" class="btn-read-more" data-target="article-4" aria-expanded="false">Leia Mais »</a>
-          <div id="article-4" class="article-content">
-            <h4>O que define o Melhor Provedor de IPTV?</h4>
-            <p>Muitos se perguntam "qual o melhor IPTV do Brasil". A resposta não está em quem oferece mais canais, mas em quem oferece o **melhor servidor**. O melhor IPTV pago de 2025 é aquele que garante estabilidade, especialmente em jogos de futebol ao vivo.</p>
-            <h4>Servidor Dedicado vs. P2P</h4>
-            <p>O TrollIPTV se destaca como um dos melhores provedores do mercado brasileiro por investir em servidores dedicados de alta performance. Diferente de listas P2P que dependem de outros usuários, nosso sistema garante que sua conexão seja direta e sem travamentos. Você pode comprovar isso com nosso teste grátis de 4 horas.</p>
-          </div>
-        </article>
-        
-        <article class="article-card">
-          <h3>O Cerco se Fecha: IPTV Ilegal no Brasil em 2025</h3>
-          <p>A Anatel e a Ancine intensificaram o combate à pirataria. Entenda o que mudou, os riscos de multas e os perigos de malwares em apps não oficiais.</p>
-          <a href="#article-1" class="btn-read-more" data-target="article-1" aria-expanded="false">Leia Mais »</a>
-          <div id="article-1" class="article-content">
-            <h4>Bloqueios em Massa e Ação das Operadoras</h4>
-            <p>Em 2025, a Anatel firmou um acordo histórico com a Ancine para agilizar o bloqueio de servidores e aplicativos de IPTV pirata. Operadoras como Claro, Vivo e TIM agora são notificadas para bloquear o acesso diretamente em suas redes (via DNS), tornando o uso de listas ilegais cada vez mais instável e frustrante para o usuário.</p>
-            <h4>Riscos Legais e Multas para Usuários</h4>
-            <p>A legislação brasileira é clara: o Artigo 184 do Código Penal criminaliza a violação de direitos autorais. Embora o foco principal seja quem distribui, usuários que consomem conteúdo pirata conscientemente estão em uma "zona cinzenta" e podem, sim, ser responsabilizados. Notícias recentes indicam que a fiscalização está aumentando, com multas que podem variar de R$ 3 mil a R$ 20 mil para quem utiliza equipamentos não homologados (TV Boxes piratas).</p>
-            <h4>O Perigo Escondido: Malware "BADBOX 2.0"</h4>
-            <p>Relatórios de segurança cibernética, como o da Human Security e alertas da própria Anatel, identificaram um aumento alarmante de malwares em TV Boxes e aplicativos de IPTV. O "BADBOX 2.0" é capaz de roubar dados pessoais, informações bancárias e até mesmo usar seu dispositivo para ataques DDoS sem que você perceba. A aparente economia do serviço ilegal pode custar muito caro à sua segurança digital.</p>
-          </div>
-        </article>
-        
-        <article class="article-card">
-          <h3>O Futuro é Agora: 5 Tendências que Moldam o IPTV</h3>
-          <p>O mercado de IPTV deve movimentar mais de 250 bilhões de dólares globalmente até 2031. Veja como a tecnologia está evoluindo com IA, 8K e experiências imersivas.</p>
-          <a href="#article-2" class="btn-read-more" data-target="article-2" aria-expanded="false">Leia Mais »</a>
-          <div id="article-2" class="article-content">
-            <p>A TV como conhecemos está sendo reinventada. O IPTV deixou de ser apenas uma alternativa e se tornou o protagonista da distribuição de conteúdo audiovisual, com um crescimento projetado que supera em muito o da TV a cabo tradicional.</p>
-            <ul>
-              <li><b>Inteligência Artificial (IA):</b> A IA está personalizando a experiência do usuário, recomendando conteúdos com base no seu histórico e otimizando a qualidade do streaming em tempo real para evitar travamentos.</li>
-              <li><b>Qualidade 8K e HDR:</b> Com a popularização das TVs 8K, os serviços de IPTV já se preparam para oferecer transmissões com resolução ultra-alta, proporcionando uma imersão visual sem precedentes, especially para esportes e filmes.</li>
-              <li><b>Realidade Virtual (VR) e Aumentada (AR):</b> O futuro promete a fusão do IPTV com VR/AR. Imagine assistir a um jogo de futebol como se estivesse no estádio ou a um show com visão em 360 graus.</li>
-              <li><b>Interatividade:</b> O IPTV permite enquetes ao vivo, compras integradas durante comerciais e múltiplas câmeras em eventos esportivos, transformando o espectador passivo em um participante ativo.</li>
-              <li><b>Cloud Gaming e Serviços Integrados:</b> As plataformas de IPTV estão se tornando centrais de entretenimento, integrando jogos via nuvem (Cloud Gaming) и outros serviços de streaming em uma única interface.</li>
-            </ul>
-          </div>
-        </article>
-
-      </div>
-    </section>
-    
-    <section class="container" id="section-escolha">
-        <h2>Por Que Escolher a TrollIPTV?</h2>
-        <div class="feature-grid">
-            <div class="feature-box">
-                <div class="icon">🚀</div>
-                <h3>Servidores de Alta Velocidade</h3>
-                <p>Investimos em infraestrutura de ponta para garantir streaming sem travamentos, mesmo em 4K.</p>
-            </div>
-            <div class="feature-box">
-                <div class="icon">🛡️</div>
-                <h3>Estabilidade Garantida</h3>
-                <p>Nossa rede possui redundância para manter o serviço no ar 99.9% do tempo. Diga adeus às quedas!</p>
-            </div>
-            <div class="feature-box">
-                <div class="icon">📺</div>
-                <h3>Conteúdo Completo</h3>
-                <p>Milhares de canais, filmes e séries atualizados semanalmente para toda a família.</p>
-            </div>
-            <div class="feature-box">
-                <div class="icon">💬</div>
-                <h3>Suporte Humanizado</h3>
-                <p>Atendimento rápido e eficiente via WhatsApp para te ajudar no que for preciso.</p>
-            </div>
-        </div>
-    </section>
     
     <section class="container" id="section-instalacao">
-        <h2>Como Instalar em 3 Passos Simples</h2>
-        <div class="steps-grid">
+      <h2>Como Funciona? <span>É simples e rápido!</span></h2>
+      <div class="instalacao-grid">
+        <div class="steps-list">
             <div class="step-card">
                 <div class="step-number">1</div>
                 <h3>Peça seu Teste Grátis</h3>
-                <p>Clique em qualquer botão do WhatsApp, peça seu teste e receba seus dados de acesso em minutos.</p>
+                <p>Clique em qualquer botão do WhatsApp e peça seu teste para receber o acesso em minutos.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">2</div>
                 <h3>Instale o App</h3>
-                <p>Baixe um dos apps que recomendamos (como o IPTV Smarters) na loja de aplicativos do seu dispositivo.</p>
+                <p>Baixe o app que recomendamos (como o IPTV Smarters) na loja do seu dispositivo.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">3</div>
                 <h3>Faça o Login e Curta!</h3>
-                <p>Abra o app, insira os dados que enviamos e aproveite todo o nosso conteúdo liberado para você.</p>
+                <p>Abra o app, insira os dados que enviamos e aproveite todo o nosso conteúdo liberado!</p>
             </div>
         </div>
-    </section>
 
-    <section class="container" id="section-comparativo">
-        <h2>IPTV vs. Concorrência: Qual a Melhor Opção?</h2>
-        <div class="table-responsive">
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                      <th>Recurso</th>
-                      <th>🏆 TrollIPTV</th>
-                      <th>📺 TV a Cabo</th>
-                      <th>🎬 Streaming Tradicional</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                      <td>Canais Ao Vivo</td>
-                      <td>✅ Sim, centenas</td>
-                      <td>✅ Sim, com pacotes</td>
-                      <td>❌ Não</td>
-                    </tr>
-                    <tr>
-                      <td>Filmes e Séries (VOD)</td>
-                      <td>✅ Sim, ilimitado</td>
-                      <td>❌ Apenas em pacotes caros</td>
-                      <td>✅ Sim, catálogo limitado</td>
-                    </tr>
-                    <tr>
-                      <td>Custo Mensal</td>
-                      <td>✅ Baixo e fixo</td>
-                      <td>❌ Alto, com reajustes</td>
-                      <td>❌ Várias assinaturas</td>
-                    </tr>
-                    <tr>
-                      <td>Fidelidade / Multa</td>
-                      <td>❌ Não</td>
-                      <td>✅ Sim</td>
-                      <td>❌ Não</td>
-                    </tr>
-                      <tr>
-                      <td>Portabilidade (usar em vários locais)</td>
-                      <td>✅ Sim</td>
-                      <td>❌ Não</td>
-                      <td>✅ Sim</td>
-                    </tr>
-                    <tr>
-                      <td>Necessidade de Instalação Técnica</td>
-                      <td>❌ Não</td>
-                      <td>✅ Sim</td>
-                      <td>❌ Não</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <section class="container" id="section-videos">
-      <h2>Veja em Ação</h2>
-      <p>Confira nossos vídeos demonstrativos e tutoriais de instalação.</p>
-      
-      <div class="videos-grid">
-        
-        <article class="video-card">
+        <div class="video-card">
           <h3>Conteúdo do Nosso Servidor</h3>
           <div class="video-responsive">
             <iframe 
@@ -709,155 +683,40 @@
               allowfullscreen>
             </iframe>
           </div>
-        </article>
-        
         </div>
-    </section>
-    <section class="container" id="section-apps">
-        <h2>Guia Definitivo: Os Melhores Aplicativos e Aparelhos de IPTV</h2>
-        
-        <div class="guide-section">
-            <h3>🏆 Qual o Melhor Aplicativo de IPTV? (Players)</h3>
-            <div class="guide-grid">
-                <div class="guide-box"><h4>IPTV Smarters Pro</h4><p>Considerado o mais popular e versátil. Interface amigável, funciona na maioria dos aparelhos e suporta recursos como EPG (guia de programação) e VOD.</p></div>
-                <div class="guide-box"><h4>XCIPTV Player</h4><p>Excelente para personalização. Oferece uma interface rápida e customizável, sendo um dos preferidos por usuários de TV Box Android.</p></div>
-                <div class="guide-box"><h4>TiviMate</h4><p>Famoso pela sua interface moderna e foco na experiência de TV ao vivo. O EPG é um dos melhores do mercado, ideal para quem gosta de ziguezaguear pelos canais.</p></div>
-                <div class="guide-box"><h4>SS IPTV</h4><p>Um dos mais antigos e confiáveis, especialmente para Smart TVs LG e Samsung. A configuração é um pouco mais manual, mas a estabilidade compensa.</p></div>
-                <div class="guide-box"><h4>VLC Media Player</h4><p>Sim, o famoso player de vídeo para PC também reproduz listas M3U. É uma opção simples e direta para quem quer assistir no computador sem instalar nada novo.</p></div>
-                <div class="guide-box"><h4>Perfect Player</h4><p>Ótima opção para Android TV e Fire Stick, com suporte avançado para EPG e um layout visualmente agradável que simula um decodificador de TV a cabo.</p></div>
-            </div>
-        </div>
-
-        <div class="guide-section">
-            <h3>☠️ Aplicativos de IPTV para Evitar (Os Piores)</h3>
-            <div class="guide-grid">
-                <div class="guide-box"><h4>Apps com Listas Embutidas</h4><p>Qualquer app que já venha "pronto para usar" com milhares de canais é suspeito. Geralmente são instáveis e podem conter malware.</p></div>
-                <div class="guide-box"><h4>Clones Desconhecidos</h4><p>Cuidado com cópias de apps famosos com nomes ligeiramente diferentes. São portas de entrada para vírus e roubo de dados.</p></div>
-                <div class="guide-box"><h4>Excesso de Anúncios</h4><p>Apps que exibem publicidade agressiva, pop-ups e banners a todo momento. Além de irritante, isso torna o app lento e perigoso.</p></div>
-                <div class="guide-box"><h4>Falta de Suporte</h4><p>Aplicativos sem site oficial, sem contato de desenvolvedor ou abandonados nas lojas de apps são um péssimo sinal. Se algo der errado, você não terá ajuda.</p></div>
-            </div>
-        </div>
-
-        <div class="guide-section">
-            <h3>💡 Respondendo às Maiores Dúvidas sobre IPTV no Brasil</h3>
-            <div class="guide-grid">
-                <div class="guide-box"><h4>O que é Lista M3U?</h4><p>É um arquivo de texto simples que contém os links (URLs) dos canais. O aplicativo de IPTV usa essa lista para saber de onde buscar a transmissão.</p></div>
-                <div class="guide-box"><h4>IPTV P2P é melhor?</h4><p>A tecnologia P2P (Peer-to-Peer) distribui a carga da transmissão entre os usuários. Pode ser mais estável em grandes eventos, mas depende muito da sua velocidade de upload.</p></div>
-                <div class="guide-box"><h4>Como instalar em Smart TV Samsung/LG?</h4><p>Geralmente, você baixa um app como o "SS IPTV" ou "IPTV Smarters" da loja de aplicativos da TV e depois adiciona a lista M3U que nós fornecemos.</p></div>
-                <div class="guide-box"><h4>Preciso de VPN para usar IPTV?</h4><p>Não é obrigatório, mas uma VPN pode ajudar a evitar bloqueios de operadoras (traffic shaping) e a proteger sua privacidade online.</p></div>
-                <div class="guide-box"><h4>Por que o IPTV trava?</h4><p>As causas mais comuns são: internet lenta ou instável, sobrecarga no servidor do provedor ou um dispositivo (TV Box) fraco e sem poder de processamento.</p></div>
-                <div class="guide-box"><h4>TV Box é ilegal?</h4><p>O aparelho TV Box é legal. O que pode ser ilegal é o software e as listas pré-instaladas nele que transmitem conteúdo sem autorização.</p></div>
-                <div class="guide-box"><h4>Qual a diferença entre IPTV e Streaming?</h4><p>Tecnicamente, IPTV é um termo amplo. Netflix é um tipo de streaming (VOD). O IPTV que vendemos foca em simular a TV ao vivo, com canais lineares.</p></div>
-                <div class="guide-box"><h4>O que é EPG?</h4><p>É o Guia Eletrônico de Programação. Aquela grade que mostra o que está passando agora e o que virá a seguir em cada canal, como na TV a cabo.</p></div>
-                <div class="guide-box"><h4>Posso usar a mesma lista em vários aparelhos?</h4><p>Depende do plano. Nossos planos padrão são para um ponto. Usar a mesma lista simultaneamente em vários locais pode causar bloqueio de acesso.</p></div>
-                <div class="guide-box"><h4>Como assistir futebol ao vivo sem travar?</h4><p>Use uma conexão de internet via cabo de rede, feche outros apps no seu dispositivo e escolha um serviço de IPTV com servidores dedicados, como o nosso.</p></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="container" id="section-beneficios">
-        <h2>Benefícios do Nosso Serviço</h2>
-        <div class="beneficios">
-          <div class="beneficio-box"><h3>Qualidade Superior</h3><p>Transmissão em Full HD e 4K, com tecnologia anti-travamento para uma experiência fluida.</p></div>
-          <div class="beneficio-box"><h3>Futebol Ao Vivo</h3><p>Não perca nenhum lance. Assista aos principais campeonatos do Brasil e do mundo.</p></div>
-          <div class="beneficio-box"><h3>Filmes e Séries</h3><p>Um catálogo VOD completo com os últimos lançamentos de filmes e séries.</p></div>
-          <div class="beneficio-box"><h3>Compatibilidade Total</h3><p>Funciona em Smart TVs, TV Box, Android, iOS, Windows, Mac e mais.</p></div>
-          <div class="beneficio-box"><h3>Suporte Rápido</h3><p>Nosso atendimento via WhatsApp está pronto para ajudar na configuração e tirar suas dúvidas.</p></div>
-          <div class="beneficio-box"><h3>Servidores Estáveis</h3><p>Investimos em servidores de alta performance para garantir um serviço estável e sem quedas.</p></div>
-        </div>
-    </section>
-
-    <section class="container" id="section-faq">
-      <h2>Perguntas Frequentes</h2>
-      <div class="faq-item"><h4>IPTV é legal ou é crime?</h4><p>A tecnologia IPTV é 100% legal. O que pode ser ilegal ("crime") é a retransmissão de canais pagos sem ter os direitos. Por isso, é essencial escolher um provedor de IPTV pago que seja confiável e que invista em servidores de qualidade. Nossos serviços operam com foco na estabilidade.</p></div>
-      <div class="faq-item"><h4>Qual o melhor aparelho de IPTV do Brasil? (TV Box)</h4><p>O melhor aparelho de IPTV é aquele que roda aplicativos de forma fluida. Dispositivos como o Amazon Fire Stick 4K, Xiaomi Mi TV Stick e TV Boxes Android com bom processamento são os mais recomendados. Evite aparelhos "gato box" não homologados, pois podem conter malware.</p></div>
-      <div class="faq-item"><h4>Qual o melhor servidor de IPTV do Brasil?</h4><p>O melhor servidor de IPTV é aquele que oferece alta estabilidade (99% de uptime) e baixa latência, especialmente durante grandes eventos como jogos de futebol ao vivo. O TrollIPTV investe em servidores dedicados para garantir a melhor experiência, se posicionando como um dos melhores provedores do mercado brasileiro.</p></div>
-      <div class="faq-item"><h4>O serviço de IPTV é legal no Brasil?</h4><p>Sim, a tecnologia IPTV é perfeitamente legal. A legalidade do serviço depende da fonte do conteúdo. O TrollIPTV se esforça para operar dentro das regulamententações, mas é crucial que o usuário esteja ciente das leis de direitos autorais.</p></div>
-      <div class="faq-item"><h4>Em quais aparelhos posso usar a lista IPTV?</h4><p>Nosso serviço é compatível com a maioria dos dispositivos: Smart TVs (Samsung, LG), TV Box (Android TV), celulares (Android e iOS), computadores (Windows e Mac) e Amazon Fire Stick.</p></div>
-      <div class="faq-item"><h4>Qual a velocidade de internet recomendada?</h4><p>Para HD, recomendamos no mínimo 10-15 Mbps. Para Full HD/4K, o ideal é ter 20-30 Mbps ou mais para garantir uma transmissão estável.</p></div>
-      <div class="faq-item"><h4>Como funciona o teste IPTV grátis?</h4><p>Você solicita seu teste pelo WhatsApp e recebe um acesso completo por 4 horas para avaliar nossa lista de canais, a qualidade e a estabilidade, sem nenhum compromisso.</p></div>
-    </section>
-
-    <section class="container" id="section-depoimentos">
-      <h2>O que nossos clientes dizem</h2>
-      <p class="section-subtitle">Opiniões reais de quem testou. Melhor que qualquer review de IPTV no Reddit!</p>
-      
-      <div class="depoimentos-grid">
-        <article class="depoimento-card">
-          <p>"Depois de testar vários, o TrollIPTV foi o único que não travou no jogo do meu time. O teste grátis de 4 horas me convenceu na hora. Recomendo!"</p>
-          <div class="depoimento-header">
-            <div class="depoimento-avatar">M</div>
-            <div class="depoimento-info">
-              <h3>Marcos R.</h3>
-              <span>São Paulo, SP</span>
-            </div>
-          </div>
-        </article>
-        <article class="depoimento-card">
-          <p>"Atendimento nota 10! Tive uma dúvida na instalação na minha Smart TV e o suporte no WhatsApp me ajudou em 5 minutos. Muito atenciosos."</p>
-          <div class="depoimento-header">
-            <div class="depoimento-avatar">J</div>
-            <div class="depoimento-info">
-              <h3>Juliana F.</h3>
-              <span>Rio de Janeiro, RJ</span>
-            </div>
-          </div>
-        </article>
-        <article class="depoimento-card">
-          <p>"A biblioteca de filmes e séries é gigante e atualiza rápido. Minha família adorou. Vale cada centavo, muito melhor que TV a cabo."</p>
-          <div class="depoimento-header">
-            <div class="depoimento-avatar">C</div>
-            <div class="depoimento-info">
-              <h3>Carlos Eduardo S.</h3>
-              <span>Belo Horizonte, MG</span>
-            </div>
-          </div>
-        </article>
-        <article class="depoimento-card">
-          <p>"Pedi o teste grátis e em poucos minutos já estava assistindo. Sem burocracia. Qualidade de imagem 4K é top. Já assinei o plano anual."</p>
-          <div class="depoimento-header">
-            <div class="depoimento-avatar">F</div>
-            <div class="depoimento-info">
-              <h3>Fernanda L.</h3>
-              <span>Curitiba, PR</span>
-            </div>
-          </div>
-        </article>
-        <article class="depoimento-card">
-          <p>"Estava com medo de ser complicado, mas é super simples. Funciona liso no meu Fire Stick. Adeus mensalidades caras de streaming!"</p>
-          <div class="depoimento-header">
-            <div class="depoimento-avatar">R</div>
-            <div class="depoimento-info">
-              <h3>Rafael T.</h3>
-              <span>Porto Alegre, RS</span>
-            </div>
-          </div>
-        </article>
-        <article class="depoimento-card">
-          <p>"O melhor EPG (guia de programação) que já vi. Fácil de achar o que está passando. A estabilidade é o ponto forte. Podem confiar."</p>
-          <div class="depoimento-header">
-            <div class="depoimento-avatar">L</div>
-            <div class="depoimento-info">
-              <h3>Lucas M.</h3>
-              <span>Salvador, BA</span>
-            </div>
-          </div>
-        </article>
       </div>
     </section>
 
-    <section class="container" id="section-contato">
-      <h2>Contato e Suporte Técnico</h2>
-      <p>Precisa de ajuda para configurar ou tem alguma dúvida? Fale conosco!</p>
-      <p>Nosso único canal de suporte é via WhatsApp: <strong>+55 84 9612-6008</strong></p>
-      <a class="btn-whatsapp" href="https://wa.me/5584996126008?text=Ol%C3%A1,%20preciso%20de%20suporte%20t%C3%A9cnico" target="_blank" rel="noopener">Falar com Suporte no WhatsApp</a>
+    <section class="container" id="section-faq">
+      <h2>Perguntas <span>Frequentes</span></h2>
+      <div class="faq-item">
+        <h4>IPTV é legal ou é crime?</h4>
+        <p>A tecnologia IPTV é 100% legal. O que pode ser ilegal ("crime") é a retransmissão de canais pagos sem ter os direitos. Por isso, é essencial escolher um provedor de IPTV pago que seja confiável e que invista em servidores de qualidade. Nossos serviços operam com foco na estabilidade.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Em quais aparelhos posso usar a lista IPTV?</h4>
+        <p>Nosso serviço é compatível com a maioria dos dispositivos: Smart TVs (Samsung, LG), TV Box (Android TV), celulares (Android e iOS), computadores (Windows e Mac) e Amazon Fire Stick.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Qual a velocidade de internet recomendada?</h4>
+        <p>Para HD, recomendamos no mínimo 10-15 Mbps. Para Full HD/4K, o ideal é ter 20-30 Mbps ou mais para garantir uma transmissão estável.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Qual o melhor aparelho de IPTV do Brasil? (TV Box)</h4>
+        <p>O melhor aparelho de IPTV é aquele que roda aplicativos de forma fluida. Dispositivos como o Amazon Fire Stick 4K, Xiaomi Mi TV Stick e TV Boxes Android com bom processamento são os mais recomendados. Evite aparelhos "gato box" não homologados, pois podem conter malware.</p>
+      </div>
+    </section>
+
+    <section class="container" id="section-cta-final">
+      <h2>Teste o Melhor Servidor de IPTV do Brasil</h2>
+      <p>Sem compromisso e sem burocracia. Peça seu teste grátis de 4 horas agora mesmo e comprove nossa qualidade.</p>
+      <a class="btn-cta" href="https://wa.me/5584996126008?text=Ol%C3%A1,%20quero%20um%20teste%20gr%C3%A1tis%20do%20IPTV" target="_blank" rel="noopener">Pedir Teste Grátis via WhatsApp</a>
     </section>
   </main>
 
   <footer>
-    <div class="container">
-      <p>© <span id="ano"></span> TrollIPTV — Todos os direitos reservados.</p>
-      <p style="margin-top:8px; font-size:0.9rem; color:#8f8f8f;">
+    <div class="container" style="padding-bottom: 20px;"> <p>© <span id="ano"></span> TrollIPTV — Todos os direitos reservados.</p>
+      <p style="margin-top:8px; font-size:0.9rem; color:var(--cor-texto-secundario);">
         <a href="/termos.html" style="color: inherit;">Termos e Condições</a> | 
         <a href="/politica.html" style="color: inherit;">Política de Privacidade</a>
       </p>
@@ -876,39 +735,18 @@
         menuToggle.setAttribute('aria-expanded', isExpanded);
     });
 
-    // Script para expandir/recolher artigos
-    document.querySelectorAll('.btn-read-more').forEach(button => {
-      button.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('data-target');
-        const content = document.getElementById(targetId);
-        
-        // Fecha todos os outros abertos
-        document.querySelectorAll('.article-content.open').forEach(openContent => {
-            if (openContent !== content) {
-                openContent.classList.remove('open');
-                openContent.style.maxHeight = null;
-                openContent.previousElementSibling.setAttribute('aria-expanded', 'false');
-            }
-        });
-
-        // Abre ou fecha o clicado
-        content.classList.toggle('open');
-        const isContentOpen = content.classList.contains('open');
-        this.setAttribute('aria-expanded', isContentOpen);
-        if (isContentOpen) {
-          content.style.maxHeight = content.scrollHeight + "px";
-        } else {
-          content.style.maxHeight = null;
-        }
-      });
-    });
-
-    // Script para FAQ
+    // Script para FAQ (Acordeão)
     document.querySelectorAll('.faq-item h4').forEach(header => {
       header.addEventListener('click', () => {
         const item = header.parentElement;
         item.classList.toggle('open');
+        
+        // Fecha outros abertos (opcional, mas bom para UI)
+        document.querySelectorAll('.faq-item').forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('open');
+          }
+        });
       });
     });
   </script>
