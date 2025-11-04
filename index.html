@@ -73,10 +73,10 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "O serviço de IPTV é legal no Brasil?",
+            "name": "Como funciona o teste IPTV grátis?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Sim, a tecnologia IPTV (transmissão de TV via protocolo de internet) é perfeitamente legal. A legalidade do serviço depende da fonte do conteúdo e dos direitos de transmissão. O TrollIPTV se esforça para operar dentro das regulamentações, mas é crucial que o usuário esteja ciente das leis de direitos autorais do seu país."
+              "text": "É simples e sem compromisso. Você solicita seu teste grátis diretamente pelo nosso WhatsApp e recebe um acesso completo à nossa lista de canais por 4 horas. Assim, você pode avaliar na prática a qualidade da imagem, a estabilidade dos servidores e a variedade do nosso catálogo."
             }
           },
           {
@@ -84,7 +84,7 @@
             "name": "IPTV é legal ou é crime?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "A tecnologia IPTV é 100% legal. O que pode ser ilegal ('crime') é a retransmissão de canais pagos sem ter os direitos. Por isso, é essencial escolher um provedor de IPTV pago que seja confiável e que invista em servidores de qualidade. Nossos serviços operam com foco na estabilidade e conformidade."
+              "text": "A tecnologia IPTV é 100% legal. O que pode ser ilegal ('crime') é a retransmissão de canais pagos sem ter os direitos. Por isso, é essencial escolher um provedor de IPTV pago que seja confiável e que invista em servidores de qualidade. Nossos serviços operam com foco na estabilidade."
             }
           },
           {
@@ -105,7 +105,7 @@
           },
           {
             "@type": "Question",
-            "name": "Qual a velocidade de internet recomendada para IPTV?",
+            "name": "Qual a velocidade de internet recomendada?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Para canais em qualidade HD, recomendamos uma conexão estável de no mínimo 10 a 15 Mbps. Para conteúdo em Full HD e 4K, o ideal é ter de 20 a 30 Mbps ou mais para garantir uma transmissão fluida e sem travamentos."
@@ -113,18 +113,42 @@
           },
           {
             "@type": "Question",
-            "name": "Como funciona o teste IPTV grátis?",
+            "name": "Qual o melhor servidor de IPTV do Brasil?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "É simples e sem compromisso. Você solicita seu teste grátis diretamente pelo nosso WhatsApp e recebe um acesso completo à nossa lista de canais por 4 horas. Assim, você pode avaliar na prática a qualidade da imagem, a estabilidade dos servidores e a variedade do nosso catálogo."
+              "text": "O melhor servidor de IPTV é aquele que oferece alta estabilidade (99% de uptime) e baixa latência, especialmente durante grandes eventos como jogos de futebol ao vivo. O TrollIPTV investe em servidores dedicados para garantir a melhor experiência, se posicionando como um dos melhores provedores do mercado brasileiro."
             }
           },
           {
             "@type": "Question",
-            "name": "Qual o melhor servidor de IPTV do Brasil?",
+            "name": "Qual o melhor aplicativo de IPTV (Player)?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "O melhor servidor de IPTV é aquele que oferece alta estabilidade (99% de uptime) e baixa latência, especialmente durante grandes eventos como jogos de futebol ao vivo. O TrollIPTV investe em servidores dedicados e tecnologia P2P para garantir a melhor experiência, se posicionando como um dos melhores provedores do mercado brasileiro."
+              "text": "Os melhores aplicativos de IPTV são players como o IPTV Smarters, XCIPTV e TiviMate. Eles são leves, fáceis de configurar e organizam bem os canais, filmes e séries. Recomendamos usar um desses apps para ter a melhor experiência."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Por que o IPTV trava?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "As causas mais comuns para travamentos são: internet lenta ou instável, sobrecarga no servidor do provedor ou um dispositivo (TV Box ou Smart TV) fraco e sem poder de processamento. Escolher um bom provedor como o TrollIPTV, que investe em servidores, é o passo mais importante."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Preciso de VPN para usar IPTV?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Na maioria dos casos, não. No entanto, algumas operadoras de internet podem limitar a velocidade do seu streaming (traffic shaping). Nesses casos, uma VPN pode ajudar a evitar esses bloqueios e a proteger sua privacidade online."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O que é uma Lista M3U?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A Lista M3U é um arquivo de texto simples que contém os links (URLs) dos canais. O aplicativo de IPTV (como o Smarters) usa essa lista para saber de onde buscar a transmissão de cada canal. Nós fornecemos essa lista ou um login de usuário/senha, que é ainda mais fácil."
             }
           }
         ]
@@ -153,7 +177,6 @@
       line-height: 1.6;
       padding-top: 70px;
       
-      /* === MUDANÇA: FUNDO .JPG E SEM GRADIENTE === */
       background-color: var(--cor-fundo);
       background-image: url("fundo.jpg");
       background-repeat: no-repeat;
@@ -170,7 +193,7 @@
       padding: 60px 0; /* Espaçamento entre seções */
     }
 
-    /* === MUDANÇA: SEÇÕES COM FUNDO TRANSPARENTE === */
+    /* SEÇÕES COM FUNDO TRANSPARENTE */
     section.container {
       background: var(--cor-fundo-transparente);
       border: 1px solid rgba(255, 255, 255, 0.1);
@@ -297,8 +320,8 @@
     .plano-card.popular { 
         transform: scale(1.05); /* Ligeiramente maior */
         border: 2px solid transparent;
-        background-image: linear-gradient(var(--cor-fundo-card), var(--cor-fundo-card)), 
-                          linear-gradient(120deg, var(--cor-primaria), var(--cor-secundaria));
+        background-image: linear-gradient(rgba(20, 20, 20, 0.9), rgba(20, 20, 20, 0.9)), /* Fundo interno */
+                          linear-gradient(120deg, var(--cor-primaria), var(--cor-secundaria)); /* Borda gradiente */
         background-origin: border-box;
         background-clip: padding-box, border-box;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
@@ -785,22 +808,57 @@
 
     <section class="container" id="section-faq">
       <h2>Perguntas <span>Frequentes</span></h2>
+      
+      <div class="faq-item">
+        <h4>Como funciona o teste IPTV grátis?</h4>
+        <p>É simples e sem compromisso. Você solicita seu teste grátis diretamente pelo nosso WhatsApp e recebe um acesso completo à nossa lista de canais por 4 horas.</p>
+      </div>
+      
       <div class="faq-item">
         <h4>IPTV é legal ou é crime?</h4>
-        <p>A tecnologia IPTV é 100% legal. O que pode ser ilegal ("crime") é a retransmissão de canais pagos sem ter os direitos. Por isso, é essencial escolher um provedor de IPTV pago que seja confiável e que invista em servidores de qualidade. Nossos serviços operam com foco na estabilidade.</p>
+        <p>A tecnologia IPTV é 100% legal. O que pode ser ilegal ("crime") é a retransmissão de canais pagos sem ter os direitos. Por isso, é essencial escolher um provedor de IPTV pago confiável.</p>
       </div>
+
       <div class="faq-item">
         <h4>Em quais aparelhos posso usar a lista IPTV?</h4>
         <p>Nosso serviço é compatível com a maioria dos dispositivos: Smart TVs (Samsung, LG), TV Box (Android TV), celulares (Android e iOS), computadores (Windows e Mac) e Amazon Fire Stick.</p>
       </div>
+
       <div class="faq-item">
         <h4>Qual a velocidade de internet recomendada?</h4>
         <p>Para HD, recomendamos no mínimo 10-15 Mbps. Para Full HD/4K, o ideal é ter 20-30 Mbps ou mais para garantir uma transmissão estável.</p>
       </div>
+      
+      <div class="faq-item">
+        <h4>Qual o melhor servidor de IPTV do Brasil?</h4>
+        <p>O melhor servidor de IPTV é aquele que oferece alta estabilidade (99% de uptime), especialmente em jogos ao vivo. O TrollIPTV investe em servidores dedicados para garantir a melhor experiência.</p>
+      </div>
+      
       <div class="faq-item">
         <h4>Qual o melhor aparelho de IPTV do Brasil? (TV Box)</h4>
-        <p>O melhor aparelho de IPTV é aquele que roda aplicativos de forma fluida. Dispositivos como o Amazon Fire Stick 4K, Xiaomi Mi TV Stick e TV Boxes Android com bom processamento são os mais recomendados. Evite aparelhos "gato box" não homologados, pois podem conter malware.</p>
+        <p>O melhor aparelho é aquele que roda aplicativos de forma fluida, como o Amazon Fire Stick 4K, Xiaomi Mi TV Stick ou uma boa TV Box Android. Evite aparelhos "gato box" não homologados.</p>
       </div>
+
+      <div class="faq-item">
+        <h4>Qual o melhor aplicativo de IPTV (Player)?</h4>
+        <p>Os melhores aplicativos de IPTV são players como o IPTV Smarters, XCIPTV e TiviMate. Eles são leves, fáceis de configurar e organizam bem os canais, filmes e séries.</p>
+      </div>
+      
+      <div class="faq-item">
+        <h4>Por que o IPTV trava?</h4>
+        <p>As causas mais comuns são: internet lenta, sobrecarga no servidor do provedor ou um dispositivo (TV Box) fraco. Escolher um bom provedor como o TrollIPTV, que investe em servidores, é o passo mais importante.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Preciso de VPN para usar IPTV?</h4>
+        <p>Na maioria dos casos, não. No entanto, se sua operadora de internet estiver limitando sua velocidade, uma VPN pode ajudar a evitar esses bloqueios.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>O que é uma Lista M3U?</h4>
+        <p>A Lista M3U é um arquivo que contém os links dos canais. Nós fornecemos essa lista ou um login de usuário/senha, que é ainda mais fácil de usar na maioria dos aplicativos.</p>
+      </div>
+
     </section>
 
     <section class="container" id="section-cta-final">
