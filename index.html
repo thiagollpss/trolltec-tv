@@ -350,6 +350,43 @@
       margin-bottom: 0;
     }
 
+    /* === NOVA SEÇÃO: RECURSOS (ANTI-TRAVAMENTOS) === */
+    .recursos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .recurso-box {
+      background: #1c1c1c; /* Fundo de card interno */
+      border-radius: 8px;
+      padding: 25px;
+      text-align: center;
+      border: 1px solid #222;
+      transition: transform 0.3s;
+    }
+    .recurso-box:hover {
+      transform: translateY(-5px);
+      border-color: var(--cor-primaria);
+    }
+    .recurso-box .check-icon {
+      font-size: 2.5rem;
+      color: var(--cor-primaria);
+      display: block;
+      margin-bottom: 10px;
+    }
+    .recurso-box h3 {
+      color: var(--cor-texto);
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+    .recurso-box p {
+      font-size: 0.95rem;
+      margin-bottom: 0;
+      color: var(--cor-texto-secundario);
+    }
+    /* === FIM DOS ESTILOS === */
+
     /* SEÇÃO COMO INSTALAR (COM VÍDEO) */
     .instalacao-grid {
       display: grid;
@@ -383,7 +420,7 @@
       justify-content: center; 
       font-size: 1.2rem; 
       font-weight: bold; 
-      border: 2px solid var(--cor-fundo-card);
+      border: 2px solid var(--cor-fundo-transparente); /* Ajustado para o fundo */
     }
     .step-card h3 { color: var(--cor-texto); margin-top: 0; margin-left: 25px; }
     .step-card p { margin-bottom: 0; margin-left: 25px; font-size: 1rem;}
@@ -459,6 +496,9 @@
     footer .container {
       padding: 0; /* Remove padding do container do footer */
       margin-top: 0;
+      background: none; /* Footer não é transparente */
+      border: none;
+      backdrop-filter: none;
     }
 
     /* SEÇÃO DEPOIMENTOS */
@@ -546,6 +586,7 @@
       /* Ajuste para seções transparentes no mobile */
       section.container {
         padding: 30px 20px;
+        margin-top: 20px;
       }
       
       .instalacao-grid {
@@ -578,7 +619,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#section-planos">Planos</a></li>
       <li><a href="#section-conteudo">Conteúdo</a></li>
-      <li><a href="#section-instalacao">Como Funciona</a></li>
+      <li><a href="#section-recursos">Recursos</a></li> <li><a href="#section-instalacao">Como Funciona</a></li>
       <li><a href="#section-depoimentos">Depoimentos</a></li>
       <li><a href="#section-faq">FAQ</a></li>
     </ul>
@@ -670,7 +711,42 @@
         </article>
       </div>
     </section>
-    
+
+    <section class="container" id="section-recursos">
+      <h2>Recursos <span>Exclusivos</span></h2>
+      <div class="recursos-grid">
+        <div class="recurso-box">
+          <span class="check-icon">✅</span>
+          <h3>Sistema Anti-Travamentos</h3>
+          <p>Servidores dedicados no Brasil para garantir a melhor estabilidade.</p>
+        </div>
+        <div class="recurso-box">
+          <span class="check-icon">✅</span>
+          <h3>Qualidade 4K e Full HD</h3>
+          <p>Assista ao melhor conteúdo na máxima resolução de imagem.</p>
+        </div>
+        <div class="recurso-box">
+          <span class="check-icon">✅</span>
+          <h3>Futebol ao Vivo</h3>
+          <p>Não perca nenhum jogo, incluindo Copa do Brasil e campeonatos.</p>
+        </div>
+        <div class="recurso-box">
+          <span class="check-icon">✅</span>
+          <h3>VOD Atualizado</h3>
+          <p>Milhares de filmes e séries com lançamentos diários.</p>
+        </div>
+        <div class="recurso-box">
+          <span class="check-icon">✅</span>
+          <h3>Suporte Rápido</h3>
+          <p>Atendimento humanizado via WhatsApp para te ajudar na hora.</p>
+        </div>
+        <div class="recurso-box">
+          <span class="check-icon">✅</span>
+          <h3>Multi-DispositIVOS</h3>
+          <p>Compatível com TV Box, Smart TV, Fire Stick, Celular e mais.</p>
+        </div>
+      </div>
+    </section>
     <section class="container" id="section-instalacao">
       <h2>Como Funciona? <span>É simples e rápido!</span></h2>
       <div class="instalacao-grid">
@@ -735,7 +811,7 @@
   </main>
 
   <footer>
-    <div class="container" style="padding: 20px 0;"> <p>© <span id="ano"></span> TrollIPTV — Todos os direitos reservados.</p>
+    <div class="container" style="padding: 20px 0; background: none; border: none; backdrop-filter: none;"> <p>© <span id="ano"></span> TrollIPTV — Todos os direitos reservados.</p>
       <p style="margin-top:8px; font-size:0.9rem; color:var(--cor-texto-secundario);">
         <a href="/termos.html" style="color: inherit;">Termos e Condições</a> | 
         <a href="/politica.html" style="color: inherit;">Política de Privacidade</a>
