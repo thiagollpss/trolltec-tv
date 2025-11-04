@@ -160,14 +160,21 @@
   <style>
     /* ESTILOS GERAIS */
     :root {
-        --cor-primaria: #FF0000; /* Vermelho vibrante */
-        --cor-secundaria: #FFD700; /* Amarelo Ouro (combina bem com vermelho) */
-        --cor-destaque: #FFA500; /* Laranja (combina bem com vermelho) */
+        --cor-primaria: #FF4500; /* Laranja/Vermelho para destaques */
+        --cor-secundaria: #FFD700; /* Amarelo Ouro */
+        --cor-destaque: #FF0000; /* Vermelho */
         --cor-fundo: #0a0a0a; /* Preto/Cinza bem escuro */
-        --cor-fundo-card: #2A0000; /* Vermelho escuro sólido para cards internos */
-        --cor-fundo-transparente: rgba(50, 0, 0, 0.8); /* Vermelho escuro transparente para seções */
+        
+        /* === MUDANÇA: FUNDO VERMELHO TRANSPARENTE === */
+        --cor-fundo-card: rgba(50, 0, 0, 0.8); /* Vermelho Transparente para cards internos */
+        --cor-fundo-transparente: rgba(30, 0, 0, 0.85); /* Vermelho Mais Escuro Transparente para seções */
+        
         --cor-texto: #f0f0f0;
         --cor-texto-secundario: #a0a0a0;
+        
+        /* Mantendo o verde para botões de ação (WhatsApp) */
+        --cor-verde-cta: #25D366;
+        --cor-verde-cta-hover: #128C7E;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { font-size: 16px; scroll-behavior: smooth; }
@@ -196,7 +203,7 @@
     /* SEÇÕES COM FUNDO TRANSPARENTE */
     section.container {
       background: var(--cor-fundo-transparente);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 100, 100, 0.1); /* Borda vermelha sutil */
       border-radius: 10px;
       padding: 40px; /* Padding interno do card */
       margin-top: 30px;
@@ -230,12 +237,12 @@
     /* NAVBAR */
     .navbar {
       position: fixed; top: 0; left: 0; right: 0;
-      background-color: rgba(10, 10, 10, 0.75);
+      background-color: rgba(10, 0, 0, 0.75); /* Navbar vermelha transparente */
       z-index: 1000;
       display: flex; justify-content: space-between; align-items: center;
       padding: 10px 24px;
       backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 100, 100, 0.1);
     }
     .nav-logo { font-size: 32px; font-weight: 900; background: linear-gradient(90deg, red, black, red); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; animation: rgbShift 5s infinite linear; background-size: 200% auto; }
     @keyframes rgbShift { 0% { background-position: 0% center; } 100% { background-position: 200% center; } }
@@ -249,7 +256,7 @@
         text-align: center;
         padding-top: 80px; 
         padding-bottom: 80px;
-        margin-top: 0; /* Hero não tem margem no topo */
+        margin-top: 0;
     }
     #section-hero h1 {
       font-size: 3rem;
@@ -271,7 +278,7 @@
     .btn-cta { 
       display: inline-block; 
       padding: 18px 40px; 
-      background: var(--cor-primaria); /* Usando o novo vermelho */
+      background: var(--cor-verde-cta); /* Verde WhatsApp */
       color: #ffffff !important; 
       border: none; 
       border-radius: 50px; 
@@ -279,24 +286,24 @@
       transition: all 0.3s ease; 
       font-weight: bold; 
       font-size: 1.2rem;
-      animation: pulse-red 2s infinite; /* Nova animação de pulso */
-      box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* Sombra vermelha */
+      animation: pulse-green 2s infinite;
+      box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
     }
     .btn-cta:hover { 
-      background: #CC0000; /* Tom mais escuro de vermelho no hover */
+      background: var(--cor-verde-cta-hover); 
       transform: translateY(-3px) scale(1.05); 
-      box-shadow: 0 8px 30px rgba(255, 0, 0, 0.4);
+      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
       animation: none;
     }
-    @keyframes pulse-red {
-      0% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); }
-      50% { box-shadow: 0 0 35px rgba(255, 0, 0, 0.8); }
-      100% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); }
+    @keyframes pulse-green {
+      0% { box-shadow: 0 0 20px rgba(37, 211, 102, 0.5); }
+      50% { box-shadow: 0 0 35px rgba(37, 211, 102, 0.8); }
+      100% { box-shadow: 0 0 20px rgba(37, 211, 102, 0.5); }
     }
     .btn-whatsapp { 
       display: inline-block; 
       padding: 12px 25px; 
-      background: var(--cor-primaria); /* Usando o novo vermelho */
+      background: var(--cor-verde-cta); /* Verde WhatsApp */
       color: #ffffff !important; 
       border: none; 
       border-radius: 50px; 
@@ -305,9 +312,9 @@
       font-weight: bold; 
     }
     .btn-whatsapp:hover { 
-      background: #CC0000; /* Tom mais escuro de vermelho no hover */
+      background: var(--cor-verde-cta-hover); 
       transform: translateY(-3px); 
-      box-shadow: 0 8px 20px rgba(255, 0, 0, 0.2); 
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.2); 
     }
     
     /* SEÇÃO DE PLANOS */
@@ -318,8 +325,8 @@
       align-items: center; /* Alinha os cards na vertical */
     }
     .plano-card { 
-        background: var(--cor-fundo-card); /* Fundo mais escuro para cards */
-        border: 1px solid #333; 
+        background: var(--cor-fundo-card); /* Fundo vermelho transparente */
+        border: 1px solid rgba(255, 100, 100, 0.2); /* Borda vermelha sutil */
         border-radius: 10px; 
         padding: 30px; 
         text-align: center; 
@@ -347,7 +354,7 @@
     .preco { font-size:2.2rem; font-weight:bold; color:var(--cor-primaria); margin:10px 0; }
     .selo { 
       display:inline-block; 
-      background: linear-gradient(120deg, var(--cor-primaria), #FF4500); /* Ajustado para vermelho/laranja */
+      background: linear-gradient(120deg, var(--cor-primaria), var(--cor-destaque));
       color:#111; 
       padding: 6px 15px; 
       border-radius:50px; 
@@ -368,7 +375,7 @@
       margin-top: 30px;
     }
     .conteudo-box {
-      background: var(--cor-fundo-card); /* Usando fundo de card interno */
+      background: var(--cor-fundo-card); /* Fundo vermelho transparente */
       border-radius: 8px;
       padding: 25px;
       border-top: 3px solid var(--cor-primaria);
@@ -395,11 +402,11 @@
       margin-top: 30px;
     }
     .recurso-box {
-      background: var(--cor-fundo-card); /* Fundo de card interno */
+      background: var(--cor-fundo-card); /* Fundo vermelho transparente */
       border-radius: 8px;
       padding: 25px;
       text-align: center;
-      border: 1px solid #222;
+      border: 1px solid rgba(255, 100, 100, 0.2);
       transition: transform 0.3s;
     }
     .recurso-box:hover {
@@ -408,7 +415,7 @@
     }
     .recurso-box .check-icon {
       font-size: 2.5rem;
-      color: var(--cor-primaria);
+      color: var(--cor-verde-cta); /* Check verde para destaque */
       display: block;
       margin-bottom: 10px;
     }
@@ -437,7 +444,7 @@
       gap: 25px;
     }
     .step-card { 
-      background: var(--cor-fundo-card); /* Fundo de card interno */
+      background: var(--cor-fundo-card); /* Fundo vermelho transparente */
       border-radius: 10px; 
       padding: 20px; 
       position: relative; 
@@ -464,10 +471,10 @@
 
     /* VÍDEO TUTORIAL */
     .video-card {
-      background: #000;
+      background: var(--cor-fundo-card); /* Fundo vermelho transparente */
       border-radius: 10px;
       overflow: hidden; 
-      border: 1px solid #222;
+      border: 1px solid rgba(255, 100, 100, 0.2);
       width: 100%;
     }
     .video-card h3 {
@@ -496,10 +503,10 @@
 
     /* FAQ */
     .faq-item {
-      background: var(--cor-fundo-card); /* Fundo de card interno */
+      background: var(--cor-fundo-card); /* Fundo vermelho transparente */
       border-radius: 8px;
       margin-bottom: 10px;
-      border: 1px solid #222;
+      border: 1px solid rgba(255, 100, 100, 0.2);
     }
     .faq-item h4 { 
       cursor:pointer; 
@@ -513,7 +520,7 @@
     .faq-item p { 
       display: none; 
       padding: 0 20px 20px 20px; 
-      background: var(--cor-fundo-card); /* Fundo de card interno */
+      background: var(--cor-fundo-card); /* Fundo vermelho transparente */
       border-top: 1px solid #333; 
       margin-bottom: 0; 
       font-size: 1rem;
@@ -545,8 +552,8 @@
       gap: 20px;
     }
     .depoimento-card {
-      background: var(--cor-fundo-card); /* Fundo de card interno */
-      border: 1px solid #222;
+      background: var(--cor-fundo-card); /* Fundo vermelho transparente */
+      border: 1px solid rgba(255, 100, 100, 0.2);
       border-radius: 8px;
       padding: 25px;
       display: flex;
@@ -656,7 +663,8 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#section-planos">Planos</a></li>
       <li><a href="#section-conteudo">Conteúdo</a></li>
-      <li><a href="#section-recursos">Recursos</a></li> <li><a href="#section-instalacao">Como Funciona</a></li>
+      <li><a href="#section-recursos">Recursos</a></li>
+      <li><a href="#section-instalacao">Como Funciona</a></li>
       <li><a href="#section-depoimentos">Depoimentos</a></li>
       <li><a href="#section-faq">FAQ</a></li>
     </ul>
