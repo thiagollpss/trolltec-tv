@@ -20,6 +20,10 @@
 
     /* === NOVA COR DE BORDA DOS PLANOS === */
     --cor-borda-vinho: #800020; /* Vermelho Vinho */
+
+    /* === NOVAS CORES DE SELEÇÃO === */
+    --cor-fundo-inverso: #111111; /* Preto para o card selecionado */
+    --cor-texto-inverso: #f0f0f0; /* Branco para o texto do card selecionado */
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { font-size: 16px; scroll-behavior: smooth; }
@@ -214,6 +218,9 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
   border-color: var(--cor-borda-vinho); /* Borda vermelho vinho */
   box-shadow: 0 8px 25px rgba(128, 0, 32, 0.4); /* Sombra vermelho vinho */
   transform: translateY(-5px); /* Efeito de "levantar" */
+  
+  /* === MUDANÇA: FUNDO PRETO E TEXTO BRANCO === */
+  background-color: var(--cor-fundo-inverso);
 }
 
 /* Destaque do Plano Popular (quando NÃO selecionado) */
@@ -227,9 +234,9 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
 }
 /* Estilo do Plano Popular QUANDO SELECIONADO (Borda vinho) */
 .radio-plano:checked + .plano-card.popular {
-    border-color: var(--cor-borda-vinho); /* Borda vinho mais forte */
-    background-image: linear-gradient(var(--cor-fundo-card), var(--cor-fundo-card)), 
-                      linear-gradient(120deg, var(--cor-borda-vinho), var(--cor-destaque)); /* Gradiente mais escuro */
+    background-image: none; /* Remove gradiente da borda */
+    background-color: var(--cor-fundo-inverso); /* Garante fundo preto */
+    border-color: var(--cor-borda-vinho);
     box-shadow: 0 10px 40px rgba(128, 0, 32, 0.6);
 }
 
@@ -237,6 +244,7 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
     margin-bottom: 10px;
     font-size: 1.6rem;
     color: var(--cor-texto);
+    transition: color 0.3s ease; /* Transição de cor */
 }
 .preco { 
     font-size: 2.5rem; /* Preço maior */
@@ -244,12 +252,14 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
     color: var(--cor-primaria); 
     margin: 10px 0 20px 0; /* Mais espaçamento */
     line-height: 1;
+    transition: color 0.3s ease; /* Transição de cor */
 }
 .preco span { /* Texto /mês, /3 meses, /ano */
     font-size: 1.2rem;
     font-weight: normal;
     color: var(--cor-texto-secundario);
     display: block; /* Quebra linha */
+    transition: color 0.3s ease; /* Transição de cor */
 }
 
 .beneficios-lista {
@@ -266,6 +276,7 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
     margin-bottom: 10px;
     position: relative;
     padding-left: 25px;
+    transition: color 0.3s ease; /* Transição de cor */
 }
 .beneficios-lista li::before {
     content: "✔️"; /* Ícone de check */
@@ -273,7 +284,26 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
     left: 0;
     color: var(--cor-verde-cta); /* Cor verde */
     font-size: 1.1rem;
+    transition: color 0.3s ease; /* Transição de cor */
 }
+
+/* === NOVAS REGRAS PARA MUDAR COR DO TEXTO QUANDO SELECIONADO === */
+.radio-plano:checked + .plano-card h4 {
+  color: var(--cor-texto-inverso);
+}
+.radio-plano:checked + .plano-card .preco {
+  color: var(--cor-texto-inverso);
+}
+.radio-plano:checked + .plano-card .preco span {
+  color: var(--cor-texto-inverso);
+}
+.radio-plano:checked + .plano-card .beneficios-lista li {
+  color: var(--cor-texto-inverso);
+}
+.radio-plano:checked + .plano-card .beneficios-lista li::before {
+  color: var(--cor-texto-inverso); /* Check agora fica branco */
+}
+/* === FIM DAS NOVAS REGRAS === */
 
 .selo { 
   display:inline-block; 
@@ -289,6 +319,7 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
   background: linear-gradient(120deg, var(--cor-verde-cta), var(--cor-secundaria));
   color: #111;
 }
+/* O selo não será afetado pela seleção de cor, o que é bom */
 
 /* Botão único no final da seção de planos */
 .cta-planos-wrapper {
