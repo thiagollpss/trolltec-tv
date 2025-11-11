@@ -252,8 +252,13 @@
             <input type="radio" name="plano" value="mensal" class="radio-plano" id="radio-mensal">
             <label class="plano-card" for="radio-mensal" role="region" aria-labelledby="mensal-title">
               <h4 id="mensal-title">Plano Mensal</h4>
-              <div class="preco">R$ 25 / mês</div>
-              <p>Acesso total. Ideal para quem quer testar e ter flexibilidade no pagamento.</p>
+              <div class="preco">R$ 25 <span>/ mês</span></div>
+              <ul class="beneficios-lista">
+                  <li>Acesso total ao conteúdo</li>
+                  <li>Ideal para experimentar</li>
+                  <li>Flexibilidade de pagamento</li>
+                  <li>Suporte 24/7</li>
+              </ul>
             </label>
           </div>
 
@@ -262,8 +267,13 @@
             <label class="plano-card popular" for="radio-trimestral" role="region" aria-labelledby="trimestral-title">
               <span class="selo">Mais Popular</span>
               <h4 id="trimestral-title">Plano Trimestral</h4>
-              <div class="preco">R$ 70 / 3 meses</div>
-              <p>O melhor custo-benefício. Economize e garanta sua diversão por mais tempo.</p>
+              <div class="preco">R$ 70 <span>/ 3 meses</span></div>
+              <ul class="beneficios-lista">
+                  <li><strong>Economia de 5 Reais!</strong></li>
+                  <li>Acesso total ao conteúdo</li>
+                  <li>Perfeito para o dia a dia</li>
+                  <li>Suporte 24/7</li>
+              </ul>
             </label>
           </div>
 
@@ -271,8 +281,13 @@
             <input type="radio" name="plano" value="anual" class="radio-plano" id="radio-anual">
             <label class="plano-card" for="radio-anual" role="region" aria-labelledby="anual-title">
               <h4 id="anual-title">Plano Anual</h4>
-              <div class="preco">R$ 240 / ano</div>
-              <p>Pague uma vez e tenha 12 meses de acesso sem se preocupar com renovação.</p>
+              <div class="preco">R$ 240 <span>/ ano</span></div>
+              <ul class="beneficios-lista">
+                  <li><strong>Economia de 60 Reais!</strong></li>
+                  <li>Acesso total ao conteúdo</li>
+                  <li>Melhor opção a longo prazo</li>
+                  <li>Suporte 24/7</li>
+              </ul>
             </label>
           </div>
 
@@ -505,6 +520,12 @@
       const formPlanos = document.getElementById('form-planos');
 
       if (ctaButton && formPlanos) {
+        // Seleciona o card "Mais Popular" por padrão ao carregar a página
+        const defaultCheckedRadio = document.getElementById('radio-trimestral');
+        if (defaultCheckedRadio) {
+          defaultCheckedRadio.checked = true;
+        }
+
         ctaButton.addEventListener('click', (event) => {
           event.preventDefault(); // Impede o link de navegar para "#"
           
