@@ -17,6 +17,9 @@
     /* Mantendo o verde para botões de ação (WhatsApp) */
     --cor-verde-cta: #25D366;
     --cor-verde-cta-hover: #128C7E;
+
+    /* === NOVA COR DE BORDA DOS PLANOS === */
+    --cor-borda-vinho: #800020; /* Vermelho Vinho */
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { font-size: 16px; scroll-behavior: smooth; }
@@ -176,54 +179,102 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
   box-shadow: 0 8px 20px rgba(37, 211, 102, 0.2); 
 }
 
-/* === MUDANÇA: SEÇÃO DE PLANOS (RADIO BUTTONS) === */
+/* === MUDANÇA: SEÇÃO DE PLANOS (DESIGN NOVO) === */
 .plano-cards { 
   display: grid; 
-  grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); /* Mantido para responsividade */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px; 
-  align-items: stretch; /* Faz os cards terem a mesma altura */
-  max-width: 960px; /* Deixa o grid "menor" em telas grandes */
-  margin: 0 auto; /* Centraliza o grid */
+  align-items: stretch; 
+  max-width: 960px; 
+  margin: 0 auto; 
 }
 .plano-wrapper {
-  display: flex; /* Garante que o label preencha o wrapper */
+  display: flex; 
 }
 .radio-plano {
-  display: none; /* Esconde o radio button real */
+  display: none; 
 }
 .plano-card { 
     background: var(--cor-fundo-card);
-    border: 3px solid var(--cor-borda-card); /* Borda mais grossa para seleção */
+    border: 2px solid var(--cor-borda-card); /* Borda mais fina e cinza padrão */
     border-radius: 10px; 
     padding: 30px; 
     text-align: center; 
     transition: all 0.3s ease; 
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    cursor: pointer; /* Indica que é clicável */
-    width: 100%; /* Garante que o label preencha o wrapper */
+    cursor: pointer; 
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 /* Estilo do card quando selecionado */
 .radio-plano:checked + .plano-card {
-  border-color: var(--cor-primaria); /* Destaque laranja */
-  box-shadow: 0 8px 25px rgba(255, 69, 0, 0.3); /* Sombra laranja */
+  border-color: var(--cor-borda-vinho); /* Borda vermelho vinho */
+  box-shadow: 0 8px 25px rgba(128, 0, 32, 0.4); /* Sombra vermelho vinho */
+  transform: translateY(-5px); /* Efeito de "levantar" */
 }
+
 /* Destaque do Plano Popular (quando NÃO selecionado) */
 .radio-plano:not(:checked) + .plano-card.popular { 
-    border: 3px solid transparent; /* Borda transparente para o gradiente */
+    border: 2px solid transparent; 
     background-image: linear-gradient(var(--cor-fundo-card), var(--cor-fundo-card)), 
                       linear-gradient(120deg, var(--cor-primaria), var(--cor-secundaria));
     background-origin: border-box;
     background-clip: padding-box, border-box;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
-/* Botão único no final da seção de planos */
-.cta-planos-wrapper {
-  text-align: center;
-  margin-top: 40px;
+/* Estilo do Plano Popular QUANDO SELECIONADO (Borda vinho) */
+.radio-plano:checked + .plano-card.popular {
+    border-color: var(--cor-borda-vinho); /* Borda vinho mais forte */
+    background-image: linear-gradient(var(--cor-fundo-card), var(--cor-fundo-card)), 
+                      linear-gradient(120deg, var(--cor-borda-vinho), var(--cor-destaque)); /* Gradiente mais escuro */
+    box-shadow: 0 10px 40px rgba(128, 0, 32, 0.6);
 }
-/* === FIM DA MUDANÇA DE PLANOS === */
 
-.preco { font-size:2.2rem; font-weight:bold; color:var(--cor-primaria); margin:10px 0; }
+.plano-card h4 {
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+    color: var(--cor-texto);
+}
+.preco { 
+    font-size: 2.5rem; /* Preço maior */
+    font-weight: bold; 
+    color: var(--cor-primaria); 
+    margin: 10px 0 20px 0; /* Mais espaçamento */
+    line-height: 1;
+}
+.preco span { /* Texto /mês, /3 meses, /ano */
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: var(--cor-texto-secundario);
+    display: block; /* Quebra linha */
+}
+
+.beneficios-lista {
+    list-style: none;
+    padding: 0;
+    text-align: left; /* Alinha os benefícios à esquerda */
+    margin: 20px 0 30px 0; /* Espaçamento da lista */
+    width: 100%; /* Ocupa a largura total do card */
+    max-width: 250px; /* Limita a largura para cards menores */
+}
+.beneficios-lista li {
+    font-size: 1rem;
+    color: var(--cor-texto-secundario);
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+.beneficios-lista li::before {
+    content: "✔️"; /* Ícone de check */
+    position: absolute;
+    left: 0;
+    color: var(--cor-verde-cta); /* Cor verde */
+    font-size: 1.1rem;
+}
+
 .selo { 
   display:inline-block; 
   background: linear-gradient(120deg, var(--cor-primaria), var(--cor-destaque));
@@ -238,6 +289,13 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
   background: linear-gradient(120deg, var(--cor-verde-cta), var(--cor-secundaria));
   color: #111;
 }
+
+/* Botão único no final da seção de planos */
+.cta-planos-wrapper {
+  text-align: center;
+  margin-top: 40px;
+}
+/* === FIM DA MUDANÇA DE PLANOS === */
 
 /* SEÇÃO CONTEÚDO (SEO) */
 .conteudo-grid {
