@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale-1.0" />
 
   <title>Teste a Melhor Lista IPTV do Brasil 2025 | TrollIPTV</title>
   
@@ -244,28 +244,45 @@
     <section class="container" id="section-planos">
       <h2>Escolha o <span>Plano Ideal</span></h2>
       <p class="subtitle" style="text-align: center; margin-bottom: 40px;">Todos os planos dão acesso ao mesmo conteúdo. A única diferença é o desconto por tempo. Peça seu teste grátis!</p>
-      <div class="plano-cards">
-        <article class="plano-card" role="region" aria-labelledby="mensal-title">
-          <h4 id="mensal-title">Plano Mensal</h4>
-          <div class="preco">R$ 25 / mês</div>
-          <p>Acesso total. Ideal para quem quer testar e ter flexibilidade no pagamento.</p>
-          <a class="btn-whatsapp" href="https://wa.me/5584996126008?text=Quero%20assinar%20o%20plano%20mensal%20do%20IPTV" target="_blank" rel="noopener">Assinar Plano Mensal</a>
-        </article>
-        <article class="plano-card popular" role="region" aria-labelledby="trimestral-title">
-          <span class="selo">Mais Popular</span>
-          <h4 id="trimestral-title">Plano Trimestral</h4>
-          <div class="preco">R$ 70 / 3 meses</div>
-          <p>O melhor custo-benefício. Economize e garanta sua diversão por mais tempo.</p>
-          <a class="btn-whatsapp" href="https://wa.me/5584996126008?text=Quero%20assinar%20o%20plano%20trimestral%20do%20IPTV" target="_blank" rel="noopener">Assinar Plano Trimestral</a>
-        </article>
-        <article class="plano-card" role="region" aria-labelledby="anual-title">
-          <h4 id="anual-title">Plano Anual</h4>
-          <div class="preco">R$ 240 / ano</div>
-          <p>Pague uma vez e tenha 12 meses de acesso sem se preocupar com renovação.</p>
-          <a class="btn-whatsapp" href="https://wa.me/5584996126008?text=Quero%20assinar%20o%20plano%20anual%20do%20IPTV" target="_blank" rel="noopener">Assinar Plano Anual</a>
-        </article>
-      </div>
-    </section>
+      
+      <form id="form-planos">
+        <div class="plano-cards">
+          
+          <div class="plano-wrapper">
+            <input type="radio" name="plano" value="mensal" class="radio-plano" id="radio-mensal">
+            <label class="plano-card" for="radio-mensal" role="region" aria-labelledby="mensal-title">
+              <h4 id="mensal-title">Plano Mensal</h4>
+              <div class="preco">R$ 25 / mês</div>
+              <p>Acesso total. Ideal para quem quer testar e ter flexibilidade no pagamento.</p>
+            </label>
+          </div>
+
+          <div class="plano-wrapper">
+            <input type="radio" name="plano" value="trimestral" class="radio-plano" id="radio-trimestral" checked>
+            <label class="plano-card popular" for="radio-trimestral" role="region" aria-labelledby="trimestral-title">
+              <span class="selo">Mais Popular</span>
+              <h4 id="trimestral-title">Plano Trimestral</h4>
+              <div class="preco">R$ 70 / 3 meses</div>
+              <p>O melhor custo-benefício. Economize e garanta sua diversão por mais tempo.</p>
+            </label>
+          </div>
+
+          <div class="plano-wrapper">
+            <input type="radio" name="plano" value="anual" class="radio-plano" id="radio-anual">
+            <label class="plano-card" for="radio-anual" role="region" aria-labelledby="anual-title">
+              <h4 id="anual-title">Plano Anual</h4>
+              <div class="preco">R$ 240 / ano</div>
+              <p>Pague uma vez e tenha 12 meses de acesso sem se preocupar com renovação.</p>
+            </label>
+          </div>
+
+        </div>
+        
+        <div class="cta-planos-wrapper">
+          <a class="btn-cta" id="btn-assinar-plano" href="#" rel="noopener">Assinar Plano Selecionado</a>
+        </div>
+      </form>
+      </section>
 
     <section class="container" id="section-dispositivos">
       <h2>Teste em <span>Todos os Seus Aparelhos</span></h2>
@@ -451,7 +468,7 @@
       <p style="margin-top:8px; font-size:0.9rem; color:var(--cor-texto-secundario);">
         <a href="/termos.html" style="color: inherit;">Termos e Condições</a> | 
         <a href="/politica.html" style="color: inherit;">Política de Privacidade</a>
-      </D>
+      </p>
     </div>
   </footer>
 
@@ -480,6 +497,49 @@
           }
         });
       });
+    });
+
+    // === NOVO SCRIPT PARA FORMULÁRIO DE PLANOS ===
+    document.addEventListener('DOMContentLoaded', () => {
+      const ctaButton = document.getElementById('btn-assinar-plano');
+      const formPlanos = document.getElementById('form-planos');
+
+      if (ctaButton && formPlanos) {
+        ctaButton.addEventListener('click', (event) => {
+          event.preventDefault(); // Impede o link de navegar para "#"
+          
+          // 1. Encontra o plano selecionado
+          const planoSelecionadoInput = formPlanos.querySelector('input[name="plano"]:checked');
+          
+          if (planoSelecionadoInput) {
+            const planoValor = planoSelecionadoInput.value;
+            let textoWhatsapp = '';
+
+            // 2. Define a mensagem com base no plano
+            switch (planoValor) {
+              case 'mensal':
+                textoWhatsapp = 'Olá, quero assinar o plano mensal do IPTV';
+                break;
+              case 'trimestral':
+                textoWhatsapp = 'Olá, quero assinar o plano trimestral do IPTV';
+                break;
+              case 'anual':
+                textoWhatsapp = 'Olá, quero assinar o plano anual do IPTV';
+                break;
+              default:
+                textoWhatsapp = 'Olá, quero assinar um plano do IPTV';
+            }
+            
+            // 3. Monta e abre o link do WhatsApp
+            const baseUrl = 'https://wa.me/5584996126008?text=';
+            const urlFinal = baseUrl + encodeURIComponent(textoWhatsapp);
+            window.open(urlFinal, '_blank');
+
+          } else {
+            alert('Por favor, selecione um plano primeiro.');
+          }
+        });
+      }
     });
   </script>
 </body>
