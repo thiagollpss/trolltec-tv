@@ -27,7 +27,7 @@ body {
   padding-top: 70px;
   
   background-color: var(--cor-fundo);
-  background-image: url("fundo.jpg");
+  background-image: url("fundo.webp"); /* <<< OTIMIZAÇÃO DE IMAGEM */
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -68,6 +68,12 @@ h2 {
 h2 span { /* Destaque no H2 */
   color: var(--cor-primaria);
 }
+/* OTIMIZAÇÃO SEMÂNTICA: Estilo de H4 para ser usado nos cards */
+h4 {
+  color: var(--cor-texto);
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
 p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; }
 .subtitle {
   font-size: 1.2rem;
@@ -86,7 +92,17 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(0, 255, 0, 0.3); /* Borda verde na navbar */
 }
-.nav-logo { font-size: 32px; font-weight: 900; background: linear-gradient(90deg, red, black, red); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; animation: rgbShift 5s infinite linear; background-size: 200% auto; }
+/* OTIMIZAÇÃO DE COR DO LOGO */
+.nav-logo { 
+  font-size: 32px; 
+  font-weight: 900; 
+  background: linear-gradient(90deg, var(--cor-primaria), var(--cor-secundaria), var(--cor-primaria)); 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+  text-transform: uppercase; 
+  animation: rgbShift 5s infinite linear; 
+  background-size: 200% auto; 
+}
 @keyframes rgbShift { 0% { background-position: 0% center; } 100% { background-position: 200% center; } }
 .nav-links { list-style: none; display: flex; gap: 25px; }
 .nav-links li a { font-size: 16px; color: #ffffff; font-weight: 500; transition: color 0.2s; }
@@ -231,8 +247,7 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
 .conteudo-box:hover {
   transform: translateY(-5px);
 }
-.conteudo-box h3 {
-  color: var(--cor-texto);
+.conteudo-box h4 {
   font-size: 1.5rem;
   margin-bottom: 10px;
 }
@@ -266,8 +281,7 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
   display: block;
   margin-bottom: 10px;
 }
-.recurso-box h3 {
-  color: var(--cor-texto);
+.recurso-box h4 {
   font-size: 1.3rem;
   margin-bottom: 10px;
 }
@@ -313,7 +327,7 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
   font-weight: bold; 
   border: 2px solid var(--cor-fundo-transparente); /* Borda do número */
 }
-.step-card h3 { color: var(--cor-texto); margin-top: 0; margin-left: 25px; }
+.step-card h4 { color: var(--cor-texto); margin-top: 0; margin-left: 25px; }
 .step-card p { margin-bottom: 0; margin-left: 25px; font-size: 1rem;}
 
 /* VÍDEO TUTORIAL */
@@ -324,7 +338,7 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
   border: var(--largura-borda-card) solid var(--cor-borda-card); /* Borda verde */
   width: 100%;
 }
-.video-card h3 {
+.video-card h4 {
   font-size: 1.2rem;
   color: var(--cor-primaria);
   padding: 20px 20px 0 20px; 
@@ -363,6 +377,7 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
   align-items:center; 
   color:var(--cor-texto); 
   margin-bottom: 0;
+  font-size: 1.2rem; /* Ajuste de tamanho para FAQ */
 }
 .faq-item p { 
   display: none; 
@@ -418,25 +433,22 @@ footer .container {
   align-items: center;
   margin-top: 15px; 
 }
+/* OTIMIZAÇÃO DE AVATAR (AGORA É UMA IMG) */
 .depoimento-avatar {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: var(--cor-primaria);
-  color: #111;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  font-weight: bold;
   margin-right: 15px;
-  flex-shrink: 0; 
+  flex-shrink: 0;
+  object-fit: cover; /* Garante que a foto preencha o círculo sem distorcer */
+  background-color: var(--cor-fundo-card); /* Cor de fundo caso a imagem falhe */
+  border: 1px solid var(--cor-borda-card); /* Borda sutil no avatar */
 }
 .depoimento-info {
   display: flex;
   flex-direction: column;
 }
-.depoimento-card h3 {
+.depoimento-card h4 {
   color: #ffffff;
   margin-bottom: 0; 
   font-size: 1.1rem;
@@ -445,6 +457,41 @@ footer .container {
   font-size: 0.9rem;
   color: var(--cor-texto-secundario);
 }
+
+/* === NOVA SEÇÃO: DISPOSITIVOS === */
+.dispositivo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+.dispositivo-card {
+  background: var(--cor-fundo-card); /* Fundo quase transparente */
+  border-radius: 8px;
+  padding: 25px;
+  text-align: center;
+  border: var(--largura-borda-card) solid var(--cor-borda-card); /* Borda verde */
+  transition: transform 0.3s;
+}
+.dispositivo-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--cor-primaria);
+}
+.dispositivo-icon {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  line-height: 1;
+}
+.dispositivo-card h4 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+.dispositivo-card p {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+  color: var(--cor-texto-secundario);
+}
+/* === FIM DA NOVA SEÇÃO === */
 
 /* SEÇÃO CTA FINAL */
 #section-cta-final {
