@@ -176,41 +176,52 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
   box-shadow: 0 8px 20px rgba(37, 211, 102, 0.2); 
 }
 
-/* SEÇÃO DE PLANOS */
+/* === MUDANÇA: SEÇÃO DE PLANOS (RADIO BUTTONS) === */
 .plano-cards { 
   display: grid; 
-  grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); 
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); /* Mantido para responsividade */
   gap: 25px; 
-  align-items: center;
+  align-items: stretch; /* Faz os cards terem a mesma altura */
+  max-width: 960px; /* Deixa o grid "menor" em telas grandes */
+  margin: 0 auto; /* Centraliza o grid */
+}
+.plano-wrapper {
+  display: flex; /* Garante que o label preencha o wrapper */
+}
+.radio-plano {
+  display: none; /* Esconde o radio button real */
 }
 .plano-card { 
-    background: var(--cor-fundo-card); /* Fundo branco */
-    border: var(--largura-borda-card) solid var(--cor-borda-card); /* Borda cinza */
+    background: var(--cor-fundo-card);
+    border: 3px solid var(--cor-borda-card); /* Borda mais grossa para seleção */
     border-radius: 10px; 
     padding: 30px; 
     text-align: center; 
-    transition: transform 0.3s, box-shadow 0.3s; 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Sombra suave */
+    transition: all 0.3s ease; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    cursor: pointer; /* Indica que é clicável */
+    width: 100%; /* Garante que o label preencha o wrapper */
 }
-.plano-card:hover { 
-  transform: scale(1.05); 
-  border-color: var(--cor-primaria);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+/* Estilo do card quando selecionado */
+.radio-plano:checked + .plano-card {
+  border-color: var(--cor-primaria); /* Destaque laranja */
+  box-shadow: 0 8px 25px rgba(255, 69, 0, 0.3); /* Sombra laranja */
 }
-
-/* Destaque do Plano Popular */
-.plano-card.popular { 
-    transform: scale(1.05);
-    border: 2px solid transparent;
+/* Destaque do Plano Popular (quando NÃO selecionado) */
+.radio-plano:not(:checked) + .plano-card.popular { 
+    border: 3px solid transparent; /* Borda transparente para o gradiente */
     background-image: linear-gradient(var(--cor-fundo-card), var(--cor-fundo-card)), 
                       linear-gradient(120deg, var(--cor-primaria), var(--cor-secundaria));
     background-origin: border-box;
     background-clip: padding-box, border-box;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
-.plano-card.popular:hover { 
-  transform: scale(1.1); 
+/* Botão único no final da seção de planos */
+.cta-planos-wrapper {
+  text-align: center;
+  margin-top: 40px;
 }
+/* === FIM DA MUDANÇA DE PLANOS === */
 
 .preco { font-size:2.2rem; font-weight:bold; color:var(--cor-primaria); margin:10px 0; }
 .selo { 
@@ -433,10 +444,10 @@ footer .container {
   align-items: center;
   margin-top: 15px; 
 }
-/* === MUDANÇA: CSS PARA AVATAR DE EMOJI === */
+/* === MUDANÇA: CSS PARA AVATAR DE EMOJI GRANDE === */
 .depoimento-avatar {
-  width: 50px;
-  height: 50px;
+  width: 60px; /* Aumentado */
+  height: 60px; /* Aumentado */
   border-radius: 50%;
   margin-right: 15px;
   flex-shrink: 0;
@@ -446,7 +457,7 @@ footer .container {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px; /* Tamanho do emoji */
+  font-size: 36px; /* Tamanho do emoji aumentado */
   color: var(--cor-texto); /* Garante que o emoji seja visível */
 }
 .depoimento-info {
@@ -553,4 +564,9 @@ footer .container {
   }
   .nav-links.active { display: flex; }
   .nav-links li { text-align: center; padding: 10px 0; }
+  
+  /* Ajuste para grade de planos no mobile */
+  .plano-cards {
+    grid-template-columns: 1fr; /* Coluna única no mobile */
+  }
 }
