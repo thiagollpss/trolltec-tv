@@ -609,17 +609,17 @@ footer .container {
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* === CÓDIGO ATUALIZADO: BOTÃO FLUTUANTE WHATSAPP (Mais Moderno) === */
+/* === CÓDIGO ATUALIZADO: BOTÃO FLUTUANTE (BRANCO/PRETO) === */
 .floating-btn {
   position: fixed; /* Fica fixo na tela */
-  bottom: 20px; /* Um pouco mais perto do canto */
+  bottom: 20px;
   right: 20px;
   
-  width: 55px; /* Um pouco menor */
+  width: 55px;
   height: 55px;
   
-  background-color: var(--cor-verde-cta); /* Cor verde do WhatsApp */
-  color: #ffffff; /* Ícone em branco */
+  /* FUNDO BRANCO */
+  background-color: #ffffff; 
   
   border-radius: 50%; /* Deixa ele redondo */
   
@@ -628,25 +628,26 @@ footer .container {
   align-items: center;
   justify-content: center;
   
-  /* Sombra mais suave e profissional */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); 
+  /* Sombra para destacar o botão branco */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); 
   
   z-index: 1000; /* Garante que ele fique acima de tudo */
   transition: all 0.3s ease; /* Transição suave */
-  border: none; /* Remove qualquer borda */
+  border: 1px solid #eee; /* Borda sutil (opcional) */
 }
 
 /* Efeito ao passar o mouse */
 .floating-btn:hover {
-  background-color: var(--cor-verde-cta-hover); /* Cor mais escura */
+  /* Fundo cinza claro no hover */
+  background-color: #f4f4f4; 
   transform: scale(1.08) translateY(-2px); /* Efeito mais sutil */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra mais forte no hover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25); /* Sombra mais forte no hover */
 }
 
 /* ÍCONE (SVG) */
-/* Este é o novo ícone de "balão de chat" */
+/* Controla o tamanho do ícone preto */
 .floating-btn svg {
-  width: 28px; /* Tamanho do ícone */
+  width: 28px;
   height: 28px;
-  fill: #ffffff; /* Cor do ícone */
+  /* A cor (fill) está sendo controlada no index.html */
 }
