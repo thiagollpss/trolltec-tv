@@ -91,6 +91,7 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
   padding: 10px 24px;
   backdrop-filter: blur(8px);
   border-bottom: 1px solid #dee2e6; /* Borda cinza sutil */
+  transition: background-color 0.3s, box-shadow 0.3s; /* ADICIONADO para efeito de scroll */
 }
 /* === LOGO ATUALIZADO (VERMELHO VINHO) === */
 .nav-logo {  
@@ -597,4 +598,44 @@ footer .container {
   }
   .nav-links.active { display: flex; }
   .nav-links li { text-align: center; padding: 10px 0; }
+}
+/* === FIM DA CORREÇÃO (CHAVE '}' REMOVIDA DAQUI) === */
+
+
+/* === CÓDIGO ADICIONADO: EFEITO SCROLL NAVBAR === */
+.navbar.scrolled {
+  /* Fundo 100% branco e sombra quando rolar */
+  background-color: rgba(255, 255, 255, 0.98); 
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* === CÓDIGO ADICIONADO: BOTÃO FLUTUANTE WHATSAPP === */
+.floating-btn {
+  position: fixed; /* Fica fixo na tela */
+  bottom: 25px; /* 25px de distância do fundo */
+  right: 25px; /* 25px de distância da direita */
+  
+  width: 60px; /* Largura */
+  height: 60px; /* Altura */
+  
+  background-color: var(--cor-verde-cta); /* Cor verde do WhatsApp */
+  color: #ffffff; /* Ícone (SVG) em branco */
+  
+  border-radius: 50%; /* Deixa ele redondo */
+  
+  /* Centraliza o ícone SVG dentro do botão */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Sombra para destacar */
+  z-index: 1000; /* Garante que ele fique acima de tudo */
+  
+  transition: all 0.3s ease; /* Transição suave */
+}
+
+/* Efeito ao passar o mouse */
+.floating-btn:hover {
+  background-color: var(--cor-verde-cta-hover); /* Cor mais escura */
+  transform: scale(1.1); /* Aumenta um pouco */
 }
