@@ -609,45 +609,44 @@ footer .container {
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* === CÓDIGO ATUALIZADO: BOTÃO FLUTUANTE (BRANCO/PRETO) === */
+/* === CÓDIGO ATUALIZADO: BOTÃO FLUTUANTE (TEXTO) === */
 .floating-btn {
-  position: fixed; /* Fica fixo na tela */
+  position: fixed; 
   bottom: 20px;
   right: 20px;
   
-  width: 55px;
-  height: 55px;
+  /* Define o padding (espaçamento interno) */
+  padding: 12px 20px; 
   
-  /* FUNDO BRANCO */
-  background-color: #ffffff; 
+  /* Cor de fundo verde do WhatsApp */
+  background-color: var(--cor-verde-cta); 
   
-  border-radius: 50%; /* Deixa ele redondo */
+  /* Cor do texto */
+  color: #ffffff; 
   
-  /* Centraliza o ícone */
+  /* Borda arredondada para formar uma pílula */
+  border-radius: 50px; 
+  
   display: flex;
   align-items: center;
   justify-content: center;
   
-  /* Sombra para destacar o botão branco */
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); 
+  /* Sombra mais suave */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
   
-  z-index: 1000; /* Garante que ele fique acima de tudo */
-  transition: all 0.3s ease; /* Transição suave */
-  border: 1px solid #eee; /* Borda sutil (opcional) */
+  z-index: 1000;
+  transition: all 0.3s ease;
+  
+  /* Estilos da fonte */
+  font-weight: 700; /* Negrito */
+  font-size: 1rem; /* Tamanho do texto */
+  text-decoration: none; /* Garante que não tenha sublinhado */
+  border: none; /* Remove qualquer borda */
 }
 
 /* Efeito ao passar o mouse */
 .floating-btn:hover {
-  /* Fundo cinza claro no hover */
-  background-color: #f4f4f4; 
-  transform: scale(1.08) translateY(-2px); /* Efeito mais sutil */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25); /* Sombra mais forte no hover */
-}
-
-/* ÍCONE (SVG) */
-/* Controla o tamanho do ícone preto */
-.floating-btn svg {
-  width: 28px;
-  height: 28px;
-  /* A cor (fill) está sendo controlada no index.html */
+  background-color: var(--cor-verde-cta-hover); /* Cor mais escura */
+  transform: scale(1.05) translateY(-2px); /* Efeito mais sutil */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
