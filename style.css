@@ -124,9 +124,12 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
   margin-left: auto;
   margin-right: auto;
 }
-/* === H1 SPAN ATUALIZADO (VERMELHO VINHO) === */
+/* === H1 SPAN ATUALIZADO (VERMELHO VINHO E MENOR) === */
 #section-hero h1 span {
   color: var(--cor-vermelho-vinho);
+  /* === MODIFICAÇÃO AQUI === */
+  font-size: 0.8em; /* 80% do tamanho do H1 */
+  font-weight: 500; /* Fonte de peso médio, em vez de 700 (negrito) */
 }
 #section-hero p {
   font-size: 1.2rem;
