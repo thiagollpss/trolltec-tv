@@ -94,16 +94,21 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
   transition: background-color 0.3s, box-shadow 0.3s; /* ADICIONADO para efeito de scroll */
 }
 /* === LOGO ATUALIZADO (VERMELHO VINHO) === */
+/* === LOGO ESTILO 𝘛𝘙𝘖𝘓𝘓𝘐𝘗𝘛𝘝 (Corrigido o corte no V) === */
 .nav-logo {  
   font-size: 32px;  
-  font-weight: 500; /* Mudei de 900 para 500 (ficou mais fina/elegante) */
-  font-style: italic; /* === O SEGREDO: Deixa a letra inclinada === */
+  font-weight: 500; 
+  font-style: italic; 
   background: linear-gradient(45deg, var(--cor-vermelho-vinho), #C62828); 
   -webkit-background-clip: text;  
   -webkit-text-fill-color: transparent;  
   text-transform: uppercase;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
-  letter-spacing: 1px; /* Um leve espaçamento para ficar chique */
+  letter-spacing: 1px;
+  
+  /* === SOLUÇÃO PARA NÃO CORTAR O V === */
+  padding-right: 8px; /* Cria um espaço para a inclinação da letra */
+  display: inline-block; /* Garante que o padding seja respeitado */
 }
 .nav-links { list-style: none; display: flex; gap: 25px; }
 .nav-links li a { font-size: 16px; color: var(--cor-texto); font-weight: 500; transition: color 0.2s; }
