@@ -96,12 +96,14 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
 /* === LOGO ATUALIZADO (VERMELHO VINHO) === */
 .nav-logo {  
   font-size: 32px;  
-  font-weight: 900; /* Super-negrito */
-  background: linear-gradient(45deg, var(--cor-vermelho-vinho), #C62828); /* Gradiente Vinho */
+  font-weight: 500; /* Mudei de 900 para 500 (ficou mais fina/elegante) */
+  font-style: italic; /* === O SEGREDO: Deixa a letra inclinada === */
+  background: linear-gradient(45deg, var(--cor-vermelho-vinho), #C62828); 
   -webkit-background-clip: text;  
   -webkit-text-fill-color: transparent;  
   text-transform: uppercase;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Sombra sutil */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+  letter-spacing: 1px; /* Um leve espaçamento para ficar chique */
 }
 .nav-links { list-style: none; display: flex; gap: 25px; }
 .nav-links li a { font-size: 16px; color: var(--cor-texto); font-weight: 500; transition: color 0.2s; }
