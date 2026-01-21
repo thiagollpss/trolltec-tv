@@ -603,6 +603,7 @@ footer .container {
   .nav-links li { text-align: center; padding: 10px 0; }
 }
 
+
 /* === CÓDIGO ADICIONADO: EFEITO SCROLL NAVBAR === */
 .navbar.scrolled {
   /* Fundo 100% branco e sombra quando rolar */
@@ -644,17 +645,20 @@ footer .container {
   border: none;
 }
 
+/* Efeito ao passar o mouse */
 .floating-btn:hover {
+  /* MUDANÇA: Um preto mais claro no hover */
   background-color: #333333; 
+  /* MUDANÇA: Um verde mais escuro no hover */
   color: var(--cor-verde-cta-hover);
   transform: scale(1.05) translateY(-2px); 
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* ==========================================================
-   MUDANÇA: CORREÇÃO PARA PÁGINAS DE POLÍTICA E TERMOS
-   ========================================================== */
-.politica-content h1, .termos-content h1 { text-align: center; margin-bottom: 40px; }
-.politica-content h3, .termos-content h3 { color: var(--cor-vermelho-vinho); margin-top: 30px; margin-bottom: 15px; }
-.politica-content p, .termos-content p { color: var(--cor-texto); margin-bottom: 15px; } /* Texto agora em PRETO/CINZA ESCURO */
-.politica-content ul, .termos-content ul { color: var(--cor-texto); padding-left: 20px; margin-bottom: 20px; }
+/* =========================================
+   CORREÇÃO DE CORES: POLÍTICA E TERMOS
+   ========================================= */
+.politica-content h1, .termos-content h1 { color: #212529; text-align: center; }
+.politica-content h3, .termos-content h3 { color: var(--cor-vermelho-vinho); margin-top: 20px;}
+.politica-content p, .termos-content p, 
+.politica-content li, .termos-content li { color: #212529 !important; }
