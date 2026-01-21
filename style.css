@@ -83,25 +83,31 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
 }
 
 /* NAVBAR */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0;
+  background-color: rgba(255, 255, 255, 0.85); /* Navbar branca translúcida */
+  z-index: 1000;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 24px;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #dee2e6; /* Borda cinza sutil */
+  transition: background-color 0.3s, box-shadow 0.3s; /* ADICIONADO para efeito de scroll */
+}
+/* === LOGO ATUALIZADO (VERMELHO VINHO) === */
 .nav-logo {  
   font-size: 32px;  
-  font-weight: 500; 
-  font-style: italic; 
-  background: linear-gradient(45deg, var(--cor-vermelho-vinho), #C62828); 
+  font-weight: 900; /* Super-negrito */
+  background: linear-gradient(45deg, var(--cor-vermelho-vinho), #0000); /* Gradiente Vinho */
   -webkit-background-clip: text;  
   -webkit-text-fill-color: transparent;  
   text-transform: uppercase;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
-  letter-spacing: 1px;
-  
-  /* === SOLUÇÃO PARA NÃO CORTAR O V === */
-  padding-right: 8px; /* Cria um espaço para a inclinação da letra */
-  display: inline-block; /* Garante que o padding seja respeitado */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Sombra sutil */
 }
 .nav-links { list-style: none; display: flex; gap: 25px; }
 .nav-links li a { font-size: 16px; color: var(--cor-texto); font-weight: 500; transition: color 0.2s; }
 .nav-links li a:hover { color: var(--cor-primaria); }
 .menu-toggle { display: none; font-size: 28px; color: var(--cor-primaria); cursor: pointer; background: none; border: none; }
+
 /* HERO */
 #section-hero {
     text-align: center;
