@@ -1,18 +1,19 @@
 /* ESTILOS GERAIS */
 :root {
-  /* === MUDANÇA: TEMA BRANCO E LIMPO === */
-  --cor-primaria: #007BFF; /* Azul primário */
-  --cor-secundaria: #0056b3; /* Azul escuro (hover) */
-  --cor-destaque: #E83E8C; /* Rosa/Roxo para destaques (opcional) */
-  --cor-fundo: #ffffff; /* Fundo branco */
+  /* === MUDANÇA: TEMA VINHO, BRANCO E AMARELO === */
+  --cor-primaria: #FFD700; /* Amarelo/Dourado */
+  --cor-secundaria: #FFC107; /* Amarelo vibrante (hover) */
+  --cor-destaque: #FFFFFF; /* Branco para destaques */
+  --cor-fundo: #4A0404; /* Fundo Vinho */
   
-  --cor-fundo-card: #f9f9f9; /* Fundo de card cinza bem claro */
-  --cor-fundo-transparente: #f9f9f9; /* Mesma cor dos cards */
-  --cor-borda-card: #dee2e6; /* Borda cinza sutil */
-  --largura-borda-card: 1px; /* Espessura da borda */
+  --cor-fundo-card: #5E0A0A; /* Fundo de card vinho um pouco mais claro */
+  --cor-fundo-transparente: #5E0A0A; 
+  --cor-borda-card: #800000; /* Borda vinho escura */
+  --largura-borda-card: 1px;
   
-  --cor-texto: #212529; /* Preto/Cinza bem escuro para textos */
-  --cor-texto-secundario: #6c757d; /* Cinza secundário para parágrafos */
+  --cor-texto: #FFD700; /* Letras do site em Amarelo */
+  --cor-texto-secundario: #FFFACD; /* Amarelo palha para parágrafos */
+  --cor-titulo: #FFFFFF; /* Títulos em Branco */
   
   --cor-verde-cta: #25D366;
   --cor-verde-cta-hover: #128C7E;
@@ -54,23 +55,23 @@ section:not(#section-hero) {
 }
 
 h1, h2, h3, h4 { 
-  color: var(--cor-texto); 
+  color: var(--cor-titulo); /* Títulos em Branco */
   margin-bottom: 20px; 
   line-height: 1.3; 
   font-weight: 700; /* Títulos em negrito */
 }
-h1 { font-size: 2.8rem; color: var(--cor-texto); }
+h1 { font-size: 2.8rem; color: var(--cor-titulo); }
 h2 {  
   font-size: 2.2rem;  
   text-align: center;  
   margin-bottom: 40px;  
-  color: var(--cor-texto);
+  color: var(--cor-titulo);
 }
 h2 span { /* Destaque no H2 */
   color: var(--cor-primaria);
 }
 h4 {
-  color: var(--cor-texto);
+  color: var(--cor-titulo);
   font-size: 1.5rem;
   margin-bottom: 10px;
 }
@@ -85,26 +86,26 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
 /* NAVBAR */
 .navbar {
   position: fixed; top: 0; left: 0; right: 0;
-  background-color: rgba(255, 255, 255, 0.85); /* Navbar branca translúcida */
+  background-color: rgba(74, 4, 4, 0.85); /* Navbar vinho translúcida */
   z-index: 1000;
   display: flex; justify-content: space-between; align-items: center;
   padding: 10px 24px;
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid #dee2e6; /* Borda cinza sutil */
+  border-bottom: 1px solid var(--cor-borda-card); /* Borda sutil */
   transition: background-color 0.3s, box-shadow 0.3s; /* ADICIONADO para efeito de scroll */
 }
 /* === LOGO ATUALIZADO (VERMELHO VINHO) === */
 .nav-logo {  
   font-size: 32px;  
   font-weight: 900; /* Super-negrito */
-  background: linear-gradient(45deg, var(--cor-vermelho-vinho), #0000); /* Gradiente Vinho */
+  background: linear-gradient(45deg, var(--cor-primaria), #ffffff); /* Gradiente Amarelo/Branco */
   -webkit-background-clip: text;  
   -webkit-text-fill-color: transparent;  
   text-transform: uppercase;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Sombra sutil */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3); /* Sombra sutil */
 }
 .nav-links { list-style: none; display: flex; gap: 25px; }
-.nav-links li a { font-size: 16px; color: var(--cor-texto); font-weight: 500; transition: color 0.2s; }
+.nav-links li a { font-size: 16px; color: var(--cor-titulo); font-weight: 500; transition: color 0.2s; }
 .nav-links li a:hover { color: var(--cor-primaria); }
 .menu-toggle { display: none; font-size: 28px; color: var(--cor-primaria); cursor: pointer; background: none; border: none; }
 
@@ -126,7 +127,7 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
 }
 /* === H1 SPAN ATUALIZADO (VERMELHO VINHO E MENOR) === */
 #section-hero h1 span {
-  color: var(--cor-vermelho-vinho);
+  color: var(--cor-primaria);
   /* === MODIFICAÇÃO AQUI === */
   font-size: 0.8em; /* 80% do tamanho do H1 */
   font-weight: 500; /* Fonte de peso médio, em vez de 700 (negrito) */
@@ -193,7 +194,7 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
 .sobre-imagem img {
   width: 100%;
   border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 .sobre-texto h2 {
   text-align: left;
@@ -211,27 +212,27 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
   align-items: center; /* Alinha os cards na vertical */
 }
 .plano-card {  
-    background: var(--cor-fundo); /* Fundo branco nos cards */
-    border: var(--largura-borda-card) solid var(--cor-borda-card); /* Borda cinza */
+    background: var(--cor-fundo-card); /* Fundo Vinho nos cards */
+    border: var(--largura-borda-card) solid var(--cor-borda-card); /* Borda Vinho */
     border-radius: 10px;  
     padding: 30px;  
     text-align: center;  
     transition: transform 0.3s, box-shadow 0.3s;  
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Sombra sutil */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* Sombra sutil */
 }
 .plano-card:hover {  
   transform: scale(1.05);  
   border-color: var(--cor-primaria); /* Borda de destaque no hover */
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 .plano-card.popular {  
     transform: scale(1.05); /* Ligeiramente maior */
     border: 2px solid transparent; 
-    background-image: linear-gradient(var(--cor-fundo), var(--cor-fundo)),  
+    background-image: linear-gradient(var(--cor-fundo-card), var(--cor-fundo-card)),  
                       linear-gradient(120deg, var(--cor-primaria), var(--cor-secundaria)); /* Borda com gradient */
     background-origin: border-box;
     background-clip: padding-box, border-box;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
 .plano-card.popular:hover {  
   transform: scale(1.1);  
@@ -240,7 +241,7 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
 .selo {  
   display:inline-block;  
   background: linear-gradient(120deg, var(--cor-primaria), var(--cor-secundaria));
-  color:#ffffff; /* Texto branco no selo */
+  color:#000; /* Texto preto no selo amarelo */
   padding: 6px 15px;  
   border-radius:50px;  
   font-size:14px;  
@@ -260,13 +261,13 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
   margin-top: 30px;
 }
 .conteudo-box {
-  background: var(--cor-fundo); /* Fundo branco */
+  background: var(--cor-fundo-card); /* Fundo Vinho */
   border-radius: 8px;
   padding: 25px;
-  border: var(--largura-borda-card) solid var(--cor-borda-card); /* Borda cinza */
+  border: var(--largura-borda-card) solid var(--cor-borda-card); /* Borda Vinho */
   border-top: 3px solid var(--cor-primaria); /* Borda superior de destaque */
   transition: transform 0.3s;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 .conteudo-box:hover {
   transform: translateY(-5px);
@@ -288,13 +289,13 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
   margin-top: 30px;
 }
 .recurso-box {
-  background: var(--cor-fundo); /* Fundo branco */
+  background: var(--cor-fundo-card); /* Fundo Vinho */
   border-radius: 8px;
   padding: 25px;
   text-align: center;
-  border: var(--largura-borda-card) solid var(--cor-borda-card); /* Borda cinza */
+  border: var(--largura-borda-card) solid var(--cor-borda-card); /* Borda Vinho */
   transition: transform 0.3s;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 .recurso-box:hover {
   transform: translateY(-5px);
@@ -329,19 +330,19 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
   gap: 25px;
 }
 .step-card {  
-  background: var(--cor-fundo); /* Fundo branco */
+  background: var(--cor-fundo-card); /* Fundo Vinho */
   border-radius: 10px;  
   padding: 20px;  
   position: relative;  
   border: var(--largura-borda-card) solid var(--cor-borda-card);
-  border-left: 3px solid var(--cor-primaria); /* Destaque azul na esquerda */
+  border-left: 3px solid var(--cor-primaria); /* Destaque amarelo na esquerda */
 }
 .step-number {  
   position: absolute;  
   top: 20px;  
   left: -18px;  
   background: var(--cor-primaria); /* Número do passo com destaque */
-  color: #ffffff; /* Texto branco */
+  color: #000; /* Texto preto no número amarelo */
   width: 36px;  
   height: 36px;  
   border-radius: 50%;  
@@ -350,19 +351,19 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
   justify-content: center;  
   font-size: 1.2rem;  
   font-weight: 700;  
-  border: 2px solid var(--cor-fundo); /* Borda do número */
+  border: 2px solid var(--cor-fundo-card); /* Borda do número */
 }
-.step-card h4 { color: var(--cor-texto); margin-top: 0; margin-left: 25px; }
+.step-card h4 { color: var(--cor-titulo); margin-top: 0; margin-left: 25px; }
 .step-card p { margin-bottom: 0; margin-left: 25px; font-size: 1rem;}
 
 /* VÍDEO TUTORIAL (AGORA CARD DE IMAGEM) */
 .video-card {
-  background: var(--cor-fundo); /* Fundo branco */
+  background: var(--cor-fundo-card); /* Fundo Vinho */
   border-radius: 10px;
   overflow: hidden;  
-  border: var(--largura-borda-card) solid var(--cor-borda-card); /* Borda cinza */
+  border: var(--largura-borda-card) solid var(--cor-borda-card); /* Borda Vinho */
   width: 100%;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 .video-card h4 {
   font-size: 1.2rem;
@@ -390,10 +391,10 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
 
 /* FAQ */
 .faq-item {
-  background: var(--cor-fundo); /* Fundo branco */
+  background: var(--cor-fundo-card); /* Fundo Vinho */
   border-radius: 8px;
   margin-bottom: 10px;
-  border: var(--largura-borda-card) solid var(--cor-borda-card); /* Borda cinza */
+  border: var(--largura-borda-card) solid var(--cor-borda-card); /* Borda Vinho */
 }
 .faq-item h4 {  
   cursor:pointer;  
@@ -401,7 +402,7 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
   display:flex;  
   justify-content:space-between;  
   align-items:center;  
-  color:var(--cor-texto);  
+  color:var(--cor-titulo);  
   margin-bottom: 0;
   font-size: 1.2rem; /* Ajuste de tamanho para FAQ */
   font-weight: 500; /* Peso médio para FAQ */
@@ -409,8 +410,8 @@ p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.1rem; 
 .faq-item p {  
   display: none;  
   padding: 0 20px 20px 20px;  
-  background: var(--cor-fundo); /* Fundo branco */
-  border-top: 1px solid #eee; /* Linha divisória interna sutil */
+  background: var(--cor-fundo-card); /* Fundo Vinho */
+  border-top: 1px solid var(--cor-borda-card); /* Linha divisória interna sutil */
   margin-bottom: 0;  
   font-size: 1rem;
   border-radius: 0 0 8px 8px;
@@ -424,7 +425,7 @@ footer {
   text-align:center;  
   padding: 40px 0 20px 0; /* Ajustado */
   margin-top: 40px;  
-  border-top: 1px solid #dee2e6; /* Borda cinza */
+  border-top: 1px solid var(--cor-borda-card); /* Borda Vinho */
 }
 footer .container {
   padding: 0; /* Remove padding do container do footer */
@@ -441,13 +442,13 @@ footer .container {
   gap: 20px;
 }
 .depoimento-card {
-  background: var(--cor-fundo-transparente); /* Fundo cinza claro */
-  border: var(--largura-borda-card) solid var(--cor-borda-card); /* Borda cinza */
+  background: var(--cor-fundo-transparente); /* Fundo Vinho */
+  border: var(--largura-borda-card) solid var(--cor-borda-card); /* Borda Vinho */
   border-radius: 8px;
   padding: 25px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 .depoimento-card p {
   font-style: italic;
@@ -478,7 +479,7 @@ footer .container {
   flex-direction: column;
 }
 .depoimento-card h4 {
-  color: var(--cor-texto); /* Cor do texto principal */
+  color: var(--cor-titulo); /* Cor do texto principal (Branco) */
   margin-bottom: 0;  
   font-size: 1.1rem;
 }
@@ -495,7 +496,7 @@ footer .container {
   display: block;
   border-radius: 10px;
   border: 1px solid var(--cor-borda-card);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 /* === SEÇÃO: DISPOSITIVOS (GRID) === */
@@ -506,24 +507,24 @@ footer .container {
   margin-top: 30px;
 }
 .dispositivo-card {
-  background: var(--cor-fundo); /* Fundo branco */
+  background: var(--cor-fundo-card); /* Fundo Vinho */
   border-radius: 8px;
   padding: 25px;
   text-align: center;
-  border: var(--largura-borda-card) solid var(--cor-borda-card); /* Borda cinza */
+  border: var(--largura-borda-card) solid var(--cor-borda-card); /* Borda Vinho */
   transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 .dispositivo-card:hover {
   transform: translateY(-5px);
   border-color: var(--cor-primaria);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 .dispositivo-icon {
   font-size: 3.5rem;
   margin-bottom: 15px;
   line-height: 1;
-  color: var(--cor-primaria); /* Ícones com a cor primária */
+  color: var(--cor-primaria); /* Ícones com a cor primária Amarelo */
 }
 .dispositivo-card h4 {
   font-size: 1.3rem;
@@ -537,14 +538,14 @@ footer .container {
 
 /* SEÇÃO CTA FINAL */
 #section-cta-final {
-  background: var(--cor-fundo-transparente); /* Fundo cinza claro */
-  border: var(--largura-borda-card) solid var(--cor-borda-card); /* Borda cinza */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  background: var(--cor-fundo-transparente); /* Fundo Vinho */
+  border: var(--largura-borda-card) solid var(--cor-borda-card); /* Borda Vinho */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Sombra sutil */
   text-align: center; /* === BOTÃO CENTRALIZADO === */
 }
 #section-cta-final h2 {
   font-size: 2rem;
-  color: var(--cor-texto);
+  color: var(--cor-titulo);
   margin-bottom: 15px;
 }
 #section-cta-final p {
@@ -595,9 +596,9 @@ footer .container {
     position: absolute;
     top: 70px;
     left: 0;
-    background-color: rgba(255, 255, 255, 0.98); /* Fundo branco no mobile */
+    background-color: var(--cor-fundo); /* Fundo Vinho no mobile */
     padding: 20px 0;
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 1px solid var(--cor-borda-card);
   }
   .nav-links.active { display: flex; }
   .nav-links li { text-align: center; padding: 10px 0; }
@@ -606,9 +607,9 @@ footer .container {
 
 /* === CÓDIGO ADICIONADO: EFEITO SCROLL NAVBAR === */
 .navbar.scrolled {
-  /* Fundo 100% branco e sombra quando rolar */
-  background-color: rgba(255, 255, 255, 0.98); 
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  /* Fundo Vinho e sombra quando rolar */
+  background-color: var(--cor-fundo);  
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
 /* === CÓDIGO ATUALIZADO: BOTÃO FLUTUANTE (PRETO/VERDE) === */
@@ -619,11 +620,11 @@ footer .container {
   
   padding: 12px 20px; 
   
-  /* MUDANÇA: Fundo preto */
-  background-color: var(--cor-texto); 
+  /* MUDANÇA: Fundo Amarelo para destacar no Vinho */
+  background-color: var(--cor-primaria); 
   
-  /* MUDANÇA: Cor do texto verde */
-  color: var(--cor-verde-cta); 
+  /* MUDANÇA: Cor do texto Vinho */
+  color: var(--cor-fundo); 
   
   border-radius: 50px; 
   
@@ -631,7 +632,7 @@ footer .container {
   align-items: center;
   justify-content: center;
   
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); 
   z-index: 1000;
   transition: all 0.3s ease;
   
@@ -647,18 +648,16 @@ footer .container {
 
 /* Efeito ao passar o mouse */
 .floating-btn:hover {
-  /* MUDANÇA: Um preto mais claro no hover */
-  background-color: #333333; 
-  /* MUDANÇA: Um verde mais escuro no hover */
-  color: var(--cor-verde-cta-hover);
+  /* MUDANÇA: Amarelo mais vibrante */
+  background-color: var(--cor-secundaria); 
   transform: scale(1.05) translateY(-2px); 
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
 /* =========================================
    CORREÇÃO DE CORES: POLÍTICA E TERMOS
    ========================================= */
-.politica-content h1, .termos-content h1 { color: #212529; text-align: center; }
-.politica-content h3, .termos-content h3 { color: var(--cor-vermelho-vinho); margin-top: 20px;}
+.politica-content h1, .termos-content h1 { color: var(--cor-titulo); text-align: center; }
+.politica-content h3, .termos-content h3 { color: var(--cor-primaria); margin-top: 20px;}
 .politica-content p, .termos-content p, 
-.politica-content li, .termos-content li { color: #212529 !important; }
+.politica-content li, .termos-content li { color: var(--cor-texto-secundario) !important; }
