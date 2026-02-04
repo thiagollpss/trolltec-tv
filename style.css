@@ -2,28 +2,29 @@
 :root {
   /* === PALETA CLARA: BRANCO AZULADO E DOURADO === */
   
-  /* CORES DE DESTAQUE (Mantendo o Dourado) */
+  /* CORES DE DESTAQUE */
   --cor-primaria: #D4AF37; /* Dourado metálico */
   --cor-secundaria: #B8860B; /* Dourado mais escuro para hover */
   --cor-destaque: #1A2B3C; /* Azul marinho para destaques específicos */
   
-  /* NOVAS CORES DE FUNDO (Claras) */
-  --cor-fundo: #EEF4F7; /* O "Branco Azulado" solicitado (Tom Gelo) */
-  --cor-fundo-card: #FFFFFF; /* Cards Branco Puro para destaque */
+  /* CORES DE FUNDO (Claras) */
+  --cor-fundo: #EEF4F7; /* Branco Azulado (Tom Gelo) */
+  --cor-fundo-card: #FFFFFF; /* Cards Branco Puro */
   --cor-fundo-transparente: rgba(255, 255, 255, 0.95); /* Navbar branca translúcida */
   
   /* BORDAS */
-  --cor-borda-card: #DCE4E8; /* Borda cinza azulada bem sutil */
+  --cor-borda-card: #DCE4E8; /* Borda cinza azulada sutil */
   --largura-borda-card: 1px;
   
-  /* NOVAS CORES DE TEXTO (Escuras para contraste) */
+  /* CORES DE TEXTO (Escuras para contraste) */
   --cor-texto: #333333; /* Texto principal Cinza Chumbo */
-  --cor-texto-secundario: #666666; /* Cinza médio para parágrafos */
+  --cor-texto-secundario: #666666; /* Cinza médio */
   --cor-titulo: #1A2B3C; /* Títulos em Azul Marinho Profundo */
   
   /* BOTÕES */
   --cor-verde-cta: #25D366;
   --cor-verde-cta-hover: #128C7E;
+  --cor-azul-btn: #007BFF; /* Novo Azul do botão flutuante */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -34,7 +35,7 @@ body {
   color: var(--cor-texto);
   line-height: 1.6;
   padding-top: 70px;
-  background-color: var(--cor-fundo); /* Fundo Branco Azulado */
+  background-color: var(--cor-fundo);
   font-weight: 400;
 }
 
@@ -55,7 +56,7 @@ section.container {
   border-radius: 10px;
   padding: 40px;
   margin-top: 30px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Sombra suave para tema claro */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 section:not(#section-hero) {
@@ -63,7 +64,7 @@ section:not(#section-hero) {
 }
 
 h1, h2, h3, h4 { 
-  color: var(--cor-titulo); /* Títulos Azul Marinho */
+  color: var(--cor-titulo); 
   margin-bottom: 20px; 
   line-height: 1.3; 
   font-weight: 700;
@@ -76,7 +77,7 @@ h4 { font-size: 1.5rem; margin-bottom: 10px; }
 
 p { 
   margin-bottom: 15px; 
-  color: var(--cor-texto-secundario); /* Texto cinza para leitura */
+  color: var(--cor-texto-secundario); 
   font-size: 1.1rem; 
 }
 
@@ -102,7 +103,6 @@ p {
 .nav-logo {  
   font-size: 32px;  
   font-weight: 900;
-  /* Gradiente Dourado para Azul Marinho */
   background: linear-gradient(45deg, var(--cor-primaria), var(--cor-titulo)); 
   -webkit-background-clip: text;  
   -webkit-text-fill-color: transparent;  
@@ -220,7 +220,7 @@ p {
     padding: 30px;  
     text-align: center;  
     transition: transform 0.3s, box-shadow 0.3s;  
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Sombra suave */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 .plano-card:hover {  
   transform: scale(1.05);  
@@ -454,17 +454,17 @@ footer {
 }
 footer .container { padding: 0; margin-top: 0; background: none; border: none; box-shadow: none; }
 
-/* BOTÃO FLUTUANTE */
+/* === CÓDIGO ATUALIZADO: BOTÃO FLUTUANTE (AZUL/BRANCO) === */
 .floating-btn {
   position: fixed; 
   bottom: 20px;
   right: 20px;
   padding: 12px 20px; 
-  background-color: var(--cor-primaria); 
-  color: #ffffff;
+  background-color: var(--cor-azul-btn); /* Fundo Azul */
+  color: #ffffff; /* Texto Branco */
   border-radius: 50px; 
   display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4); 
   z-index: 1000;
   transition: all 0.3s ease;
   font-style: italic;
@@ -474,9 +474,9 @@ footer .container { padding: 0; margin-top: 0; background: none; border: none; b
   border: none;
 }
 .floating-btn:hover {
-  background-color: var(--cor-secundaria); 
+  background-color: #0056b3; /* Azul mais escuro no hover */
   transform: scale(1.05) translateY(-2px); 
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.5);
 }
 
 /* RESPONSIVIDADE */
@@ -498,7 +498,7 @@ footer .container { padding: 0; margin-top: 0; background: none; border: none; b
     position: absolute;
     top: 70px;
     left: 0;
-    background-color: var(--cor-fundo-card); /* Fundo branco no mobile */
+    background-color: var(--cor-fundo-card);
     padding: 20px 0;
     border-bottom: 1px solid var(--cor-borda-card);
   }
