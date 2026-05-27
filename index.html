@@ -1,3 +1,18 @@
+Aqui está o seu código HTML completo e modificado.
+
+### O que mudou para afastar "Papa-Testes"?
+
+* **Filtro Psicológico nos Textos e CTAs:** Troquei termos fracos por palavras de alta conversão, como **"Verificar Vagas"** e **"Consultar Disponibilidade do Servidor Privado"**. Isso passa a impressão de escassez e exclui quem quer só clicar e pegar lista automática.
+* **Aviso de Restrição:** Adicionei uma caixinha de aviso estratégico na seção do Speed Test deixando claro: **"Não liberamos testes durante jogos oficiais."** Isso quebra totalmente a intenção dos curiosos de última hora.
+* **Mensagens do WhatsApp Otimizadas:** As mensagens automáticas que vão para o seu WhatsApp foram reconfiguradas. Agora, em vez de o cliente pedir um teste, a mensagem padrão diz que ele quer **"validar os requisitos para entrar no servidor"**.
+
+### O que mudou para melhorar o SEO?
+
+* **Subtítulos estruturados:** Adicionei tags `<h3>` que faltavam em algumas seções para criar uma hierarquia de leitura perfeita para o robô do Google.
+* **Otimização de Imagens:** Adicionei atributos `alt` mais focados nas buscas locais e adicionei `decoding="async"` para acelerar o carregamento do site.
+* **JSON-LD (Schema Markup) Robusto:** Atualizei o Schema do seu site inserindo mais dados (como a moeda e faixas de preços claras), ajudando o Google a entender que o seu site é uma empresa de serviços legítima e profissional em 2026.
+
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,7 +22,7 @@
   <title>IPTV 2026: Estabilidade Real. Zero Travamentos.</title>
   
   <meta name="description" content="Chega de passar raiva no meio do jogo! O IPTV 2026 oferece a estabilidade que você sempre buscou. Servidores dedicados, zero travamentos e suporte 24h. Teste e comprove a diferença." />
-  <meta name="keywords" content="IPTV 2026, Melhor IPTV 2026, Lista IPTV Brasil, IPTV sem travamento, Servidor Dedicado IPTV, IPTV Premium 4K, Anti-trava, IPTV estável, Futebol ao vivo, Speed Test IPTV" />
+  <meta name="keywords" content="IPTV 2026, Melhor IPTV 2026, Lista IPTV Brasil, IPTV sem travamento, Servidor Dedicado IPTV, IPTV Premium 4K, Anti-trava, IPTV estável, Futebol ao vivo, Speed Test IPTV, IPTV Pago estável" />
   
   <meta name="author" content="TrollIPTV" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -48,21 +63,23 @@
     "@graph": [
       {
         "@type": "Service",
-        "serviceType": "IPTV Service",
+        "serviceType": "IPTV Service Premium",
         "provider": {
           "@type": "Organization",
-          "name": "TrollIPTV"
+          "name": "TrollIPTV",
+          "url": "https://trolliptv.com.br/"
         },
         "areaServed": {
           "@type": "Country",
           "name": "Brasil"
         },
-        "description": "Fornecedor da Melhor Lista IPTV paga do Brasil em 2026.",
+        "description": "Fornecedor da Melhor Lista IPTV paga do Brasil em 2026 com tecnologia Anti-Traffic Shaping.",
         "offers": {
-          "@type": "Offer",
-          "price": "20.00",
+          "@type": "AggregateOffer",
           "priceCurrency": "BRL",
-          "name": "Plano Mensal Premium"
+          "lowPrice": "20.00",
+          "highPrice": "240.00",
+          "offerCount": "3"
         }
       },
       {
@@ -94,13 +111,14 @@
       width: 100%;
       border-radius: 12px;
     }
-    /* Estilos novos para Speed Test e Tabela */
+    /* Estilos novos para Speed Test, Tabela e Alertas Antisteste */
     .speed-test-box { background: #1a1a1a; padding: 40px 20px; text-align: center; border-radius: 15px; margin: 40px 0; border: 1px solid #333; }
     .btn-speed { display: inline-block; padding: 15px 30px; background: #25d366; color: #fff; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 20px; transition: 0.3s; }
     .seo-table-container { overflow-x: auto; margin: 40px 0; }
     .seo-table { width: 100%; border-collapse: collapse; color: #fff; background: #111; min-width: 600px; }
     .seo-table th, .seo-table td { padding: 15px; border: 1px solid #333; text-align: center; }
     .seo-table th { background: #e50914; }
+    .alert-anti-papateste { background: rgba(229, 9, 20, 0.1); border: 1px dashed #e50914; padding: 15px; border-radius: 8px; margin: 20px auto 0 auto; max-width: 500px; font-size: 0.93rem; color: #ff6b6b; }
   </style>
 
 </head>
@@ -121,13 +139,13 @@
     <section class="container" id="section-hero">
       <h1>IPTV 2026: Estabilidade Real<br><span>(Zero Travamentos)</span></h1>
       <p class="subtitle">Servidores Dedicados com Tecnologia Anti-Traffic Shaping. A única lista com sinal 99.9% estável em 4K e Full HD para você assistir sem passar raiva.</p>
-      <a class="btn-cta" href="https://wa.me/5575999960790?text=Ol%C3%A1,%20quero%20consultar%20a%20disponibilidade%20do%20servidor%20Premium" target="_blank" rel="noopener">Consultar Disponibilidade Premium</a>
+      <a class="btn-cta" href="https://wa.me/5575999960790?text=Ol%C3%A1,%20gostaria%20de%20verificar%20a%20disponibilidade%20de%20vagas%20no%20servidor%20privado%20TrollIPTV." target="_blank" rel="noopener">Verificar Vagas no Servidor Privado</a>
     </section>
 
     <section class="container" id="section-sobre">
       <div class="sobre-grid">
         <div class="sobre-imagem">
-          <img src="imagem-conteudo.webp" alt="Controle remoto e futebol na TV" loading="lazy" width="600" height="400">
+          <img src="imagem-conteudo.webp" alt="Controle remoto configurando a melhor lista IPTV 2026 estável e paga" loading="lazy" decoding="async" width="600" height="400">
         </div>
         <div class="sobre-texto">
           <h2>Tecnologia Anti-Trava: Por que somos diferentes?</h2>
@@ -140,9 +158,12 @@
 
     <section class="container" id="section-velocidade">
       <div class="speed-test-box">
-        <h2>Sua internet suporta Canais 4K?</h2>
-        <p>Antes de assinar, verifique se sua conexão está estável. Recomendamos acima de 30 Mbps para Ultra HD.</p>
+        <h3>Sua internet suporta Canais 4K Premium?</h3>
+        <p>Antes de solicitar sua ativação, verifique se sua conexão está estável. Recomendamos acima de 30 Mbps para Ultra HD.</p>
         <a href="https://www.speedtest.net/pt" class="btn-speed" rel="nofollow" target="_blank">Fazer Teste de Velocidade Oficial 🚀</a>
+        <div class="alert-anti-papateste">
+          ⚠️ <strong>AVISO IMPORTANTE:</strong> Nosso servidor preza pela extrema qualidade dos assinantes. Não liberamos acessos temporários para uso exclusivo durante horários de jogos oficiais.
+        </div>
       </div>
     </section>
     
@@ -189,25 +210,25 @@
           <thead>
             <tr>
               <th>Benefício</th>
-              <th>Outras Listas</th>
+              <th>Outras Listas / Testes Grátis</th>
               <th>TrollIPTV 2026</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>Estabilidade em Jogos</td>
-              <td>Travamentos constantes</td>
-              <td>Sinal 99.9% Liso</td>
+              <td>Travamentos constantes e quedas</td>
+              <td>Sinal 99.9% Liso Dedicado</td>
             </tr>
             <tr>
               <td>Tecnologia Anti-Bloqueio</td>
-              <td>Não possui</td>
-              <td>Anti-Traffic Shaping</td>
+              <td>Não possui (Cai com Traffic Shaping)</td>
+              <td>Anti-Traffic Shaping Ativo</td>
             </tr>
             <tr>
               <td>Suporte ao Cliente</td>
-              <td>Demorado / Robôs</td>
-              <td>Humano via WhatsApp</td>
+              <td>Demorado / Robôs que somem</td>
+              <td>Humano via WhatsApp 24h</td>
             </tr>
           </tbody>
         </table>
@@ -222,20 +243,20 @@
           <h4 id="mensal-title">Plano Mensal</h4>
           <div class="preco">R$ 20,00</div>
           <p>Acesso total à grade premium. Sem fidelidade.</p>
-          <a class="btn-whatsapp" href="https://wa.me/5575999960790?text=Ol%C3%A1,%20vi%20o%20site%20e%20quero%20aderir%20ao%20Plano%20Mensal%20Anti-Trava" target="_blank" rel="noopener">Assinar Plano Mensal</a>
+          <a class="btn-whatsapp" href="https://wa.me/5575999960790?text=Ol%C3%A1,%20gostaria%20de%20validar%20os%20requisitos%20para%20contratar%20o%20Plano%20Mensal%20Premium." target="_blank" rel="noopener">Contratar Plano Mensal</a>
         </article>
         <article class="plano-card popular" role="region" aria-labelledby="trimestral-title">
           <span class="selo">Mais Vendido</span>
           <h4 id="trimestral-title">Plano Trimestral</h4>
           <div class="preco">R$ 55,00</div>
           <p>Estabilidade garantida por 3 meses.</p>
-          <a class="btn-whatsapp" href="https://wa.me/5575999960790?text=Ol%C3%A1,%20vi%20o%20site%20e%20quero%20aderir%20ao%20Plano%20Trimestral%20Anti-Trava" target="_blank" rel="noopener">Assinar Plano Trimestral</a>
+          <a class="btn-whatsapp" href="https://wa.me/5575999960790?text=Ol%C3%A1,%20gostaria%20de%20validar%20os%20requisitos%20para%20contratar%20o%20Plano%20Trimestral%20Premium." target="_blank" rel="noopener">Contratar Plano Trimestral</a>
         </article>
         <article class="plano-card" role="region" aria-labelledby="anual-title">
           <h4 id="anual-title">Plano Anual</h4>
           <div class="preco">R$ 240,00</div>
           <p>O melhor custo-benefício anual do mercado.</p>
-          <a class="btn-whatsapp" href="https://wa.me/5575999960790?text=Ol%C3%A1,%20vi%20o%20site%20e%20quero%20aderir%20ao%20Plano%20Anual%20Anti-Trava" target="_blank" rel="noopener">Assinar Plano Anual</a>
+          <a class="btn-whatsapp" href="https://wa.me/5575999960790?text=Ol%C3%A1,%20gostaria%20de%20validar%20os%20requisitos%20para%20contratar%20o%20Plano%20Anual%20Premium." target="_blank" rel="noopener">Contratar Plano Anual</a>
         </article>
       </div>
     </section>
@@ -244,7 +265,7 @@
       <h2>Onde Assistir a <span>Melhor Lista?</span></h2>
       <p class="subtitle" style="text-align: center; margin-bottom: 40px;">Compatibilidade total com os aparelhos mais buscados.</p>
       
-      <img src="iptv-familia-brasil.webp" alt="Família assistindo Melhor IPTV 2026 na TV" class="section-image" loading="lazy" width="600" height="400">
+      <img src="iptv-familia-brasil.webp" alt="Família reunida assistindo canais na Smart TV usando a melhor lista IPTV paga e estável do Brasil" class="section-image" loading="lazy" decoding="async" width="600" height="400">
       
       <div class="dispositivo-grid">
         <article class="dispositivo-card">
@@ -274,16 +295,16 @@
       <h2>Grade Completa <span>Premium</span></h2>
       <div class="conteudo-grid">
         <article class="conteudo-box">
-          <h4>Futebol ao Vivo</h4>
-          <p>Todos os campeonatos nacionais e internacionais sem delay e sem travas.</p>
+          <h3>Futebol ao Vivo</h3>
+          <p>Todos os campeonatos nacionais e internacionais sem delay e sem travas nas transmissões de alta performance.</p>
         </article>
         <article class="conteudo-box">
-          <h4>Filmes e Séries</h4>
-          <p>Catálogo VOD atualizado diariamente com lançamentos do cinema.</p>
+          <h3>Filmes e Séries</h3>
+          <p>Catálogo VOD atualizado diariamente com lançamentos do cinema e das principais plataformas de streaming.</p>
         </article>
         <article class="conteudo-box">
-          <h4>Canais 4K</h4>
-          <p>Aproveite a máxima resolução da sua TV com nossa transmissão UHD Real.</p>
+          <h3>Canais 4K UHD</h3>
+          <p>Aproveite a máxima resolução da sua TV com nossa transmissão UHD Real sem perda de pacotes de dados.</p>
         </article>
       </div>
     </section>
@@ -307,22 +328,22 @@
             <div class="step-card">
                 <div class="step-number">1</div>
                 <h4>Escolha seu Plano</h4>
-                <p>Selecione a melhor opção (Mensal, Trimestral ou Anual) acima.</p>
+                <p>Selecione a melhor opção (Mensal, Trimestral ou Anual) acima de acordo com sua necessidade.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">2</div>
-                <h4>Receba o Acesso</h4>
-                <p>Enviamos seu login e senha imediatamente no WhatsApp após a confirmação.</p>
+                <h4>Valide o Acesso Profissional</h4>
+                <p>Fale conosco para configurar seu aplicativo rapidamente e sincronizar sua conexão com o servidor dedicado.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">3</div>
                 <h4>Diversão Garantida</h4>
-                <p>Configure em segundos e aproveite o melhor conteúdo do Brasil.</p>
+                <p>Configure em segundos e aproveite o melhor conteúdo do Brasil sem quedas de sinal.</p>
             </div>
         </div>
 
         <div class="video-card">
-          <h4>Por dentro do Servidor</h4>
+          <h3>Por dentro do Servidor Dedicado</h3>
           <div class="video-responsive">
             <iframe  
               src="https://www.youtube.com/embed/CdX60ccZtH4"  
@@ -389,14 +410,14 @@
       <div class="faq-item"><h4>25. Por que escolher o TrollIPTV?</h4><p>Porque somos sérios. Enquanto outros vendem ilusão, nós vendemos o melhor serviço de streaming do Brasil.</p></div>
 
       <div style="text-align: center; margin-top: 40px;">
-        <a href="https://wa.me/5575999960790?text=Ol%C3%A1,%20tenho%20uma%20d%C3%BAvida%20sobre%20o%20IPTV%20Premium" class="btn-cta-link">Tirar mais dúvidas no WhatsApp →</a>
+        <a href="https://wa.me/5575999960790?text=Ol%C3%A1,%20gostaria%20de%20esclarecer%20uma%20d%C3%BAvida%20espec%C3%ADfica%20sobre%20os%20planos%20do%20servidor%20privado." class="btn-cta-link">Consultar Atendimento no WhatsApp →</a>
       </div>
     </section>
 
     <section class="container" id="section-cta-final">
       <h2>Garanta o Melhor IPTV do Brasil</h2>
       <p>Qualidade comprovada. Não perca tempo e dinheiro com serviços ruins. Venha para a elite do streaming.</p>
-      <a class="btn-cta" href="https://wa.me/5575999960790?text=Ol%C3%A1,%20quero%20assinar%20o%20IPTV%20Premium%20Anti-Trava" target="_blank" rel="noopener">Quero Acesso Imediato</a>
+      <a class="btn-cta" href="https://wa.me/5575999960790?text=Ol%C3%A1,%20gostaria%20de%20solicitar%20a%20minha%20ativa%C3%A7%C3%A3o%20no%20servidor%20Premium%20TrollIPTV." target="_blank" rel="noopener">Quero Ativação Imediata</a>
     </section>
   </main>
 
@@ -410,8 +431,8 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/5575999960790?text=Ol%C3%A1,%20quero%20assinar%20o%20IPTV%20Premium%20Anti-Trava" class="floating-btn" target="_blank" rel="noopener" aria-label="Assinar via WhatsApp">
-    Consultar Disponibilidade ⚡
+  <a href="https://wa.me/5575999960790?text=Ol%C3%A1,%20gostaria%20de%20verificar%20a%20disponibilidade%20de%20vagas%20para%20novos%20assinantes%20no%20servidor." class="floating-btn" target="_blank" rel="noopener" aria-label="Assinar via WhatsApp">
+    Consultar Vagas Disponíveis ⚡
   </a>
 
   <script>
@@ -446,3 +467,5 @@
   </script>
 </body>
 </html>
+
+```
