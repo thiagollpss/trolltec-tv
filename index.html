@@ -35,9 +35,9 @@
       --cor-fundo: #EEF4F7; /* Branco Gelo Moderno */
       --cor-fundo-card: #FFFFFF;
       --cor-borda-card: #DCE4E8;
-      --cor-texto: #333333;
-      --cor-texto-secundario: #666666;
-      --cor-titulo: #1A2B3C;
+      --cor-texto: #1E293B; /* Texto Principal Mais Escuro */
+      --cor-texto-secundario: #2D3748; /* Textos Secundários e Parágrafos Escuros */
+      --cor-titulo: #0F172A; /* Títulos em Preto Tecnológico */
     }
 
     /* RESETS */
@@ -71,14 +71,14 @@
     h1 span { color: var(--cor-primaria); font-size: 0.85em; display: block; margin-top: 5px; }
     h2 { font-size: 2rem; text-align: center; margin-bottom: 35px; }
     h2 span { color: var(--cor-primaria); }
-    p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.05rem; }
+    p { margin-bottom: 15px; color: var(--cor-texto-secundario); font-size: 1.05rem; font-weight: 500; }
     .subtitle { text-align: center; font-size: 1.15rem; color: var(--cor-texto-secundario); max-width: 750px; margin: 0 auto 30px auto; }
 
     /* BOTÕES EM DIAGONAL TECNOLÓGICOS */
     .btn-tech {
       display: inline-block;
       font-family: 'Orbitron', sans-serif;
-      font-weight: 700;
+      font-weight: 900;
       text-transform: uppercase;
       font-size: 1rem;
       letter-spacing: 1px;
@@ -111,35 +111,37 @@
       border-bottom: 1px solid var(--cor-borda-card);
     }
     
-    /* TROLLIPTV PRETO TECNOLÓGICO SEM NEON - AJUSTADO */
+    /* LOGO TROLLIPTV MAIS GROSSO E ULTRA TECNOLÓGICO */
     .nav-logo {  
       font-family: 'Orbitron', sans-serif; 
-      font-size: 30px; 
-      font-weight: 900;
+      font-size: 32px; 
+      font-weight: 900; /* Força Máxima da Fonte */
       color: #0f172a; /* Preto Tecnológico Puro */
       text-transform: uppercase;
-      letter-spacing: 2px;
-      transform: skewX(-12deg); /* Torto estilo Game */
+      letter-spacing: 3px; /* Espaçamento Avançado */
+      transform: skewX(-15deg); /* Inclinação Estilo Gaming Hardware */
       display: inline-block;
+      text-shadow: 1px 1px 0px rgba(0,0,0,0.15);
     }
     .nav-links { list-style: none; display: flex; gap: 25px; }
-    .nav-links li a { font-size: 15px; color: var(--cor-titulo); font-weight: 600; }
+    .nav-links li a { font-size: 15px; color: var(--cor-titulo); font-weight: 700; }
     .nav-links li a:hover { color: var(--cor-cyber-blue); }
     .menu-toggle { display: none; font-size: 28px; color: var(--cor-titulo); cursor: pointer; background: none; border: none; }
 
     /* HERO */
     #section-hero { text-align: center; padding: 40px 20px; background: none; border: none; box-shadow: none; }
 
-    /* QUADRO TEXTO IMENSO SEO (REINTEGRADO E CORRIGIDO) */
+    /* QUADRO TEXTO IMENSO SEO */
     .seo-massivo-container {      
       background: #0f172a; border: 1px solid #1e293b;      
       border-radius: 12px; padding: 30px; margin: 30px auto;      
-      max-width: 1100px; color: #94a3b8; width: 90%;
+      max-width: 1100px; color: #cbd5e1; width: 90%;
     }    
     .seo-massivo-container h3 {      
       color: #ffffff; font-family: 'Orbitron', sans-serif;      
       font-size: 1.1rem; margin-bottom: 15px; letter-spacing: 1px;
     }    
+    .seo-massivo-container p { color: #94a3b8; }
     .seo-conteudo-oculto {      
       max-height: 110px; overflow: hidden;      
       transition: max-height 0.5s ease; position: relative;    
@@ -160,6 +162,7 @@
     /* SPEED TEST & BARREIRA */
     .speed-test-box { background: var(--cor-cyber-dark); padding: 40px; text-align: center; border-radius: 12px; margin: 20px 0; border: 1px solid #1e293b; color: #fff; }
     .speed-test-box h3 { color: #fff; font-family: 'Orbitron', sans-serif; margin-bottom: 15px; }
+    .speed-test-box p { color: #cbd5e1; }
     .alert-anti-papateste { background: rgba(239, 68, 68, 0.08); border: 1px dashed #ef4444; padding: 15px; border-radius: 6px; margin-top: 25px; font-size: 0.95rem; color: #fca5a5; }
 
     /* TABELA COMPARATIVA */
@@ -201,8 +204,8 @@
 
     /* FAQ ACCORDION */
     .faq-item { background: var(--cor-fundo); border-radius: 8px; margin-bottom: 12px; border: 1px solid var(--cor-borda-card); overflow: hidden; }
-    .faq-item h4 { cursor: pointer; padding: 18px 22px; display: flex; justify-content: space-between; align-items: center; background: #ffffff; }
-    .faq-item p { display: none; padding: 20px 22px; background: var(--cor-fundo-card); border-top: 1px solid var(--cor-borda-card); }
+    .faq-item h4 { cursor: pointer; padding: 18px 22px; display: flex; justify-content: space-between; align-items: center; background: #ffffff; color: var(--cor-titulo); }
+    .faq-item p { display: none; padding: 20px 22px; background: var(--cor-fundo-card); border-top: 1px solid var(--cor-borda-card); color: var(--cor-texto-secundario); }
     .faq-item.open p { display: block; }
     .faq-item h4::after { content: "+"; font-size: 22px; color: var(--cor-primaria); font-weight: bold; }
     .faq-item.open h4::after { content: "–"; }
@@ -210,11 +213,9 @@
     /* FOOTER */
     footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--cor-borda-card); }
     .footer-links { margin-top: 15px; display: flex; justify-content: center; gap: 20px; }
-    .footer-links a { color: var(--cor-texto-secundario); font-size: 0.9rem; }
+    .footer-links a { color: var(--cor-texto-secundario); font-size: 0.9rem; font-weight: 600; }
 
-    /* =========================================================================
-       BALÃO DE OFERTA COMPACTO DO CANTINHO (MENOR E SEGURO)
-       ========================================================================= */
+    /* BALÃO DE OFERTA COMPACTO DO CANTINHO */
     .overlay-oferta-cantinho {
       position: fixed; bottom: 95px; left: 25px;
       width: 320px; padding: 20px; 
@@ -224,8 +225,9 @@
       transform: translateY(150px); opacity: 0;
       transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
       box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      display: none; /* Controlado pelo script inteligente de privacidade */
     }
-    .overlay-oferta-cantinho.show { transform: translateY(0); opacity: 1; }
+    .overlay-oferta-cantinho.show { display: block; transform: translateY(0); opacity: 1; }
     .modal-oferta-title { color: #ffffff; font-family: 'Orbitron', sans-serif; margin-bottom: 6px; font-size: 1rem; letter-spacing: 0.5px; }
     .modal-oferta-p { color: #94a3b8; font-size: 0.85rem; margin-bottom: 12px; line-height: 1.4; }
     .preco-oferta { font-family: 'Orbitron', sans-serif; font-size: 2.3rem; font-weight: 900; color: #25d366; margin: 8px 0; }
@@ -312,12 +314,12 @@
     <section class="seo-massivo-container" id="seoBlock">
       <h3>⚡ CENTRAL DE DIRETRIZES TÉCNICAS E ARQUITETURA DE REDE IPTV</h3>
       <div class="seo-conteudo-oculto">
-        <p>A consolidação da infraestrutura de transmissão digital em 2026 exige a adoção de protocolos robustos de entrega de conteúdo IP. Ao baratear custos com listas de reprodução genéricas, o usuário final frequentemente enfrenta o fenômeno de gargalo conhecido como traffic shaping, uma prática em que provedores de internet (ISPs) limitam deliberadamente pacotes UDP/TCP associados a fluxos de vídeo não verificados. Para contornar tais restrições e garantir a entrega de fluxos lineares e sob demanda (VOD) em resoluções Ultra High Definition (4K UHD), nossa engenharia de servidores emprega redes de distribuição de conteúdo (CDNs) descentralizadas com espelhamento dinâmico.</p>
+        <p>A consolidação da infraestrutura de transmissão digital em 2026 exige a adoção de protocols robustos de entrega de conteúdo IP. Ao baratear custos com listas de reprodução genéricas, o usuário final frequentemente enfrenta o fenômeno de gargalo conhecido como traffic shaping, uma prática em que provedores de internet (ISPs) limitam deliberadamente pacotes UDP/TCP associados a fluxos de vídeo não verificados. Para contornar tais restrições e garantir a entrega de fluxos lineares e sob demanda (VOD) em resoluções Ultra High Definition (4K UHD), nossa engenharia de servidores emprega redes de distribuição de conteúdo (CDNs) descentralizadas com espelhamento dinâmico.</p>
         <p>Ao pesquisar por soluções de IPTV estável ou melhor lista de canais paga do mercado nacional, deve-se analisar os fatores de latência de borda (Ping) e jitter da conexão de rede. Plataformas móveis executando sistemas Android, sistemas proprietários WebOS (LG), Tizen (Samsung) e interfaces baseadas em ecossistemas FireOS ou Apple tvOS operam sob diferentes taxas de decodificação de hardware (H.264, H.265 HEVC e o codec AV1). Os nossos servidores realizam o transcodificação em tempo real direto na nuvem dedicada, minimizando o processamento exigido pelo dispositivo receptor e eliminando completamente falhas de sincronismo de áudio e vídeo.</p>
         <p>Além da transmissão estável de grades de esportes ao vivo, eventos pay-per-view e canais abertos/fechados premium, os metadados associados ao guia de programação eletrônica (EPG) são atualizados em ciclos automatizados, garantindo que o usuário locate o conteúdo desejado instantaneamente. A segurança da comunicação entre o terminal cliente e nossos nós centrais é blindada por camadas de transporte criptografadas, impossibilitando interceptações arbitrárias e mitigando bloqueios regionais comuns em grandes provedores de telecomunicação em território brasileiro.</p>
       </div>
       <div class="cta-container">
-        <button class="btn-tech btn-seo-toggle" id="btnSeoToggle">Expandir Documentação de SEO</button>
+        <button class="btn-tech btn-seo-toggle" id="btnSeoToggle">Expandir Relatório de Infraestrutura</button>
       </div>
     </section>
 
@@ -473,7 +475,7 @@
       <div class="faq-item"><h4>11. O sinal cai durante jogos importantes ou pay-per-view?</h4><p>Não. Nossa rede possui balanceamento de carga inteligente. Quando o tráfego sobe, novos servidores escravos entram em ação automaticamente.</p></div>
       <div class="faq-item"><h4>12. Qual a diferença de sinal IPTV comum para o sistema P2P?</h4><p>O IPTV utiliza servidores centrais por requisição de pacotes de dados. O P2P redistribui de forma descentralizada a transmissão entre os usuários conectados.</p></div>
       <div class="faq-item"><h4>13. Vocês oferecem suporte para configuração nos aparelhos?</h4><p>Sim. Temos suporte especializado via WhatsApp das 08:00h às 22:00h para auxiliar em qualquer instalação inicial do zero.</p></div>
-      <div class="faq-item"><h4>14. Como efetuar o pagamento da minha licença anual ou mensal?</h4><p>Os pagamentos são processados via Pix com liberação automatizada no sistema assim que o comprovante é validado.</p></div>
+      <div class="faq-item"><h4>14. Como efuar o pagamento da minha licença anual ou mensal?</h4><p>Os pagamentos são processados via Pix com liberação automatizada no sistema assim que o comprovante é validado.</p></div>
       <div class="faq-item"><h4>15. O plano renova sozinho no cartão ou gera cobranças?</h4><p>Não. O sistema não realiza cobranças automáticas. Você decide quando renovar o seu acesso ao término da sua licença.</p></div>
       <div class="faq-item"><h4>16. Posso usar em redes móveis 4G ou 5G no celular?</h4><p>Sim, funciona perfeitamente, desde que o sinal da operadora esteja estável e com boa taxa de transferência de download.</p></div>
       <div class="faq-item"><h4>17. O que fazer se um canal específico ficar sem áudio?</h4><p>Basta alterar o codec de áudio nas configurações do aplicativo player ou mudar a faixa de áudio de estéreo para nativo.</p></div>
@@ -537,15 +539,15 @@
   </a>
 
   <script>
-    // Controle do Bloco de SEO (Abre/Fecha)
+    // Controle do Bloco de Ocultação Estrutural (Antigo SEO Block)
     const seoBlock = document.getElementById('seoBlock');
     const btnSeoToggle = document.getElementById('btnSeoToggle');
     btnSeoToggle.addEventListener('click', () => {
       seoBlock.classList.toggle('aberto');
       if(seoBlock.classList.contains('aberto')) {
-        btnSeoToggle.textContent = 'Recolher Documentação';
+        btnSeoToggle.textContent = 'Recolher Relatório';
       } else {
-        btnSeoToggle.textContent = 'Expandir Documentação de SEO';
+        btnSeoToggle.textContent = 'Expandir Relatório de Infraestrutura';
       }
     });
 
@@ -582,51 +584,87 @@
     setTimeout(dispararPopup, 3000);
     setInterval(dispararPopup, 7000);
 
-    // LÓGICA DA OFERTA COMPACTA NO CANTINHO (APARECE APÓS 12 SEGUNDOS)
+    /* =========================================================================
+       SISTEMA PRIVADO ANTI-REPETIÇÃO (LOCAL E REDE/SESSÃO FAMILIAR POR COOKIE)
+       ========================================================================= */
     const ofertaCantinho = document.getElementById('ofertaCantinho');
     const btnFecharOferta = document.getElementById('btnFecharOferta');
     const btnModalWhats = document.getElementById('btnModalWhats');
     const tempoRegressivo = document.getElementById('tempoRegressivo');
     const avisoContador = document.getElementById('avisoContador');
 
-    setTimeout(() => {
-      ofertaCantinho.classList.add('show');
-      
-      let tempoTrava = 5; 
-      let intervalTrava = setInterval(() => {
-        tempoTrava--;
-        tempoRegressivo.textContent = tempoTrava + 's';
-        
-        if(tempoTrava <= 0) {
-          clearInterval(intervalTrava);
-          btnModalWhats.disabled = false;
-          btnModalWhats.classList.add('desbloqueado');
-          btnModalWhats.textContent = 'Garantir Desconto ➔';
-          btnModalWhats.onclick = () => {
-            window.open("https://wa.me/5575999960790?text=Quero%20a%20oferta%20especial%20de%2018%20reais%20no%20primeiro%20mes", "_blank");
-          };
-          
-          let tempoLimiteOferta = 30;
-          avisoContador.innerHTML = `Expira em: <span>${tempoLimiteOferta}s</span>`;
-          
-          let intervalExpiracao = setInterval(() => {
-            tempoLimiteOferta--;
-            avisoContador.innerHTML = `Expira em: <span>${tempoLimiteOferta}s</span>`;
-            if(tempoLimiteOferta <= 0) {
-              clearInterval(intervalExpiracao);
-              ofertaCantinho.classList.remove('show');
-            }
-          }, 1000);
-
-          btnFecharOferta.addEventListener('click', () => {
-            clearInterval(intervalExpiracao);
-            ofertaCantinho.classList.remove('show');
-          });
+    // Função de verificação robusta
+    function checarBloqueioOferta() {
+      if (localStorage.getItem('troll_oferta_ocultada') === 'true') {
+        return true;
+      }
+      let cookies = document.cookie.split(';');
+      for (let i = 0; i < cookies.length; i++) {
+        let c = cookies[i].trim();
+        if (c.indexOf('troll_rede_block=') == 0) {
+          return true;
         }
-      }, 1000);
-    }, 12000);
+      }
+      return false;
+    }
+
+    function aplicarBloqueioTotal() {
+      localStorage.setItem('troll_oferta_ocultada', 'true');
+      // Define cookie de 30 dias simulando bloqueio por faixa de sessão (mesma rede/grupo)
+      let d = new Date();
+      d.setTime(d.getTime() + (30*24*60*60*1000));
+      document.cookie = "troll_rede_block=true; expires=" + d.toUTCString() + "; path=/; SameSite=Strict";
+    }
+
+    // Só inicia a contagem e exibe se o dispositivo e rede estiverem limpos
+    if (!checarBloqueioOferta()) {
+      setTimeout(() => {
+        // Nova checagem de segurança de última hora antes de renderizar
+        if (checarBloqueioOferta()) return;
+
+        ofertaCantinho.classList.add('show');
+        
+        let tempoTrava = 5; 
+        let intervalTrava = setInterval(() => {
+          tempoTrava--;
+          tempoRegressivo.textContent = tempoTrava + 's';
+          
+          if(tempoTrava <= 0) {
+            clearInterval(intervalTrava);
+            btnModalWhats.disabled = false;
+            btnModalWhats.classList.add('desbloqueado');
+            btnModalWhats.textContent = 'Garantir Desconto ➔';
+            btnModalWhats.onclick = () => {
+              aplicarBloqueioTotal();
+              window.open("https://wa.me/5575999960790?text=Quero%20a%20oferta%20especial%20de%2018%20reais%20no%20primeiro%20mes", "_blank");
+              ofertaCantinho.classList.remove('show');
+            };
+            
+            let tempoLimiteOferta = 30;
+            avisoContador.innerHTML = `Expira em: <span>${tempoLimiteOferta}s</span>`;
+            
+            let intervalExpiracao = setInterval(() => {
+              tempoLimiteOferta--;
+              avisoContador.innerHTML = `Expira em: <span>${tempoLimiteOferta}s</span>`;
+              if(tempoLimiteOferta <= 0) {
+                clearInterval(intervalExpiracao);
+                aplicarBloqueioTotal();
+                ofertaCantinho.classList.remove('show');
+              }
+            }, 1000);
+
+            btnFecharOferta.addEventListener('click', () => {
+              clearInterval(intervalExpiracao);
+              aplicarBloqueioTotal();
+              ofertaCantinho.classList.remove('show');
+            });
+          }
+        }, 1000);
+      }, 12000);
+    }
 
     btnFecharOferta.addEventListener('click', () => {
+      aplicarBloqueioTotal();
       ofertaCantinho.classList.remove('show');
     });
   </script>
